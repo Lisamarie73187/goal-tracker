@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
     return (
         <div className="navBar">
-            <Link to="/home"><img style={image} src={logo} alt="logo"/></Link>
+            <Link to="/"><img style={image} src={logo} alt="logo"/></Link>
             <div className="nav">
                 <Nav tagz="Home" linky="/home"/>
+                <Nav tagz="About" linky="/Create"/>
                 <Nav tagz="Create Goal" linky="/Create"/>
             </div>
         </div>
@@ -21,6 +22,6 @@ export default Header;
 
 const image = {
     float: 'left',
-    height: '70px',
+    height: '65px',
     margin: '0'
 }
