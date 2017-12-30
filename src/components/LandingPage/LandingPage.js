@@ -1,37 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import './landingpage.css';
 import logo from './../../assests/logo.png';
 // import Animation from './Animation';
 import Radium, { StyleRoot } from 'radium';
 
-
-
-
-class LandingPage extends Component {
-   
-
-    render() {
-        return (
-            <div>
-                <StyleRoot>
-                    <div className="hero">
-                        <div style={styling.logoText}>
-                            <img style={styling.logoStyle} src={logo} alt="logo"/> 
-                            <div style={styling.alignText}>Goalsy</div>
-                        </div>
-                        <div style={styling.base}>
-                            <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                            <Link to="/start" style={button.noDecor}>
-                                <span style={[button.base, button.clicked]}>Get Started</span>
-                            </Link>
-                        </div>
-                    </div>
-                </StyleRoot>
+const LandingPage = () => {
+    return (
+        <div>
+        <StyleRoot>
+            <div className="hero">
+                <div style={styling.logoText}>
+                    <img style={styling.logoStyle} src={logo} alt="logo"/> 
+                    <div style={styling.alignText}>Goalsy</div>
+                </div>
+                <div style={styling.base}>
+                    <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
+                    <Link to="/home" style={button.noDecor}>
+                        <span style={[button.base, button.clicked]}>Get Started</span>
+                    </Link>
+                </div>
             </div>
-        )
-    }
+        </StyleRoot>
+    </div>
+    )
 }
+ 
 
 var styling = {
     base: {

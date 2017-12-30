@@ -7,6 +7,6 @@ import Home from '././components/Home/Home';
 export default (
     <Switch>
         <Route exact path="/" component={ LandingPage }/>
-        <Route exact path="/start" component={ Home }/>
+        <Route exact path="/home" component={ Home }/>
     </Switch>
 )
