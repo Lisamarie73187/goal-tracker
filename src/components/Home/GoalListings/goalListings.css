@@ -1,0 +1,18 @@
+.rapper {
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    
+}
+.why {
+    margin: 20px;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around;
+    /* background-color: blue; */
+}
+

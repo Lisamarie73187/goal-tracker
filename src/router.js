@@ -8,5 +8,6 @@ export default (
     <Switch>
         <Route exact path="/" component={ LandingPage }/>
         <Route exact path="/home" component={ Home }/>
+        {/* <Route exact path="/goal/:id" component={ Goal }/> */}
     </Switch>
 )
