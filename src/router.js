@@ -4,6 +4,7 @@ import LandingPage from '././components/LandingPage/LandingPage';
 import Home from '././components/Home/Home';
 
 
+
 export default (
     <Switch>
         <Route exact path="/" component={ LandingPage }/>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import './goalListings.css';
+import ProgressBar from './ProgressBar/ProgressBar';
+// import Goal from '../../Goal/Goal';
 
 const dataGoals = [ 
     {
@@ -28,13 +30,13 @@ const dataGoals = [
     tasks: []
         },
         {
-            id: 4,
-            goalTitle: 'example three',
-            goalDescription: 'blah blah blah yada yada',
-            startDate: '1/1/2018',
-            goalDate: '7/1/2018',
-            tasks: []
-                },
+        id: 4,
+        goalTitle: 'example three',
+        goalDescription: 'blah blah blah yada yada',
+        startDate: '1/1/2018',
+        goalDate: '7/1/2018',
+        tasks: []
+        },
     ]
 
 
@@ -58,11 +60,12 @@ class GoalListings extends Component {
             <div className="why">
             {this.state.data.map((e)=>{
                  return (
-                    <Link to={`/${e.id}`} key={e.id}>
+                    <Link style={noDecor}to={`/goal/${e.id}`} key={e.id}>
                         <div>
                         <div className="rapper">
                         <div className="titleText">{e.goalTitle}</div>
-                        <div className="dates"><div>Start Date: {e.startDate} - Goal Date: {e.goalDate}</div></div>
+                        <ProgressBar/>
+                        <div className="dates"><div>Start Date: {e.startDate} Goal Date: {e.goalDate}</div></div>
                         </div>
                         </div>
                     </Link>
@@ -74,5 +77,8 @@ class GoalListings extends Component {
     }
 }
 
+const noDecor = {
+    textDecoration: 'none'
+}
 
 export default GoalListings

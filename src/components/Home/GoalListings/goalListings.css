@@ -1,18 +1,29 @@
 .rapper {
     border: 2px solid black;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     margin: 20px;
+    
     
 }
 .why {
     margin: 20px;
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     align-content: space-around;
     /* background-color: blue; */
+}
+
+.titleText, .dates{
+    font-family: 'Raleway','serif';
+    text-decoration: none;
+    padding: 20px;
+}
+
+.titleText {
+    font-size: 20pt;
 }
 
