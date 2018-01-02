@@ -15,6 +15,7 @@ massive(process.env.CONNECTION_STRING)
 })
 
 app.get('/api/read', display_ctr.read);
+app.get('/api/goal/:goalsid', display_ctr.getOne);
 
 const db = app.get('db');
 

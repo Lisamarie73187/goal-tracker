@@ -17,7 +17,7 @@ class GoalListings extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3003/api/read').then(res => {
+        return axios.get('http://localhost:3003/api/read').then(res => {
             console.log(res.data)
             this.setState ({
                 data: res.data
@@ -30,7 +30,7 @@ class GoalListings extends Component {
             <div className="why">
             {this.state.data.map((e)=>{
                  return (
-                    <Link style={noDecor}to={`/goal/${e.goals_id}`} key={e.goals_id}>
+                    <Link style={noDecor}to={`/goal/${e.goalsid}`} key={e.goalsid}>
                         <div>
                         <div className="rapper">
                         <div className="titleText">{e.goal_name}</div>
