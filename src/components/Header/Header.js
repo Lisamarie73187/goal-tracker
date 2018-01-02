@@ -10,7 +10,6 @@ const Header = (props) => {
             <Link to="/"><img style={image} src={logo} alt="logo"/></Link>
             <div className="nav">
                 <Nav tagz="Home" linky="/home"/>
-                <Nav tagz="About" linky="/Create"/>
                 <Nav tagz="Create Goal" linky="/Create"/>
             </div>
         </div>

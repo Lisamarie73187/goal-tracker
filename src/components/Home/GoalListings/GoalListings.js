@@ -1,71 +1,41 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './goalListings.css';
-import ProgressBar from './ProgressBar/ProgressBar';
-// import Goal from '../../Goal/Goal';
 
-const dataGoals = [ 
-    {
-    id: 1,
-    goalTitle: 'Run a Marathon',
-    goalDescription: 'train to run a full marathon',
-    startDate: '1/1/2018',
-    goalDate: '7/1/2018',
-    tasks: []
-    },
-    {
-    id: 2,
-    goalTitle: 'Example two',
-    goalDescription: 'lorem impsom',
-    startDate: '1/1/2018',
-    goalDate: '7/1/2018',
-    tasks: []
-    },
-    {
-    id: 3,
-    goalTitle: 'example three',
-    goalDescription: 'blah blah blah yada yada',
-    startDate: '1/1/2018',
-    goalDate: '7/1/2018',
-    tasks: []
-        },
-        {
-        id: 4,
-        goalTitle: 'example three',
-        goalDescription: 'blah blah blah yada yada',
-        startDate: '1/1/2018',
-        goalDate: '7/1/2018',
-        tasks: []
-        },
-    ]
+import ProgressBar from './ProgressBar/ProgressBar';
+
+
 
 
 class GoalListings extends Component {
     constructor() {
         super()
         this.state = {
-            data: dataGoals
+            data: []
         }
     }
-//    componentDidMount(){
-//     setTimeout(() => {
-//         this.setState({
-//           data: dataGoals
-//         })
-//       }, 1000)
-//     }
 
+    componentDidMount() {
+        axios.get('http://localhost:3003/api/read').then(res => {
+            console.log(res.data)
+            this.setState ({
+                data: res.data
+            })
+        })
+    }
+   
     render() {
         return (
             <div className="why">
             {this.state.data.map((e)=>{
                  return (
-                    <Link style={noDecor}to={`/goal/${e.id}`} key={e.id}>
+                    <Link style={noDecor}to={`/goal/${e.goals_id}`} key={e.goals_id}>
                         <div>
                         <div className="rapper">
-                        <div className="titleText">{e.goalTitle}</div>
+                        <div className="titleText">{e.goal_name}</div>
                         <ProgressBar/>
-                        <div className="dates"><div>Start Date: {e.startDate} Goal Date: {e.goalDate}</div></div>
+                        <div className="dates"><div>Start Date: {e.start_date} Goal Date: {e.end_date}</div></div>
                         </div>
                         </div>
                     </Link>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
-import GoalListings from '../GoalListings/GoalListings';
+
 
 
 class Dashboard extends Component {
@@ -15,9 +15,6 @@ class Dashboard extends Component {
             <div>
                 <div className="wrapper">
                     Charts and graphs
-                </div>
-                <div>
-                    <GoalListings/>
                 </div>
             </div>
         )
