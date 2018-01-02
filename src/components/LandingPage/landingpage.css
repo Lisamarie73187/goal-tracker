@@ -1,9 +1,26 @@
 .hero{
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-image: url("../../assests/hero.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.startButton
+{
+    color: white;
+    padding: 20px;
+    background : #FF459A;
+    background : rgba(255, 69, 154, 1);
+    border-radius : 101px;
+    -moz-border-radius : 101px;
+    -webkit-border-radius : 101px;
+    margin-top: 20px;
+  }
+  
+
+.noDecor {
+    text-decoration: none;
 }

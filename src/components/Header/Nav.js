@@ -8,20 +8,18 @@ import radium from 'radium'
 
 const Nav = (props) => {
     return (  
-        <div style={psuedo}>
-             <Link className="text"to={props.linky}><h4 className="text">{props.tagz}</h4></Link>
+        <div>
+             <Link className="noDecor" to={props.linky}><h4 style={color}>{props.tagz}</h4></Link>
         </div>)
 }
  
 
 
-
-const psuedo = {
-    ':hover': {
-        backgroundColor: '#473567',
-        borderBottomColor: '#fed734',
-        borderBottomStyle: 'solid'
-    }
+const color = {
+    color: 'white',
+    padding: '10px',
+    fontFamily: "'Raleway','serif'",
 }
+
 
 export default radium(Nav)

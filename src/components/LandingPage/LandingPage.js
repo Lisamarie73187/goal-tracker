@@ -16,8 +16,8 @@ const LandingPage = () => {
                 </div>
                 <div style={styling.base}>
                     <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                    <Link to="/home" style={button.noDecor}>
-                        <span style={[button.base, button.clicked]}>Get Started</span>
+                    <Link to="/home" className="noDecor">
+                        <span className="startButton">Get Started</span>
                     </Link>
                 </div>
             </div>
@@ -54,41 +54,10 @@ var styling = {
     }
 }
 
-var button = {
-    base: {
-    backgroundColor: '#e3186f',
-    padding: '20px',
-    borderRadius: '72px',
-    mozBorderRadius: '72px',
-    webkitBorderRadius: '72px',
-    color: 'white',
-    border: 'none',
-    fontSize: '16pt',
-    fontFamily: 'Raleway',
-    webkitBoxShadow: '12px 14px 43px -4px rgba(0,0,0,0.35)',
-    mozBoxShadow: '12px 14px 43px -4px rgba(0,0,0,0.35)',
-    boxShadow: '12px 14px 43px -4px rgba(0,0,0,0.35)',
-    cursor: 'pointer',
-    },
-    primary: {
-        ':hover': {
-            backgroundColor: '#CB0057',
-        },
-    },
-    clicked: {
-        ':active': {
-           fontSize: '20pt'
-        }
-    },
 
-    noDecor: {
-        textDecoration: 'none'
-    }
-    
-}
 
 var yellow = {
-    color:'#fed734'
+    color:'#ffd700'
 }
 
 

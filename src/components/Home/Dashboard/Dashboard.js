@@ -3,6 +3,7 @@ import './Dashboard.css';
 
 
 
+
 class Dashboard extends Component {
     constructor(props) {
         super(props)
@@ -14,7 +15,6 @@ class Dashboard extends Component {
         return (
             <div>
                 <div className="wrapper">
-                    Charts and graphs
                 </div>
             </div>
         )

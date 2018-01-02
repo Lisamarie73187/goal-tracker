@@ -3,6 +3,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 import './ProgressBar.css'
 
 
+
 class ProgressBar extends Component {
     constructor(props) {
         super(props)
@@ -13,11 +14,12 @@ class ProgressBar extends Component {
     render() {
         return (
             <div>
-                <CircularProgressbar percentage={60} initialAnimation="true" />
+                <CircularProgressbar percentage={this.props.percent} initialAnimation="true" />
             </div>
         )
     }
 }
+
 
 
 export default ProgressBar

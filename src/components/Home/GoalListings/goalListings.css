@@ -1,29 +1,54 @@
 .rapper {
-    border: 2px solid black;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
-    margin: 20px;
-    
+    margin: 30px;
+    background : #333243;
+    box-shadow : 7px 7px 5px rgba(0, 0, 0, 0.4);
+    height: 425px;
     
 }
 .why {
-    margin: 20px;
+    margin: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: space-around;
-    /* background-color: blue; */
 }
 
 .titleText, .dates{
     font-family: 'Raleway','serif';
-    text-decoration: none;
+    color: white;
     padding: 20px;
 }
 
 .titleText {
     font-size: 20pt;
+    background : #3F3E54;
 }
 
+.dates {
+    border: 2px solid #3F3E54;
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+}
+
+.buttonGoal {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 15px;
+    background : -moz-linear-gradient(0% 50% 0deg,rgba(253, 140, 122, 1) 0%,rgba(253, 130, 140, 1) 39.9%,rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(253, 140, 122, 1) ),color-stop(0.399,rgba(253, 130, 140, 1) ),color-stop(0.971,rgba(253, 117, 162, 1) ));
+    background : -o-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -ms-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FD8C7A', endColorstr='#FD75A2' ,GradientType=0)";
+    background : linear-gradient(90deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    border-radius : 101px;
+    -moz-border-radius : 101px;
+    -webkit-border-radius : 101px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FD8C7A',endColorstr='#FD75A2' , GradientType=1);
+}
