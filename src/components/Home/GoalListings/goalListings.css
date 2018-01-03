@@ -13,6 +13,7 @@
         box-shadow : 7px 7px 5px rgba(0, 0, 0, 0.4);
         width: 80vw; 
         margin: auto;
+        height: 100vh;
 }
 .why {
     margin: 40px;
