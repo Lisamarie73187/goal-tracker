@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import './CreateGoal.css';
 
 import Header from '../Header/Header';
+import Footer from '../Home/Footer/Footer';
 
 
 class CreateGoal extends Component {
@@ -15,7 +17,7 @@ class CreateGoal extends Component {
             <div className="homePage">
                 <Header/>
                 <div className="rapperLarge">
-                    <div>Create your Goal</div>
+                    <div className="titleText">Create your Goal</div>
                     <p>Create a goal. You are able to make 10 goals. Once you create a goal <br/>
                     you can add tasks to it.</p>
                     <form>
@@ -25,6 +27,7 @@ class CreateGoal extends Component {
                         <input className="datess" type="text" placeholder="End Date"/>
                     </form>
                 </div>
+                <Footer/>
             </div>
         )
     }
