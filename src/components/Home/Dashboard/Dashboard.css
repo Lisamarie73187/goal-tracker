@@ -1,6 +1,24 @@
 .wrapper {
-    height: 600px;
     width: 90vw;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #333243;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: baseline;
+	align-content: flex-end;
+  
+}
+
+.wrapperTwo {
     margin: auto;
-    margin-top: 20px;
+}
+
+.textyText {
+    background-color: #3f3e54;
+    text-align: center;
+    color: white;
+    padding: 20px;
 }

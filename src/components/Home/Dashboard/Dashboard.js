@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
 
+import LineGraph from './LineGraph';
+import BarGraph from './BarGraph';
+import GoalLength from './GoalLength';
+
 
 
 
@@ -15,6 +19,11 @@ class Dashboard extends Component {
         return (
             <div>
                 <div className="wrapper">
+                <GoalLength/>
+                <div className="wrapperTwo">
+                <LineGraph/>
+                <BarGraph/>
+                </div>
                 </div>
             </div>
         )

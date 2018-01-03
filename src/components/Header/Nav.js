@@ -17,7 +17,7 @@ const Nav = (props) => {
 
 const color = {
     color: 'white',
-    padding: '10px',
+    paddingRight: '20px',
     fontFamily: "'Raleway','serif'",
 }
 
