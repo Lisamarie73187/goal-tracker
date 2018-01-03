@@ -16,7 +16,7 @@ class GoalListings extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         return axios.get('http://localhost:3003/api/read').then(res => {
             console.log(res.data)
             this.setState ({
@@ -31,7 +31,7 @@ class GoalListings extends Component {
             {this.state.data.map((e)=>{
                  return (
                     <div key={e.goalsid}>
-                        <div className="rapper" >
+                        <div className="rapper" style={heighty0}>
                             <div className="titleText">{e.goal_name}</div>
                             <div className="dates">Goal Date <br/>{e.end_date}</div>
                             <ProgressBar percent="70"/>
@@ -50,6 +50,10 @@ class GoalListings extends Component {
 
 const layoutButton = {
     marginTop: '40px'
+}
+
+var heighty0 = {
+    height: '425px',
 }
 
 export default GoalListings

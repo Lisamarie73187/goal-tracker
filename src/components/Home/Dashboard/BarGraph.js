@@ -27,17 +27,17 @@ class BarGraph extends Component {
           
     render() {
         return (
-            <div style={layout}>
+            <div style={size}>
             <Bar data={this.state.data1} />
             </div>
         );
     }
 }
 
-const layout = {
-    width: '50vw',
-    backgroundColor: '#3f3e54',
-    padding: '10px',
-    marginTop: '10px'
+const size = {
+    width: '40vw',
+    backgroundColor: '#3f3e54'
 }
+
+
 export default BarGraph;
