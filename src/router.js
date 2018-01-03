@@ -12,6 +12,6 @@ export default (
         <Route exact path="/" component={ LandingPage }/>
         <Route path="/home" component={ Home }/>
         <Route path="/goal/:goalsid" component={ Goal }/>
-        <Route path="/create" component={ Create }/>
+        <Route path="/Create" component={ Create }/>
     </Switch>
 )

@@ -30,7 +30,7 @@ export class Goal extends Component {
                  return (
                     <div key={e.goalsid}>
                     <Header/>
-                    <div className="rapper">
+                    <div className="rapperLarge">
                     <div className="titleText">{e.goal_name}</div>
                     <div style={dates}>Start Date: {e.start_date} Goal Date: {e.end_date}</div>
                     <div style={taskList}>Taskyo</div>
