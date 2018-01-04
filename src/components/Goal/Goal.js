@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import radium from 'radium';
 import './Goal.css';
+
 
 import Header from '../Header/Header';
 import Footer from '../Home/Footer/Footer';
@@ -29,13 +31,18 @@ export class Goal extends Component {
                 {this.state.data.map((e)=>{
                  return (
                     <div key={e.goalsid}>
-                    <Header/>
-                    <div className="rapperLarge">
-                    <div className="titleText">{e.goal_name}</div>
-                    <div style={dates}>Start Date: {e.start_date} Goal Date: {e.end_date}</div>
-                    <div style={taskList}>Taskyo</div>
-                    </div>
-                    <Footer/>
+                        <Header/>
+                        <div className="rapper">
+                            <div style={styleYo.primary}>
+                                <div style={[styleYo.base, styleYo.name]}>{e.goal_name}</div>
+                                <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
+                                <div style={[styleYo.base, styleYo.dates]}>Start Date: 
+                                {e.start_date}<br/>
+                                Goal Date: {e.end_date}</div>
+                            </div>
+                            <div style={format}>jadfkljdslkfjsd</div>
+                        </div>
+                        <Footer/>
                     </div>
                     )
                  })
@@ -46,17 +53,37 @@ export class Goal extends Component {
 
 }
 
-const dates = {
-    textAlign: 'center',
-    fontFamily: 'Raleway',
-    color: 'white',
-    fontSize: '15pt',
-    border: '2px solid #3F3E54',
-    padding: '15px',
-    margin: '15px'
+const styleYo = {
+    primary: {
+        backgroundColor: '#3F3E54',
+        fontFamily: 'Raleway',
+        padding: '15px',    
+    },
+    base: {
+        padding: '6px',
+    },
+    name: {
+        textAlign: 'left',
+        fontSize: '20pt',
+        color: 'white',
+    },
+    dates: {
+        textAlign: 'right',
+        color: 'white',
+        position: 'absolute',
+        top: '112px',
+        right: '35px'
+    },
+    desc: {
+        fontSize: '15pt',
+        textAlign: 'left',
+        color: '#292839',
+    }
 }
 
-const taskList = {
+const format = {
     height: '100vh'
 }
-export default Goal
+
+
+export default radium(Goal)

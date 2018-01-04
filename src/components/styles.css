@@ -1,6 +1,4 @@
-
-    .homePage
-    {
+.homePage {
       background : -moz-linear-gradient(50% 0% -90deg,rgba(30, 31, 50, 1) 0%,rgba(41, 40, 57, 1) 100%);
       background : -webkit-linear-gradient(-90deg, rgba(30, 31, 50, 1) 0%, rgba(41, 40, 57, 1) 100%);
       background : -webkit-gradient(linear,50% 0% ,50% 100% ,color-stop(0,rgba(30, 31, 50, 1) ),color-stop(1,rgba(41, 40, 57, 1) ));
@@ -9,11 +7,47 @@
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1E1F32', endColorstr='#292839' ,GradientType=0)";
       background : linear-gradient(180deg, rgba(30, 31, 50, 1) 0%, rgba(41, 40, 57, 1) 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1E1F32',endColorstr='#292839' , GradientType=0);
-        }
+}
 
 p {
   color: #555568;
   font-family: 'Raleway','serif';
 }
-        
 
+h1 {
+  color: white;
+  font-family: 'Raleway','serif';
+  font-size: 20pt;
+  text-align: left;
+}
+
+.inputs {
+  color: #d2d2d6;
+  background-color: #292839;
+  outline:  none;
+  margin: auto;
+  border: 1px #2e2d3f inset;
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20pt;
+  width: 32.5vw;
+}
+
+.datess {
+  color: #d2d2d6;
+  background-color: #292839;
+  outline:  none;
+  border: 1px #2e2d3f inset;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  font-size: 20pt;
+  width: 15vw;
+}
+
+.formyForm {
+  margin-top: 30px;
+}
+        

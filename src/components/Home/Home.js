@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header'
 import Dashboard from '../Home/Dashboard/Dashboard';
 import GoalListings from '../Home/GoalListings/GoalListings';
-import '../Home/Home.css';
+import '../styles.css';
 import Footer from './Footer/Footer';
 
 

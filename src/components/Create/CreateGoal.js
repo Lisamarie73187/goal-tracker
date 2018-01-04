@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './CreateGoal.css';
+
 
 import Header from '../Header/Header';
 import Footer from '../Home/Footer/Footer';
