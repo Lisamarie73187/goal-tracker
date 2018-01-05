@@ -4,10 +4,16 @@ const bodyParser = require('body-parser')
 const massive = require('massive')
 const cors = require('cors')
 
-const display_ctr = require('./controllers/display_controller')
+const display_ctr = require('./controllers/display_controller');
+
+
 
 const app = express();
-app.use(cors())
+
+app.use(bodyParser.json());
+
+app.use(cors());
+
 
 massive(process.env.CONNECTION_STRING)
 .then( db => {
@@ -16,6 +22,7 @@ massive(process.env.CONNECTION_STRING)
 
 app.get('/api/read', display_ctr.read);
 app.get('/api/goal/:goalsid', display_ctr.getOne);
+app.post('/api/goal/add', display_ctr.addGoal);
 
 const db = app.get('db');
 

@@ -2,27 +2,11 @@ DROP TABLE goals;
 
 CREATE TABLE goals (
     goalsid SERIAL PRIMARY KEY NOT NULL,
-    goal_name varchar(20),
+    goalname varchar(20),
     description varchar(80),
-    start_date VARCHAR(11),
-    end_date VARCHAR(11)
+    startdate VARCHAR(11),
+    enddate VARCHAR(11)
 );
 
-INSERT INTO goals 
-(goal_name, description, start_date, end_date)
-VALUES ('Learn Dynamic Charts', 'help me', '1-1-18', '7-15-18');
 
-INSERT INTO goals 
-(goal_name, start_date, end_date)
-VALUES ('Learn Sass', '1-2-18', '2-20-18');
-
-INSERT INTO goals 
-(goal_name, description, start_date, end_date)
-VALUES ('Get a Job', 'prep and find a job I am passionate about', '3-10-18', '4-10-18');
-
-INSERT INTO goals 
-(goal_name, description, start_date, end_date)
-VALUES ('Run a Marathon', 'train for a marathon', '1-1-18', '7-15-18');
-
-
-select * FROM goals;
+SELECT * FROM goals;

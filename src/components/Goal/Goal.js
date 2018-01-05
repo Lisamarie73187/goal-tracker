@@ -6,6 +6,7 @@ import './Goal.css';
 
 import Header from '../Header/Header';
 import Footer from '../Home/Footer/Footer';
+import DisplayList from './DisplayList';
 
 
 export class Goal extends Component {
@@ -34,13 +35,13 @@ export class Goal extends Component {
                         <Header/>
                         <div className="rapper">
                             <div style={styleYo.primary}>
-                                <div style={[styleYo.base, styleYo.name]}>{e.goal_name}</div>
+                                <div style={[styleYo.base, styleYo.name]}>{e.goalname}</div>
                                 <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
                                 <div style={[styleYo.base, styleYo.dates]}>Start Date: 
-                                {e.start_date}<br/>
-                                Goal Date: {e.end_date}</div>
+                                {e.startdate}<br/>
+                                Goal Date: {e.enddate}</div>
                             </div>
-                            <div style={format}>jadfkljdslkfjsd</div>
+                            <DisplayList/>
                         </div>
                         <Footer/>
                     </div>
@@ -79,10 +80,6 @@ const styleYo = {
         textAlign: 'left',
         color: '#292839',
     }
-}
-
-const format = {
-    height: '100vh'
 }
 
 

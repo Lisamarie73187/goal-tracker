@@ -32,8 +32,8 @@ class GoalListings extends Component {
                  return (
                     <div key={e.goalsid}>
                         <div className="rapper" style={heighty0}>
-                            <div className="titleText">{e.goal_name}</div>
-                            <div className="dates">Goal Date <br/>{e.end_date}</div>
+                            <div className="titleText">{e.goalname}</div>
+                            <div className="dates">Goal Date <br/>{e.enddate}</div>
                             <ProgressBar percent="70"/>
                             <div style={layoutButton}>
                             <Link className="noDecor" to={`/goal/${e.goalsid}`}><span className="buttonGoal">Go to Goal</span></Link>
