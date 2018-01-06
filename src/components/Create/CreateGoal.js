@@ -31,7 +31,7 @@ class CreateGoal extends Component {
             endDate: this.state.endDate
         })
          .then(res => {
-            this.props.history.push('/home');
+            this.props.history.push('/Home');
         }).catch(err => console.error(err))
         }
     

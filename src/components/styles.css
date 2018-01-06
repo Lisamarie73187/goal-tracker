@@ -44,3 +44,6 @@ p {
   margin-top: 30px;
 }
         
+.noDecor {
+  text-decoration: none;
+}

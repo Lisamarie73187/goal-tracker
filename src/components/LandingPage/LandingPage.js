@@ -16,7 +16,7 @@ const LandingPage = () => {
                 </div>
                 <div style={styling.base}>
                     <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                    <Link to="/home" className="noDecor">
+                    <Link to="/Home" className="noDecor">
                         <span className="startButton">Get Started</span>
                     </Link>
                 </div>
