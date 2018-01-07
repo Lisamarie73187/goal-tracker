@@ -40,7 +40,7 @@ class LineGraph extends Component {
                         data: [0, 1, 4, 9, 13, 18, 20, 22, 25, 26, 37, 38],
                       },
                       {
-                        label: 'goal 2',
+                        label: res.data[1].goalname,
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: '#c353f5',
@@ -59,27 +59,6 @@ class LineGraph extends Component {
                         pointRadius: 1,
                         pointHitRadius: 10,
                         data: [0, 12, 13, 19, 20, 18, 20, 22, 29, 33, 37, 38],
-                      },
-                      {
-                        label: 'goal 3',
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: '#fd8c7a',
-                        borderColor: '#fd8c7a',
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'miter',
-                        pointBorderColor: '#fd8c7a',
-                        pointBackgroundColor: '#fd8c7a',
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: '#fd8c7a',
-                        pointHoverBorderColor: '#fd8c7a',
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
-                        data: [0, 2, 3, 9, 10, 8, 10, 12, 15, 16, 17, 18],
                       }
                     ]
                   }

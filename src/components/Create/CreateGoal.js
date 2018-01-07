@@ -89,7 +89,7 @@ class CreateGoal extends Component {
                             onChange={(e) => this.handleEndDateChange(e.target.value)}                            
                             placeholder="End Date"/>
                         <div>
-                            <button style={buttonLarger} className="buttonGoal">Reset</button>
+                            <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
                             <button type="submit" style={buttonLarger} className="buttonGoal">Create Goal</button>
                         </div>
                     </form>
