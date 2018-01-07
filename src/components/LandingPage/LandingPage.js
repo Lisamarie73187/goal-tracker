@@ -57,7 +57,7 @@ var styling = {
 
 
 var yellow = {
-    color:'#ffd700'
+    color:'#ff8c69'
 }
 
 

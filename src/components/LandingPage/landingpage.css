@@ -12,13 +12,18 @@
 {
     color: white;
     padding: 20px;
-    background : #FF459A;
-    background : rgba(255, 69, 154, 1);
-    border-radius : 101px;
-    -moz-border-radius : 101px;
-    -webkit-border-radius : 101px;
-    margin-top: 20px;
-  }
+    background : -moz-linear-gradient(34.02% -49.4% -60deg,rgba(239, 118, 106, 1) 0%,rgba(242, 100, 155, 1) 100%);
+  background : -webkit-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+  background : -webkit-gradient(linear,34.02% -49.4% ,65.98% 149.4% ,color-stop(0,rgba(239, 118, 106, 1) ),color-stop(1,rgba(242, 100, 155, 1) ));
+  background : -o-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+  background : -ms-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A', endColorstr='#F2649B' ,GradientType=0)";
+  background : linear-gradient(150deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+  border-radius : 41px;
+  -moz-border-radius : 41px;
+  -webkit-border-radius : 41px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A',endColorstr='#F2649B' , GradientType=1);
+}
   
 
 .noDecor {
