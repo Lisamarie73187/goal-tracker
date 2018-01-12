@@ -1,29 +1,54 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import './landingpage.css';
 import logo from './../../assests/logo.png';
-// import Animation from './Animation';
-import Radium, { StyleRoot } from 'radium';
+import Auth0Lock from 'auth0-lock';
+import axios from 'axios';
+// import Radium, { StyleRoot } from 'radium';
+import { login } from '../../ducks/reducer';
+import { connect } from 'react-redux';
 
-const LandingPage = () => {
-    return (
-        <div>
-        <StyleRoot>
-            <div className="hero">
-                <div style={styling.logoText}>
-                    <img style={styling.logoStyle} src={logo} alt="logo"/> 
-                    <div style={styling.alignText}>Goalsy</div>
+class LandingPage extends Component {
+    constructor() {
+      super();
+      this.lock = null;
+      this.login = this.login.bind(this);
+    }
+
+    componentDidMount() {
+        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN);
+        console.log('this.lock', this.lock);
+        this.lock.on('authenticated', authResult => {
+          this.lock.getUserInfo(authResult.accessToken, (error, user) => {
+            axios.post('/login', { userId: user.sub }).then(response => {
+              this.props.login(response.data.user);
+              this.props.history.push('/Home');
+            })
+          })
+        })
+      }
+
+    login() {
+        this.lock.show();
+    }
+
+    render() {
+        return (
+            <div>
+                {/* <StyleRoot> */}
+                    <div className="hero">
+                        <div style={styling.logoText}>
+                        <img style={styling.logoStyle} src={logo} alt="logo"/> 
+                        <div style={styling.alignText}>Goalsy</div>
+                    </div>
+                        <div style={styling.base}>
+                        <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
+                        <span onClick={this.login} className="startButton">Get Started</span>
+                    </div>
                 </div>
-                <div style={styling.base}>
-                    <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                    <Link to="/Home" className="noDecor">
-                        <span className="startButton">Get Started</span>
-                    </Link>
-                </div>
-            </div>
-        </StyleRoot>
-    </div>
-    )
+            {/* </StyleRoot> */}
+        </div>
+        )
+    }
 }
  
 
@@ -64,4 +89,8 @@ var yellow = {
 
 
 
-export default Radium(LandingPage);
+const mapDispatchToProps = {
+    login: login,
+  };
+  
+  export default connect(null, mapDispatchToProps)(LandingPage);

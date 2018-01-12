@@ -24,7 +24,7 @@ class CreateGoal extends Component {
     }
     addNewGoal(){
         console.log('button working?')
-        axios.post('http://localhost:3003/api/goal/add', {
+        axios.post('/api/goal/add', {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
             startDate: this.state.startDate, 
@@ -90,7 +90,7 @@ class CreateGoal extends Component {
                             placeholder="End Date"/>
                         <div>
                             <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
-                            <button type="submit" style={buttonLarger} className="buttonGoal">Create Goal</button>
+                            <button onSubmit={this.addNewGoal} type="submit" style={buttonLarger} className="buttonGoal">Create Goal</button>
                         </div>
                     </form>
                 </div>

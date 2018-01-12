@@ -22,6 +22,7 @@
   border-radius : 41px;
   -moz-border-radius : 41px;
   -webkit-border-radius : 41px;
+  cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A',endColorstr='#F2649B' , GradientType=1);
 }
   

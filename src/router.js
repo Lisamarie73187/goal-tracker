@@ -9,7 +9,7 @@ import CreateGoal from './components/Create/CreateGoal';
 
 export default (
     <Switch>
-        <Route exact path="/" component={ LandingPage }/>
+        <Route exact path="/(access_token.*)?" component={ LandingPage }/>
         <Route path="/home" component={ Home }/>
         <Route path="/goal/:goalsid" component={ Goal }/>
         <Route path="/Create" component={ CreateGoal }/>

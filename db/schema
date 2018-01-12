@@ -1,4 +1,5 @@
 DROP TABLE goals;
+DROP TABLE users;
 
 CREATE TABLE goals (
     goalsid SERIAL PRIMARY KEY NOT NULL,
@@ -8,5 +9,14 @@ CREATE TABLE goals (
     enddate VARCHAR(11)
 );
 
+CREATE TABLE users (
+  id SERIAL,
+  auth0_id TEXT,
+  email TEXT,
+  pictureUrl TEXT,
+  name TEXT
+);
+
 
 SELECT * FROM goals;
+SELECT * FROM users;
