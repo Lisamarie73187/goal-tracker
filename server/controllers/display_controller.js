@@ -33,6 +33,22 @@ module.exports = {
                 console.log('errordelete', error)
                 res.status(500).send(error)
             })
-        }
-           
+        },
+        editGoal: (req,res, next) => {
+            const db = req.app.get('db')
+            db.edit_goal([
+                req.params.goalsid, 
+                req.body.goalName, 
+                req.body.goalName, 
+                req.body.goalDesc, 
+                req.body.startDate, 
+                req.body.endDate])
+                .then(() => {
+                    res.status(200).json()
+                }).catch( (error) => {
+                    console.log('errordelete', error)
+                    res.status(500).send(error)
+                })
+            }
+            
 }

@@ -71,6 +71,7 @@ app.get('/api/read', display_ctr.read);
 app.get('/api/goal/:goalsid', display_ctr.getOne);
 app.post('/api/goal/add', display_ctr.addGoal);
 app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);
+app.put('/api/goal/:goalsid', display_ctr.editGoal);
 
 const db = app.get('db');
 

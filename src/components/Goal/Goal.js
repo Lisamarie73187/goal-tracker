@@ -7,6 +7,8 @@ import './Goal.css';
 import Header from '../Header/Header';
 import Footer from '../Home/Footer/Footer';
 import DisplayList from './DisplayList';
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
 
 
 export class Goal extends Component {
@@ -14,10 +16,16 @@ export class Goal extends Component {
         super();
 
         this.state = {
-            data: []
+            data: [],
+            modalIsOpen: false,
+            goalNameInput: '',
+            goalDescInput: '',
+            startDate: '',
+            endDate: '',
         }
 
         this.deleteGoal = this.deleteGoal.bind(this)
+        this.editGoal=this.editGoal.bind(this)
     }
 
     componentDidMount() {
@@ -32,6 +40,43 @@ export class Goal extends Component {
             this.props.history.push('/home')
         }).catch(console.log)
     }
+    editGoal(){
+        console.log('button working?')
+        axios.put(`/api/goal/edit/${this.props.match.params.goalsid}`, {
+            goalName: this.state.goalName, 
+            goalDesc: this.state.goalDesc, 
+            startDate: this.state.startDate, 
+            endDate: this.state.endDate})
+            .then(res=>{
+            // this.props.history.push(`/goal/${this.props.match.params.goalsid}`)
+        }).catch(console.log)
+    }
+
+    handleNameChange ( value ){
+        console.log(value)
+        this.setState({ goalName: value})
+    }
+    handleDescChange ( value ){
+        console.log(value)
+        this.setState({ goalDesc: value})
+    }
+    handleStartDateChange ( value ){
+        console.log(value)
+        this.setState({ startDate: value})
+    }
+    handleEndDateChange ( value ){
+        console.log(value)
+        this.setState({ endDate: value})
+        
+    }
+
+    showModal = () => {
+        this.setState({modalIsOpen: true});
+      }
+    
+      closeModal = () => {
+        this.setState({modalIsOpen: false});
+      }
 
     render() {
         return (
@@ -40,14 +85,17 @@ export class Goal extends Component {
                  return (
                     <div key={e.goalsid}>
                         <Header/>
+                        <Modal goal={e.goalsid} show={this.state.modalIsOpen} closed={this.closeModal}/>
+                        <Backdrop show={this.state.modalIsOpen} />
                         <div className="rapper">
                             <div style={styleYo.primary}>
                                 <div style={[styleYo.base, styleYo.name]}>{e.goalname}</div>
                                 <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
-                                <button onClick={this.deleteGoal}>Delete Goal</button><div>this action cannot be undone</div>
+                                <button onClick={this.deleteGoal}>Delete Goal</button>
                                 <div style={[styleYo.base, styleYo.dates]}>Start Date: 
                                 {e.startdate}<br/>
-                                Goal Date: {e.enddate}</div>
+                                Goal Date: {e.enddate}
+                                <div style={buttonTwo}><button onClick={this.showModal} style={button} className="buttonGoal">Edit</button></div></div>
                             </div>
                             <DisplayList/>
                         </div>
@@ -88,6 +136,17 @@ const styleYo = {
         textAlign: 'left',
         color: '#292839',
     }
+}
+
+const button = {
+    border: 'none',
+    padding: '5px 15px',
+    margin: '5px',
+    outline: 'none'
+}
+
+const buttonTwo = {
+    textAlign: 'center'
 }
 
 

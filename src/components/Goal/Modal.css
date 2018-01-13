@@ -1,0 +1,22 @@
+.Modal {
+    position: fixed;
+    z-index: 200;
+    -webkit-box-shadow: 10px 10px 38px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 38px -4px rgba(0,0,0,1);
+    box-shadow: 10px 10px 38px -4px rgba(0,0,0,1);
+    background-color: #242330;
+    text-align: center;
+    box-sizing: border-box;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.ModalOpen {
+    display: block;
+}
+
+.ModalClosed {
+    display: none;
+}
