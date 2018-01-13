@@ -17,7 +17,7 @@ class Dashboard extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         return axios.get('http://localhost:3003/api/read').then(res => {
             console.log(res.data)
             this.setState ({

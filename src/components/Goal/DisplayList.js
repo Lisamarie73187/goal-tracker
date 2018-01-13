@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 
+
 class DisplayList extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,7 @@ class DisplayList extends Component {
     render() {
         return (
             <div style={layout}>
-                This is the task lists
+    
             </div>
         )
     }

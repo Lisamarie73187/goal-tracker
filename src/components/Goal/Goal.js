@@ -16,14 +16,21 @@ export class Goal extends Component {
         this.state = {
             data: []
         }
+
+        this.deleteGoal = this.deleteGoal.bind(this)
     }
 
-    componentWillMount() {
+    componentDidMount() {
         return axios.get(`http://localhost:3003/api/goal/${this.props.match.params.goalsid}`).then(res => {
             this.setState({
                 data: res.data
             })
         })
+    }
+    deleteGoal(){
+        return axios.delete(`http://localhost:3003/api/goal/${this.props.match.params.goalsid}`).then(results=>{
+            this.props.history.push('/home')
+        }).catch(console.log)
     }
 
     render() {
@@ -37,6 +44,7 @@ export class Goal extends Component {
                             <div style={styleYo.primary}>
                                 <div style={[styleYo.base, styleYo.name]}>{e.goalname}</div>
                                 <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
+                                <button onClick={this.deleteGoal}>Delete Goal</button><div>this action cannot be undone</div>
                                 <div style={[styleYo.base, styleYo.dates]}>Start Date: 
                                 {e.startdate}<br/>
                                 Goal Date: {e.enddate}</div>

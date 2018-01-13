@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import Dashboard from '../Home/Dashboard/Dashboard';
 import GoalListings from '../Home/GoalListings/GoalListings';
 import '../styles.css';
@@ -17,7 +17,7 @@ class Home extends Component {
     }
 }
 
-  componentWillMount() {
+  componentDidMount() {
     return axios.get('http://localhost:3003/api/read').then(res => {
         console.log(res.data)
         this.setState ({
@@ -27,8 +27,7 @@ class Home extends Component {
 }
   render() {
     return (
-      <div>
-       {this.state.data.length !==0 && 
+      <div> 
         <div className="homePage">
           <Header/>
           <Dashboard/>
@@ -36,40 +35,33 @@ class Home extends Component {
           <GoalListings/>
           </div>
           <Footer/>
-        </div>}
-        {this.state.data.length === 0 && 
-            <div className="homePage" style={fullPage}>
-              <div className="rapper" style={innerPage}>
-                <div style={pic}>Picture Here</div>
-                <Link className="noDecor" to="/Create"><div style={theButton} className="buttonGoal">Create Your First Goal</div></Link>
-              </div>
-            </div>}
+        </div>
       </div>
     );
   }
 }
 
-const fullPage = {
-  height: '100vh',
-  padding: '70px',
-}
+// const fullPage = {
+//   height: '100vh',
+//   padding: '70px',
+// }
 
-const innerPage = {
-  height: '90vh',
-  padding: '40px'
-} 
+// const innerPage = {
+//   height: '90vh',
+//   padding: '40px'
+// } 
 
-const theButton = {
-  width: '20vw',
-  margin: 'auto',
-  textAlign: 'center'
-}
+// const theButton = {
+//   width: '20vw',
+//   margin: 'auto',
+//   textAlign: 'center'
+// }
 
-const pic = {
-  backgroundColor: 'black',
-  height: '400px',
-  marginBottom: '50px'
-}
+// const pic = {
+//   backgroundColor: 'black',
+//   height: '400px',
+//   marginBottom: '50px'
+// }
 
 
 

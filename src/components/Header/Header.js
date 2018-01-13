@@ -3,13 +3,13 @@ import Nav from './Nav';
 import './Header.css';
 import logo from '../../assests/logo.png'
 import { Link } from 'react-router-dom';
-import AccountInfo from '../Header/AcountInfo'
+// import AccountInfo from '../Header/AcountInfo'
 
 const Header = (props) => {
     return (
         <div>
             <Link to="/"><img style={image} src={logo} alt="logo"/></Link>
-            <AccountInfo/>
+            {/* <AccountInfo/> */}
             <div className="nav">
                 <Nav tagz="Home" linky="/home"/>
                 <Nav tagz="Create Goal" linky="/Create"/>
