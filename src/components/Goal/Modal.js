@@ -18,13 +18,6 @@ class Modal extends Component {
         this.handleEndDateChange=this.handleEndDateChange.bind(this)
         this.editGoal=this.editGoal.bind(this)
     }
-    // componentDidMount() {
-    //     return axios.get(`http://localhost:3003/api/goal/${goalsid}`).then(res => {
-    //         this.setState({
-    //             data: res.data
-    //         })
-    //     })
-    // }
 
     editGoal(){
         console.log('button working?')
@@ -34,7 +27,7 @@ class Modal extends Component {
             startDate: this.state.startDate, 
             endDate: this.state.endDate})
             .then(res=>{
-            // this.props.history.push(`/goal/${this.props.match.params.goalsid}`)
+            
         }).catch(console.log)
     }
 

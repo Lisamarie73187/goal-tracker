@@ -25,7 +25,7 @@ export class Goal extends Component {
         }
 
         this.deleteGoal = this.deleteGoal.bind(this)
-        this.editGoal=this.editGoal.bind(this)
+        // this.editGoal=this.editGoal.bind(this)
     }
 
     componentDidMount() {
@@ -40,17 +40,17 @@ export class Goal extends Component {
             this.props.history.push('/home')
         }).catch(console.log)
     }
-    editGoal(){
-        console.log('button working?')
-        axios.put(`/api/goal/edit/${this.props.match.params.goalsid}`, {
-            goalName: this.state.goalName, 
-            goalDesc: this.state.goalDesc, 
-            startDate: this.state.startDate, 
-            endDate: this.state.endDate})
-            .then(res=>{
-            // this.props.history.push(`/goal/${this.props.match.params.goalsid}`)
-        }).catch(console.log)
-    }
+    // editGoal(){
+    //     console.log('button working?')
+    //     axios.put(`/api/goal/edit/${this.props.match.params.goalsid}`, {
+    //         goalName: this.state.goalName, 
+    //         goalDesc: this.state.goalDesc, 
+    //         startDate: this.state.startDate, 
+    //         endDate: this.state.endDate})
+    //         .then(res=>{
+    //         // this.props.history.push(`/goal/${this.props.match.params.goalsid}`)
+    //     }).catch(console.log)
+    // }
 
     handleNameChange ( value ){
         console.log(value)
