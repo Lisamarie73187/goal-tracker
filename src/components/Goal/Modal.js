@@ -21,13 +21,13 @@ class Modal extends Component {
 
     editGoal(){
         console.log('button working?')
-        axios.put(`http://localhost:3003/api/goal/${this.props.goal}`, {
+        return axios.put(`http://localhost:3003/api/goal/${this.props.goal}`, {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
             startDate: this.state.startDate, 
             endDate: this.state.endDate})
             .then(res=>{
-            
+                this.props.history.push('/home') 
         }).catch(console.log)
     }
 

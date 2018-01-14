@@ -25,7 +25,6 @@ export class Goal extends Component {
         }
 
         this.deleteGoal = this.deleteGoal.bind(this)
-        // this.editGoal=this.editGoal.bind(this)
     }
 
     componentDidMount() {
@@ -40,17 +39,6 @@ export class Goal extends Component {
             this.props.history.push('/home')
         }).catch(console.log)
     }
-    // editGoal(){
-    //     console.log('button working?')
-    //     axios.put(`/api/goal/edit/${this.props.match.params.goalsid}`, {
-    //         goalName: this.state.goalName, 
-    //         goalDesc: this.state.goalDesc, 
-    //         startDate: this.state.startDate, 
-    //         endDate: this.state.endDate})
-    //         .then(res=>{
-    //         // this.props.history.push(`/goal/${this.props.match.params.goalsid}`)
-    //     }).catch(console.log)
-    // }
 
     handleNameChange ( value ){
         console.log(value)
@@ -91,11 +79,14 @@ export class Goal extends Component {
                             <div style={styleYo.primary}>
                                 <div style={[styleYo.base, styleYo.name]}>{e.goalname}</div>
                                 <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
-                                <button onClick={this.deleteGoal}>Delete Goal</button>
                                 <div style={[styleYo.base, styleYo.dates]}>Start Date: 
                                 {e.startdate}<br/>
                                 Goal Date: {e.enddate}
-                                <div style={buttonTwo}><button onClick={this.showModal} style={button} className="buttonGoal">Edit</button></div></div>
+                                <div style={buttonTwo}>
+                                <button className="buttonGoal" style={button} onClick={this.deleteGoal}>Delete Goal</button>
+                                <button onClick={this.showModal} style={button} className="buttonGoal">Edit</button>
+                                </div>
+                                </div>
                             </div>
                             <DisplayList/>
                         </div>
@@ -146,7 +137,8 @@ const button = {
 }
 
 const buttonTwo = {
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: '20px'
 }
 
 

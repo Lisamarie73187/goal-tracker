@@ -50,7 +50,6 @@ class CreateGoal extends Component {
     handleEndDateChange ( value ){
         console.log(value)
         this.setState({ endDate: value})
-        
     }
 
     
