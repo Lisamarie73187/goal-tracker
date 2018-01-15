@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
-import axios from 'axios';
+// import axios from 'axios';
+import { connect } from 'react-redux';
+import { goals } from '../../../ducks/reducer'
 import LineGraph from './LineGraph';
 import BarGraph from './BarGraph';
 
@@ -10,20 +12,8 @@ import BarGraph from './BarGraph';
 
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data: []
-        }
-    }
-
     componentDidMount() {
-        return axios.get('/api/goals').then(res => {
-            console.log(res.data)
-            this.setState ({
-                data: res.data
-            })
-        })
+        this.props.goals()
     }
 
     render() {
@@ -32,7 +22,7 @@ class Dashboard extends Component {
                 <div className="wrappers">
                     <div className="firstRow">
                         <div className="boxer"><h1 className="textyText">Number of Goals </h1>
-                        <div className="numberGoals">{this.state.data.length}</div></div>
+                        <div className="numberGoals">{this.props.data.length}</div></div>
                         <div className="boxer"><LineGraph/></div>
                     </div>
                     <div className="secondRow">
@@ -45,5 +35,14 @@ class Dashboard extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        data: state.data
+    }
+}
 
-export default Dashboard
+const mapDispatchToProps = {
+    goals: goals
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

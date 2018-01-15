@@ -1,34 +1,25 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import './goalListings.css';
-
+import { connect } from 'react-redux';
+import { goals } from '../../../ducks/reducer'
 import ProgressBar from './ProgressBar/ProgressBar';
 
 
 
 
 class GoalListings extends Component {
-    constructor() {
-        super()
-        this.state = {
-            data: []
-        }
-    }
+   
 
     componentDidMount() {
-        return axios.get('/api/goals').then(res => {
-            console.log(res.data)
-            this.setState ({
-                data: res.data
-            })
-        })
+        this.props.goals()
     }
    
     render() {
         return (
             <div className="why">
-            {this.state.data.map((e)=>{
+            {this.props.data.map((e)=>{
                  return (
                     <div key={e.goalsid}>
                         <div className="rapper" style={heighty0}>
@@ -56,4 +47,15 @@ var heighty0 = {
     height: '425px',
 }
 
-export default GoalListings
+function mapStateToProps(state) {
+    return {
+      data: state.data
+    };
+  };
+
+const mapDispatchToProps = {
+    goals: goals,
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(GoalListings);
+

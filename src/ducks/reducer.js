@@ -1,16 +1,20 @@
 import axios from 'axios'
 
 const initialState = {
-    user: null
+    user: null,
+    data: []
   };
   
   const LOGIN = 'LOGIN';
+  const GETGOALS = 'GETGOALS';
   
   export default (state = initialState, action) => {
     switch (action.type) {
       case LOGIN + "_FULFILLED":
-      console.log(action)
         return { ...state, user: action.payload };
+      
+      case GETGOALS + "_FULFILLED":
+        return { ...state, data: action.payload };
       default:
         return state;
     }
@@ -18,7 +22,6 @@ const initialState = {
   
   export const login = () => {
     var request = axios.get('/user-data').then(response => {
-      console.log('log in respoonse',response.data)
       if (response.data) {
         return response.data
       }
@@ -28,3 +31,15 @@ const initialState = {
       payload: request,
     };
   };
+
+  export var goals = () => {
+    var request = axios.get('api/goals').then(response => {
+      if(response.data){
+        return response.data
+      }
+    })
+    return {
+      type: GETGOALS,
+      payload: request,
+    }
+  }
