@@ -21,7 +21,7 @@ class Modal extends Component {
 
     editGoal(){
         console.log('button working?')
-        return axios.put(`http://localhost:3003/api/goal/${this.props.goal}`, {
+        return axios.put(`/api/goal/${this.props.goal}`, {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
             startDate: this.state.startDate, 

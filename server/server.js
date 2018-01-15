@@ -3,9 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const massive = require('massive')
 const session = require('express-session');
-const authRoutes = require ('./authRoutes.js')
 const axios = require ('axios')
-const cors = require('cors')
+
 
 const display_ctr = require('./controllers/display_controller');
 
@@ -14,7 +13,7 @@ const display_ctr = require('./controllers/display_controller');
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 
 app.use(bodyParser.json());
 app.use(session({
@@ -66,7 +65,6 @@ massive(process.env.CONNECTION_STRING)
   });
   
   app.get('/user-data', (req, res) => {
-    res.json({ user: req.session.user });
     if(req.session.user){
       res.status(200).send(req.session.user);
   } else {

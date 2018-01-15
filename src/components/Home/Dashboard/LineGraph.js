@@ -12,7 +12,7 @@ class LineGraph extends Component {
         }
     }
     componentWillMount() {
-        return axios.get('http://localhost:3003/api/read').then(res => {
+        return axios.get('/api/read').then(res => {
             console.log(res.data)
             this.setState ({
                 dataThree: {

@@ -28,14 +28,14 @@ export class Goal extends Component {
     }
 
     componentDidMount() {
-        return axios.get(`http://localhost:3003/api/goal/${this.props.match.params.goalsid}`).then(res => {
+        return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
             this.setState({
                 data: res.data
             })
         })
     }
     deleteGoal(){
-        return axios.delete(`http://localhost:3003/api/goal/${this.props.match.params.goalsid}`).then(results=>{
+        return axios.delete(`/api/goal/${this.props.match.params.goalsid}`).then(results=>{
             this.props.history.push('/home')
         }).catch(console.log)
     }

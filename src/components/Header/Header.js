@@ -3,7 +3,7 @@ import Nav from './Nav';
 import './Header.css';
 import logo from '../../assests/logo.png'
 import { Link } from 'react-router-dom';
-import AccountInfo from '../Header/AcountInfo'
+import AccountInfo from '../Header/AccountInfo'
 
 const Header = (props) => {
     return (

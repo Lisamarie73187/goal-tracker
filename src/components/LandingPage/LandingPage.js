@@ -16,11 +16,11 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
-        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN, options);
+        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN);
         console.log('this.lock', this.lock);
         this.lock.on('authenticated', authResult => {
           this.lock.getUserInfo(authResult.accessToken, (error, user) => {
-            axios.post('http://localhost:3003/login', { userId: user.sub }).then(response => {
+            axios.post('/login', { userId: user.sub }).then(response => {
               this.props.login(response.data.user);
               this.props.history.push('/home');
             })
@@ -53,18 +53,18 @@ class LandingPage extends Component {
     }
 }
  
-var options = {
-    theme: {
-      logo: './../../assests/logo.png',
-      primaryColor: '#31324F',
-      authButtons: {
-        "testConnection": {
-          displayName: "Test Conn",
-          primaryColor: "#b7b7b7",
-          foregroundColor: "#000000",
-        },
-    }
-}}
+// var options = {
+//     theme: {
+//       logo: './../../assests/logo.png',
+//       primaryColor: '#31324F',
+//       authButtons: {
+//         "testConnection": {
+//           displayName: "Test Conn",
+//           primaryColor: "#b7b7b7",
+//           foregroundColor: "#000000",
+//         },
+//     }
+// }}
 var styling = {
     base: {
     textAlign: 'center',

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import { login } from '../../ducks/reducer';
 
 
 class AccountInfo extends Component {
   componentDidMount() {
-    axios.get('http://localhost:3003/user-data').then(response => {
-      if (response.data.user) {
-        this.props.login(response.data.user);
-      }
-    });
+   this.props.login()
+   console.log(this.props.user)
   }
 
   render() {
