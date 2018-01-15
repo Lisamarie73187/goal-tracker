@@ -16,7 +16,7 @@ class AccountInfo extends Component {
     return (
       <div style={layout}>
         {user && <div>
-          <img src={user.pictureUrl}  alt="profilepic" width="50px" style={picture}/>
+          <img src={user.pictureurl}  alt="profilepic" width="50px" style={picture}/>
           <div style={texty}>Welcome:  {user.name}</div>
         </div>}
         {!user && <p style={white}>You must login! <Link style={white}to="/">Log in</Link></p>}

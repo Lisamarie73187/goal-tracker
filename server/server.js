@@ -43,15 +43,17 @@ massive(process.env.CONNECTION_STRING)
         name: userData.name,
         email: userData.email,
         auth0_id: userData.user_id,
-        pictureUrl: userData.picture
+        pictureurl: userData.picture
       };
       app.get('db').find_user(userData.user_id).then(users => {
         if (users.length) {
-          req.session.user = userForDatabase;
+          req.session.user = users[0]
+          console.log(users[0])
           res.json({ user: req.session.user });
         } else {
-          app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then(() => {
-            req.session.user = userForDatabase;
+          app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then( user => {
+            req.session.user = user[0];
+            console.log(user[0])
             res.json({ user: req.session.user });
           }).catch(error => {
             console.log('error', error);
@@ -72,9 +74,9 @@ massive(process.env.CONNECTION_STRING)
   }
   });
 
-app.get('/api/read', display_ctr.read);
+app.get('/api/goals', display_ctr.read);
 app.get('/api/goal/:goalsid', display_ctr.getOne);
-app.post('/api/goal/add', display_ctr.addGoal);
+app.post('/api/goal', display_ctr.addGoal);
 app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);
 app.put('/api/goal/:goalsid', display_ctr.editGoal);
 

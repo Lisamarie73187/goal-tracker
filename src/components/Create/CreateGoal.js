@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
 
 import Header from '../Header/Header';
@@ -24,11 +25,12 @@ class CreateGoal extends Component {
     }
     addNewGoal(){
         console.log('button working?')
-        axios.post('/api/goal/add', {
+        axios.post('/api/goal', {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
             startDate: this.state.startDate, 
-            endDate: this.state.endDate
+            endDate: this.state.endDate,
+            userId: this.props.user.id
         })
          .then(res => {
             this.props.history.push('/home');
@@ -93,6 +95,7 @@ class CreateGoal extends Component {
                         </div>
                     </form>
                 </div>
+                {console.log(this.props)}
                 <Footer/>
             </div>
         )
@@ -104,4 +107,12 @@ const buttonLarger = {
     fontSize: '15pt',
     width: '150px'
 }
-export default CreateGoal
+
+function mapStateToProps(state) {
+    return {
+      user: state.user
+    };
+  };
+
+
+export default connect(mapStateToProps)(CreateGoal)

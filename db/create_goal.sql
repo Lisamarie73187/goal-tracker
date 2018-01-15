@@ -1,4 +1,4 @@
 INSERT INTO goals 
-(goalname, description, startdate, enddate)
+(goalname, description, startdate, enddate, users)
 VALUES
-($1, $2, $3, $4);
+($1, $2, $3, $4, $5);

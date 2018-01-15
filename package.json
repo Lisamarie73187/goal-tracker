@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/server.js",
+  "proxy": "http://localhost:3003",
   "dependencies": {
     "auth0-lock": "^11.0.1",
     "axios": "^0.17.1",
@@ -34,6 +35,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:3003"
+  }
 }

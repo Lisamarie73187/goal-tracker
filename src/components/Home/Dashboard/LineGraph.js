@@ -12,14 +12,14 @@ class LineGraph extends Component {
         }
     }
     componentWillMount() {
-        return axios.get('/api/read').then(res => {
+        return axios.get('/api/goals').then(res => {
             console.log(res.data)
             this.setState ({
                 dataThree: {
                     labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug','Sept','Oct','Nov','Dec'],
                     datasets: [
                       {
-                        label: res.data[0].goalname,
+                        label: res.data.goalname,
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: '#655fd7',

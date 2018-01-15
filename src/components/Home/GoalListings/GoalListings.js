@@ -17,7 +17,7 @@ class GoalListings extends Component {
     }
 
     componentDidMount() {
-        return axios.get('/api/read').then(res => {
+        return axios.get('/api/goals').then(res => {
             console.log(res.data)
             this.setState ({
                 data: res.data
