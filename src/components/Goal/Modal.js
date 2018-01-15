@@ -27,7 +27,7 @@ class Modal extends Component {
             startDate: this.state.startDate, 
             endDate: this.state.endDate})
             .then(res=>{
-                this.props.history.push('/home') 
+                this.props.closed()
         }).catch(console.log)
     }
 

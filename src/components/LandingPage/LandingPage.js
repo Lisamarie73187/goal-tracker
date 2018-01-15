@@ -20,9 +20,9 @@ class LandingPage extends Component {
         console.log('this.lock', this.lock);
         this.lock.on('authenticated', authResult => {
           this.lock.getUserInfo(authResult.accessToken, (error, user) => {
-            axios.post('/login', { userId: user.sub }).then(response => {
+            axios.post('http://localhost:3003/login', { userId: user.sub }).then(response => {
               this.props.login(response.data.user);
-              this.props.history.push('/Home');
+              this.props.history.push('/home');
             })
           })
         })

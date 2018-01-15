@@ -39,10 +39,10 @@ module.exports = {
             db.edit_goal([
                 req.params.goalsid, 
                 req.body.goalName, 
-                req.body.goalName, 
                 req.body.goalDesc, 
                 req.body.startDate, 
-                req.body.endDate])
+                req.body.endDate, 
+                ])
                 .then(() => {
                     res.status(200).json()
                 }).catch( (error) => {

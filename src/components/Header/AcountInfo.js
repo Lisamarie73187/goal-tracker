@@ -7,7 +7,7 @@ import { login } from '../../ducks/reducer';
 
 class AccountInfo extends Component {
   componentDidMount() {
-    axios.get('/user-data').then(response => {
+    axios.get('http://localhost:3003/user-data').then(response => {
       if (response.data.user) {
         this.props.login(response.data.user);
       }

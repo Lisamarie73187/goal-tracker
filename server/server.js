@@ -14,10 +14,9 @@ const display_ctr = require('./controllers/display_controller');
 
 const app = express();
 
-app.use(bodyParser.json());
 app.use(cors());
 
-
+app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -41,17 +40,20 @@ massive(process.env.CONNECTION_STRING)
       }
     }).then(response => {
       const userData = response.data;
-      req.session.user = {
+      const userForDatabase = {
         name: userData.name,
         email: userData.email,
         auth0_id: userData.user_id,
         pictureUrl: userData.picture
       };
-      res.json({ user: req.session.user });
       app.get('db').find_user(userData.user_id).then(users => {
-        if (!users.length) {
+        if (users.length) {
+          req.session.user = userForDatabase;
+          res.json({ user: req.session.user });
+        } else {
           app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then(() => {
-            
+            req.session.user = userForDatabase;
+            res.json({ user: req.session.user });
           }).catch(error => {
             console.log('error', error);
           });
@@ -65,6 +67,11 @@ massive(process.env.CONNECTION_STRING)
   
   app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user });
+    if(req.session.user){
+      res.status(200).send(req.session.user);
+  } else {
+      res.status(403);
+  }
   });
 
 app.get('/api/read', display_ctr.read);

@@ -10,8 +10,8 @@ import Modal from './components/Goal/Modal';
 
 export default (
     <Switch>
-        {/* <Route exact path="/(access_token.*)?" component={ LandingPage }/> */}
-        <Route exact path="/" component={ LandingPage }/>
+        <Route exact path="/(access_token.*)?" component={ LandingPage }/>
+        {/* <Route exact path="/" component={ LandingPage }/> */}
         <Route path="/home" component={ Home }/>
         <Route path="/goal/:goalsid" component={ Goal }/>
         <Route path="/goal/:goalsid" component={ Modal }/>

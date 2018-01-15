@@ -24,7 +24,7 @@ class CreateGoal extends Component {
     }
     addNewGoal(){
         console.log('button working?')
-        axios.post('/api/goal/add', {
+        axios.post('http://localhost:3003/api/goal/add', {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
             startDate: this.state.startDate, 
