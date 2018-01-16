@@ -37,79 +37,108 @@ class DisplayList extends Component {
             data: this.props.goalsid})
             .then(()=>{
                 this.props.getTask(this.props.goalsid)
-                .then(()=> {this.setState({
+                .then(() => {this.setState({
                     taskname: ''
                 })})
             })
     }
 
     render() {
-        
         return (
             <div style={layout}>
-                {/* {!this.props.task && 
-                    <div className="rapper" style={task}>
-                        <div onClick={this.showList} style={button} className="titleText">Add Task +</div>
-                    </div>} */}
-                    {this.props.task &&
-                        <div style={task} className="rapper">
-                        <div className="titleText">
-                        <div style={inputList}>
-                            <input  style={tasksList} 
-                                    placeholder="Add Task"
-                                    value={this.state.value}
-                                    onChange={(e) => this.handleChange(e.target.value)}/>
-                            <button onClick={this.submitTask} 
-                                    style={button}>Add
-                            </button>
+                {this.props.tasks.map((e) => {
+                    return (
+                        <div key={e.taskid} style={cardsLayout} className="rapper">
+                            <div style= {text} className="titleText">{e.taskname}</div>
+                            <div style={wrapper}>
+                                <input placeholder="Add More Tasks"
+                                        style={inputOne}/>
+                                 <button style={button}>Add</button>
+                            </div>
                         </div>
-                        {this.props.tasks.map((e) => {
-                            return (<div key={e.taskid}>
-                                {e.taskname}
-                                {e.completed}
-                            </div>)
-                        })}
-                        </div>
+                    )
+                })}
+                 <div>
+                    <div className="rapper" style={inputRapper}>
+                        <input value={this.state.taskname}
+                                style={input}
+                                placeholder="Add Task"
+                                onChange={(e) => this.handleChange(e.target.value)}/>
+                        <button style={button} onClick={this.submitTask}>Add</button>
                     </div>
-                    }
+                </div>
             </div>
-        )
-    }
+        )}
 }
-
+    
 const layout = {
-    height: '100vh'
+    height: '100vh',
+    textAlign: 'left',
+    display: 'flex',
+	flexDirection: 'row',
+	flexWrap: 'nowrap',
+	alignItems: 'baseline',
+	alignContent: 'stretch'
 }
 
-const task = {
-    width: '28vw'
-}
-
-const inputList = {
-  
-}
-
-const tasksList = {
-    width: '20vw',
-    height: '30px',
-    border: 'none',
-    fontSize: '16pt',
-    borderBottom: '1px solid #292839',
-    display: 'inline',
-    background: 'none',
-    color: 'white',
-    outline: 'none'
+const text = {
+    fontSize: '15pt'
 }
 
 const button = {
+    border: 'none',
+    outline: 'none',
+    fontFamily: 'Raleway',
     cursor: 'pointer',
     background: 'none',
-    border: 'none',
-    color: '#525063',
-    fontSize: '15pt',
-    paddingLeft: '6px',
-    outline: 'none'
+    color: 'white'
 }
+
+const cardsLayout = {
+    margin: '20px',
+    width: '25vw',
+    color: 'white',
+    fontSize: '12pt'
+    
+}
+const inputOne = {
+    border: 'none',
+    fontSize: '15pt',
+    outline: 'none',
+    padding: '3px 8px',
+    background: 'none',
+    borderBottom: '1px solid black',
+    color: 'white',
+    marginRight: '10px'
+}
+const input = {
+    border: 'none',
+    fontSize: '15pt',
+    outline: 'none',
+    padding: '3px 8px',
+    background: '#3F3E54',
+    borderBottom: '1px solid black',
+    color: 'white',
+    marginRight: '10px'
+
+}
+
+const wrapper = {
+    padding: '18px 15px',
+}
+
+const inputRapper = {
+    padding: '18px 15px',
+    background: '#3F3E54'
+}
+
+const cards = {
+    background: "#3F3E54",
+    padding: '30px',
+    marginLeft: '20px'
+}
+
+
 
 function mapStateToProps(state) {
     return {
