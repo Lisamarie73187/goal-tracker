@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import axios from 'axios';
 import './goalListings.css';
 import { connect } from 'react-redux';
-import { goals } from '../../../ducks/reducer'
+import { getGoals } from '../../../ducks/reducer'
 import ProgressBar from './ProgressBar/ProgressBar';
 
 
@@ -13,7 +13,7 @@ class GoalListings extends Component {
    
 
     componentDidMount() {
-        this.props.goals()
+        this.props.getGoals()
     }
    
     render() {
@@ -54,7 +54,7 @@ function mapStateToProps(state) {
   };
 
 const mapDispatchToProps = {
-    goals: goals,
+    getGoals: getGoals,
   }
   
 export default connect(mapStateToProps, mapDispatchToProps)(GoalListings);

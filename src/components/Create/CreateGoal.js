@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
+import { addGoal } from '../../ducks/reducer'
 
 
 import Header from '../Header/Header';
@@ -16,26 +16,7 @@ class CreateGoal extends Component {
             startDate: '',
             endDate: '',
         }
-        this.handleNameChange=this.handleNameChange.bind(this)
-        this.handleDescChange=this.handleDescChange.bind(this)
-        this.handleStartDateChange=this.handleStartDateChange.bind(this)
-        this.handleEndDateChange=this.handleEndDateChange.bind(this)
-        this.addNewGoal=this.addNewGoal.bind(this)
-        
     }
-    addNewGoal(){
-        console.log('button working?')
-        axios.post('/api/goal', {
-            goalName: this.state.goalName, 
-            goalDesc: this.state.goalDesc, 
-            startDate: this.state.startDate, 
-            endDate: this.state.endDate,
-            userId: this.props.user.id
-        })
-         .then(res => {
-            this.props.history.push('/home');
-        }).catch(err => console.error(err))
-        }
     
     handleNameChange ( value ){
         console.log(value)
@@ -64,7 +45,7 @@ class CreateGoal extends Component {
                     <div className="titleText">Create your Goal</div>
                     <p>Create a goal. You are able to create up to 10 goals. Once you create a goal <br/>
                     you can add tasks to it.</p>
-                    <form className="formyForm" onSubmit={this.addNewGoal}>
+                    <form className="formyForm">
                         <input 
                             className="inputs" 
                             type="text" 
@@ -91,11 +72,15 @@ class CreateGoal extends Component {
                             placeholder="End Date"/>
                         <div>
                             <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
-                            <button onSubmit={this.addNewGoal} type="submit" style={buttonLarger} className="buttonGoal">Create Goal</button>
+                            <button onClick={() => this.props.addGoal({
+                                goalName: this.state.goalName,
+                                goalDesc: this.state.goalDesc,
+                                stateDate: this.state.startDate,
+                                endDate: this.state.endDate
+                                })} style={buttonLarger} className="buttonGoal">Create Goal</button>
                         </div>
                     </form>
                 </div>
-                {console.log(this.props)}
                 <Footer/>
             </div>
         )
@@ -110,9 +95,14 @@ const buttonLarger = {
 
 function mapStateToProps(state) {
     return {
-      user: state.user
+      user: state.user,
+      goal: state.goal
     };
   };
 
+  const mapDispathToProps = {
+      addGoal: addGoal
+  }
 
-export default connect(mapStateToProps)(CreateGoal)
+
+export default connect(mapStateToProps, mapDispathToProps)(CreateGoal)

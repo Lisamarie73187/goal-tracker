@@ -18,9 +18,13 @@ module.exports = {
         const db = req.app.get('db');
         // let { goalname, description, startdate, enddate } = req.body; 
         console.log(req.body)
-        db.create_goal([req.body.goalName, req.body.goalDesc, req.body.startDate, req.body.endDate, req.session.user.id])
-        .then( () => {
-            res.status(200).send()
+        db.create_goal([req.body.goalName, 
+                        req.body.goalDesc, 
+                        req.body.startDate, 
+                        req.body.endDate, 
+                        req.session.user.id])
+        .then( (goal) => {
+            res.status(200).send(goal)
         }).catch( (error) => {
             console.log(error)
             res.status(500).send(error)})

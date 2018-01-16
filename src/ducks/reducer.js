@@ -9,6 +9,7 @@ const initialState = {
   const LOGIN = 'LOGIN';
   const GETGOALS = 'GETGOALS';
   const ADDTASK = 'ADDTASK';
+  const ADDGOAL = "CREATEGOAL";
   
   export default (state = initialState, action) => {
     switch (action.type) {
@@ -18,8 +19,12 @@ const initialState = {
       case GETGOALS + "_FULFILLED":
         return { ...state, data: action.payload };
       
-      case ADDTASK + "FULFILLED":
+      case ADDTASK + "_FULFILLED":
         return { ...state, task: action.payload };
+
+        case ADDGOAL + "_FULFILLED":
+          return {...state, goal: action.payload};
+
       default:
         return state;
     }
@@ -37,8 +42,8 @@ const initialState = {
     };
   };
 
-  export var goals = () => {
-    var request = axios.get('api/goals').then(response => {
+  export var getGoals = () => {
+    var request = axios.get('/api/goals').then(response => {
       if(response.data){
         return response.data
       }
@@ -50,7 +55,7 @@ const initialState = {
   };
 
   export var addTask = (body) => {
-    var request = axios.post('api/task', body).then(response => {
+    var request = axios.post('/api/task', body).then(response => {
       console.log(body)
       if(response.data){
         return response.data
@@ -59,5 +64,18 @@ const initialState = {
     return {
       type: ADDTASK,
       payload: request
+    }
+  }
+
+  export var addGoal = (body) => {
+    var request = axios.post('/api/goal', body).then(response => {
+      console.log(body)
+      if(response.data){
+        return response.data
+      }
+    })
+    return {
+    type: ADDGOAL,
+    payload: request
     }
   }

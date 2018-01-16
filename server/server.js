@@ -39,12 +39,12 @@ massive(process.env.CONNECTION_STRING)
       }
     }).then(response => {
       const userData = response.data;
-      const userForDatabase = {
-        name: userData.name,
-        email: userData.email,
-        auth0_id: userData.user_id,
-        pictureurl: userData.picture
-      };
+      // const userForDatabase = {
+      //   name: userData.name,
+      //   email: userData.email,
+      //   auth0_id: userData.user_id,
+      //   pictureurl: userData.picture
+      // };
       app.get('db').find_user(userData.user_id).then(users => {
         if (users.length) {
           req.session.user = users[0]

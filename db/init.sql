@@ -1,20 +1,9 @@
-DROP TABLE goals;
-DROP TABLE users;
-
-
 CREATE TABLE users (
   id SERIAL,
   auth0_id TEXT,
   email TEXT,
   pictureUrl TEXT,
   name TEXT
-);
-
-CREATE TABLE task (
-    taskid SERIAL PRIMARY KEY,
-    task TEXT,
-    completed BOOLEAN,
-    goalid INTEGER REFERENCES goals(goalsid)
 );
 
 CREATE TABLE goals (
@@ -24,7 +13,13 @@ CREATE TABLE goals (
     description TEXT,
     startdate TEXT,
     enddate TEXT
-)
+);
 
-SELECT * FROM goals;
-SELECT * FROM users;
+CREATE TABLE task (
+    taskid SERIAL PRIMARY KEY,
+    taskname TEXT,
+    completed BOOLEAN,
+    date TEXT,
+    goalsid INTEGER REFERENCES goals(goalsid)
+);
+
