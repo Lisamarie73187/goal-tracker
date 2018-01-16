@@ -16,7 +16,6 @@ module.exports = {
     
     addGoal: (req,res,next) => {
         const db = req.app.get('db');
-        // let { goalname, description, startdate, enddate } = req.body; 
         console.log(req.body)
         db.create_goal([req.body.goalName, 
                         req.body.goalDesc, 

@@ -6,7 +6,7 @@ import axios from 'axios';
 // import Radium, { StyleRoot } from 'radium';
 import { login } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class LandingPage extends Component {
     constructor() {
@@ -44,7 +44,7 @@ class LandingPage extends Component {
                         <div style={styling.base}>
                         <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
                         <span onClick={this.login} className="startButton">Get Started</span>
-                        <Link to="/home"><button>I dont need to log in</button></Link>
+                        {/* <Link to="/home"><button>I dont need to log in</button></Link> */}
                     </div>
                 </div>
             {/* </StyleRoot> */}
