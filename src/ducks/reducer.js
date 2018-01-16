@@ -2,11 +2,13 @@ import axios from 'axios'
 
 const initialState = {
     user: null,
-    data: []
+    data: [],
+    task: []
   };
   
   const LOGIN = 'LOGIN';
   const GETGOALS = 'GETGOALS';
+  const ADDTASK = 'ADDTASK';
   
   export default (state = initialState, action) => {
     switch (action.type) {
@@ -15,6 +17,9 @@ const initialState = {
       
       case GETGOALS + "_FULFILLED":
         return { ...state, data: action.payload };
+      
+      case ADDTASK + "FULFILLED":
+        return { ...state, task: action.payload };
       default:
         return state;
     }
@@ -41,5 +46,18 @@ const initialState = {
     return {
       type: GETGOALS,
       payload: request,
+    }
+  };
+
+  export var addTask = (body) => {
+    var request = axios.post('api/task', body).then(response => {
+      console.log(body)
+      if(response.data){
+        return response.data
+      }
+    })
+    return {
+      type: ADDTASK,
+      payload: request
     }
   }

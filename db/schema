@@ -1,13 +1,6 @@
 DROP TABLE goals;
 DROP TABLE users;
 
-CREATE TABLE goals (
-    goalsid SERIAL PRIMARY KEY NOT NULL,
-    goalname varchar(20),
-    description varchar(80),
-    startdate VARCHAR(11),
-    enddate VARCHAR(11)
-);
 
 CREATE TABLE users (
   id SERIAL,
@@ -17,6 +10,21 @@ CREATE TABLE users (
   name TEXT
 );
 
+CREATE TABLE task (
+    taskid SERIAL PRIMARY KEY,
+    task TEXT,
+    completed BOOLEAN,
+    goalid INTEGER REFERENCES goals(goalsid)
+);
+
+CREATE TABLE goals (
+    goalsid SERIAL PRIMARY KEY,
+    users INTEGER REFERENCES users(id),
+    goalname TEXT,
+    description TEXT,
+    startdate TEXT,
+    enddate TEXT
+)
 
 SELECT * FROM goals;
 SELECT * FROM users;

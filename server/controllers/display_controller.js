@@ -25,6 +25,19 @@ module.exports = {
             console.log(error)
             res.status(500).send(error)})
         },
+
+        addTask: (req,res,next) => {
+            const db = req.app.get('db');
+            console.log(req.body)
+            db.add_task([req.body.task, req.body.completed, req.body.date, req.session.goalid])
+            .then( (task) => {
+                res.status(200).send(task)
+            }).catch( (error) => {
+                console.log(error)
+                res.status(500).send(error)
+            })
+        },
+
         deleteGoal:(req,res) => {
             const db = req.app.get('db')
             db.delete_goal([req.params.goalsid])
