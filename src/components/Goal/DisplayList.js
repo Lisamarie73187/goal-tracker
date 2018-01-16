@@ -9,36 +9,46 @@ class DisplayList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-                task: '',
-                date: ''
+                taskname: '',
+                date: '',
+                show: false,
+                data: ''
         }
     }
     handleChange(value){
         console.log(value)
         this.setState({
-            task: value
+            taskname: value,
         })
     }
+    componentDidMount(){
+        this.props.addTask()
+    }
+
+  
 
     render() {
         
         return (
             <div style={layout}>
-                {!this.state.task && 
+                {/* {!this.props.task && 
                     <div className="rapper" style={task}>
-                        <div style={button} className="titleText">Add Task +</div>
-                    </div>}
-                    {this.state.task &&
+                        <div onClick={this.showList} style={button} className="titleText">Add Task +</div>
+                    </div>} */}
+                    {this.props.task &&
                         <div style={task} className="rapper">
-                        <div className="titleText"></div>
+                        <div className="titleText">
                         <div style={inputList}>
-                            <input className="inputs" 
-                                    style={tasksList} 
+                            <input  style={tasksList} 
                                     placeholder="Add Task"
                                     value={this.state.value}
                                     onChange={(e) => this.handleChange(e.target.value)}/>
-                            <button onClick={() => this.props.addTask({task: this.state.task, completed: false, date: new Date()})} style={button} className="buttonGoal">Add</button>
+                            <button onClick={() => this.props.addTask({taskname: this.state.taskname, completed: false, date: new Date(), data: this.props.goalsid})} 
+                                    style={button}>Add
+                            </button>
                         </div>
+                        </div>
+                        {this.props.task.taskname}
                     </div>
                     }
             </div>
@@ -55,27 +65,39 @@ const task = {
 }
 
 const inputList = {
-    fontSize: '15pt',
-    padding: '20px'
+  
 }
 
 const tasksList = {
     width: '20vw',
     height: '30px',
-    display: 'inline'
+    border: 'none',
+    fontSize: '16pt',
+    borderBottom: '1px solid #292839',
+    display: 'inline',
+    background: 'none',
+    color: 'white',
+    outline: 'none'
 }
 
 const button = {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    background: 'none',
+    border: 'none',
+    color: '#525063',
+    fontSize: '15pt',
+    paddingLeft: '6px',
+    outline: 'none'
 }
 
 function mapStateToProps(state) {
     return {
-        task: state.task
+        task: state.task,
+        data: state.data
     }
 }
 const mapDispatchToProps = {
-    addTask: addTask
+    addTask: addTask,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayList)

@@ -1,4 +1,4 @@
 INSERT INTO task
-(task, completed, date, goalid)
+(taskname, completed, date, goalsid)
 VALUES
 ($1, $2, $3, $4);

@@ -17,6 +17,7 @@ const initialState = {
         return { ...state, user: action.payload };
       
       case GETGOALS + "_FULFILLED":
+      console.log(action.payload)
         return { ...state, data: action.payload };
       
       case ADDTASK + "_FULFILLED":
@@ -55,6 +56,7 @@ const initialState = {
   };
 
   export var addTask = (body) => {
+    // console.log(body.data)
     var request = axios.post('/api/task', body).then(response => {
       console.log(body)
       if(response.data){

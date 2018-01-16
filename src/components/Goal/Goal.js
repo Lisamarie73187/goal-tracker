@@ -29,6 +29,7 @@ export class Goal extends Component {
 
     componentDidMount() {
         return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
+            console.log(res.data)
             this.setState({
                 data: res.data
             })
@@ -67,10 +68,9 @@ export class Goal extends Component {
       }
 
     render() {
+        const e = this.state.data
         return (
             <div className="homePage">
-                {this.state.data.map((e)=>{
-                 return (
                     <div key={e.goalsid}>
                         <Header/>
                         <Modal goal={e.goalsid} show={this.state.modalIsOpen} closed={this.closeModal}/>
@@ -88,13 +88,10 @@ export class Goal extends Component {
                                 </div>
                                 </div>
                             </div>
-                            <DisplayList/>
+                            <DisplayList goalsid={e.goalsid}/>
                         </div>
                         <Footer/>
                     </div>
-                    )
-                 })
-                }
             </div>
         )
     }

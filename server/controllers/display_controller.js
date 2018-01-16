@@ -10,7 +10,7 @@ module.exports = {
         const db = req.app.get('db');
         const {goalsid} = req.params
         db.read_goal([goalsid])
-        .then( (goal) => res.status(200).send(goal))
+        .then( (goal) => res.status(200).send(goal[0]))
         .catch( () => res.status(500).send())
     },
     
@@ -32,8 +32,10 @@ module.exports = {
         addTask: (req,res,next) => {
             const db = req.app.get('db');
             console.log(req.body)
-            db.add_task([req.body.task, req.body.completed, req.body.date, req.session.goalid])
+            db.add_task([req.body.taskname, req.body.completed, 
+                        req.body.date, req.body.data])
             .then( (task) => {
+                console.log(req.body.goalsid)
                 res.status(200).send(task)
             }).catch( (error) => {
                 console.log(error)
