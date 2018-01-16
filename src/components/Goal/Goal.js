@@ -88,7 +88,7 @@ export class Goal extends Component {
                                 </div>
                                 </div>
                             </div>
-                            <DisplayList goalsid={e.goalsid}/>
+                            <DisplayList goalsid={this.props.match.params.goalsid}/>
                         </div>
                         <Footer/>
                     </div>

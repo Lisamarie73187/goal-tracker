@@ -31,14 +31,22 @@ module.exports = {
 
         addTask: (req,res,next) => {
             const db = req.app.get('db');
-            console.log(req.body)
             db.add_task([req.body.taskname, req.body.completed, 
                         req.body.date, req.body.data])
             .then( (task) => {
-                console.log(req.body.goalsid)
                 res.status(200).send(task)
             }).catch( (error) => {
                 console.log(error)
+                res.status(500).send(error)
+            })
+        },
+
+        readTask: (req, res, next) => {
+            const db = req.app.get('db')
+            db.get_task([req.params.goalsid])
+            .then((task) => res.status(200).send(task))
+            .catch( (error) => {
+                console.log('errortaskread', error)
                 res.status(500).send(error)
             })
         },

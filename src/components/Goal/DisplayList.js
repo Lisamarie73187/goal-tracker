@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios'
 import { connect } from 'react-redux'
-import { addTask } from '../../ducks/reducer'
+import { addTask, getTask } from '../../ducks/reducer'
 
 
 
@@ -12,8 +12,11 @@ class DisplayList extends Component {
                 taskname: '',
                 date: '',
                 show: false,
-                data: ''
+                data: '',
+                task: ''
         }
+
+        this.submitTask = this.submitTask.bind(this)
     }
     handleChange(value){
         console.log(value)
@@ -21,11 +24,24 @@ class DisplayList extends Component {
             taskname: value,
         })
     }
+  
     componentDidMount(){
-        this.props.addTask()
+        console.log('componentDidMount', this.props.goalsid)
+        this.props.getTask(this.props.goalsid)
     }
 
-  
+    submitTask(){
+        this.props.addTask({taskname: this.state.taskname, 
+            completed: false, 
+            date: new Date(), 
+            data: this.props.goalsid})
+            .then(()=>{
+                this.props.getTask(this.props.goalsid)
+                .then(()=> {this.setState({
+                    taskname: ''
+                })})
+            })
+    }
 
     render() {
         
@@ -43,12 +59,17 @@ class DisplayList extends Component {
                                     placeholder="Add Task"
                                     value={this.state.value}
                                     onChange={(e) => this.handleChange(e.target.value)}/>
-                            <button onClick={() => this.props.addTask({taskname: this.state.taskname, completed: false, date: new Date(), data: this.props.goalsid})} 
+                            <button onClick={this.submitTask} 
                                     style={button}>Add
                             </button>
                         </div>
+                        {this.props.tasks.map((e) => {
+                            return (<div key={e.taskid}>
+                                {e.taskname}
+                                {e.completed}
+                            </div>)
+                        })}
                         </div>
-                        {this.props.task.taskname}
                     </div>
                     }
             </div>
@@ -93,11 +114,12 @@ const button = {
 function mapStateToProps(state) {
     return {
         task: state.task,
-        data: state.data
+        tasks: state.tasks
     }
 }
 const mapDispatchToProps = {
     addTask: addTask,
+    getTask: getTask
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayList)

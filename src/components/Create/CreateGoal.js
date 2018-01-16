@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGoal } from '../../ducks/reducer'
+import { Link } from 'react-router-dom'
 
 
 import Header from '../Header/Header';
@@ -72,12 +73,12 @@ class CreateGoal extends Component {
                             placeholder="End Date"/>
                         <div>
                             <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
-                            <button onClick={() => this.props.addGoal({
+                            <Link to="/home"><button onClick={() => this.props.addGoal({
                                 goalName: this.state.goalName,
                                 goalDesc: this.state.goalDesc,
                                 stateDate: this.state.startDate,
                                 endDate: this.state.endDate
-                                })} style={buttonLarger} className="buttonGoal">Create Goal</button>
+                                })} style={buttonLarger} className="buttonGoal">Create Goal</button></Link>
                         </div>
                     </form>
                 </div>

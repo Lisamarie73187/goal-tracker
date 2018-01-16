@@ -80,6 +80,7 @@ app.post('/api/goal', display_ctr.addGoal);
 app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);
 app.put('/api/goal/:goalsid', display_ctr.editGoal);
 app.post('/api/task', display_ctr.addTask)
+app.get('/api/task/:goalsid', display_ctr.readTask)
 
 const db = app.get('db');
 

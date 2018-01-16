@@ -8,7 +8,6 @@ import { login } from '../../ducks/reducer';
 class AccountInfo extends Component {
   componentDidMount() {
    this.props.login()
-   console.log(this.props.user)
   }
 
   render() {

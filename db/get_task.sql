@@ -1,0 +1,1 @@
+SELECT * FROM task where goalsid = $1
