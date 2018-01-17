@@ -1,0 +1,1 @@
+SELECT * FROM subtask where taskid = $1;

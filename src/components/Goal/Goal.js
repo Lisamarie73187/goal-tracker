@@ -5,7 +5,7 @@ import './Goal.css';
 
 
 import Header from '../Header/Header';
-import Footer from '../Home/Footer/Footer';
+import Footer from '../Footer/Footer';
 import DisplayList from './DisplayList';
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";

@@ -43,12 +43,37 @@ module.exports = {
 
         readTask: (req, res, next) => {
             const db = req.app.get('db')
+            console.log('gettask?')
             db.get_task([req.params.goalsid])
             .then((task) => res.status(200).send(task))
             .catch( (error) => {
                 console.log('errortaskread', error)
                 res.status(500).send(error)
             })
+        },
+
+        addSubTask: (req, res, next) => {
+            const db = req.app.get('db')
+            db.add_subtask([
+                req.body.subTaskName,
+                req.body.completed,
+                req.body.date,
+                req.body.taskid
+            ]).then((subtask) => res.status(200).send(subtask))
+            .catch( (error) => {
+                console.log('error post subtask', error)
+                res.status(500).send(error)
+            })
+        },
+
+        getSubTask: (req, res, next) => {
+            const db = req.app.get('db')
+            db.get_subtask([req.params.taskid])
+            .then( (subtask) => res.status(200).send(subtask))
+            .catch( (error) => {
+                console.log('error read subtask', error)
+                res.status(500).send(error)
+            }) 
         },
 
         deleteGoal:(req,res) => {

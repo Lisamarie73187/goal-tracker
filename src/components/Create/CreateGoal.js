@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 import Header from '../Header/Header';
-import Footer from '../Home/Footer/Footer';
+import Footer from '../Footer/Footer';
 
 
 class CreateGoal extends Component {

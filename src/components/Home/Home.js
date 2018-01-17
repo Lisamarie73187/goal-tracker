@@ -3,9 +3,9 @@ import Header from '../Header/Header';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Dashboard from '../Home/Dashboard/Dashboard';
-import GoalListings from '../Home/GoalListings/GoalListings';
+import GoalCards from '../Home/GoalCards/GoalCards';
 import '../styles.css';
-import Footer from './Footer/Footer';
+import Footer from '../Footer/Footer';
 
 
 
@@ -32,7 +32,7 @@ class Home extends Component {
                 <Header/>
                 <Dashboard/>
                 <div>
-                  <GoalListings/>
+                  <GoalCards/>
                 </div>
                   <Footer/>
               </div>

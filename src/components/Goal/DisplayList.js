@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios'
+import Task from './Task'
 import { connect } from 'react-redux'
 import { addTask, getTask } from '../../ducks/reducer'
 
@@ -11,27 +11,28 @@ class DisplayList extends Component {
         this.state = {
                 taskname: '',
                 date: '',
-                show: false,
                 data: '',
-                task: ''
+                tasks: []
         }
 
         this.submitTask = this.submitTask.bind(this)
     }
+
     handleChange(value){
         console.log(value)
         this.setState({
-            taskname: value,
+            taskname: value
         })
     }
   
     componentDidMount(){
-        console.log('componentDidMount', this.props.goalsid)
         this.props.getTask(this.props.goalsid)
     }
 
+
     submitTask(){
-        this.props.addTask({taskname: this.state.taskname, 
+        this.props.addTask({
+            taskname: this.state.taskname, 
             completed: false, 
             date: new Date(), 
             data: this.props.goalsid})
@@ -43,25 +44,20 @@ class DisplayList extends Component {
             })
     }
 
+
     render() {
         return (
             <div style={layout}>
                 {this.props.tasks.map((e) => {
+                    console.log('inside th map')
                     return (
-                        <div key={e.taskid} style={cardsLayout} className="rapper">
-                            <div style= {text} className="titleText">{e.taskname}</div>
-                            <div style={wrapper}>
-                                <input placeholder="Add More Tasks"
-                                        style={inputOne}/>
-                                 <button style={button}>Add</button>
-                            </div>
-                        </div>
+                      <Task id={e.taskid} taskName={e.taskname}/>
                     )
                 })}
                  <div>
-                    <div className="rapper" style={inputRapper}>
+                    <div style={inputRapper}>
                         <input value={this.state.taskname}
-                                style={input}
+                                style={inputOne}
                                 placeholder="Add Task"
                                 onChange={(e) => this.handleChange(e.target.value)}/>
                         <button style={button} onClick={this.submitTask}>Add</button>
@@ -78,12 +74,24 @@ const layout = {
 	flexDirection: 'row',
 	flexWrap: 'nowrap',
 	alignItems: 'baseline',
-	alignContent: 'stretch'
+    alignContent: 'stretch',
+    overflow: 'scroll',    
 }
 
-const text = {
-    fontSize: '15pt'
-}
+// const cardsLayout = {
+//     margin: '10px',
+//     padding: '10px',
+//     width: '250px',
+//     color: 'white',
+//     fontSize: '12pt',
+//     background: '#3F3E54',
+//     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)'
+// }
+
+// const text = {
+//     fontSize: '14pt',
+//     paddingBottom: '8px',
+// }
 
 const button = {
     border: 'none',
@@ -94,61 +102,47 @@ const button = {
     color: 'white'
 }
 
-const cardsLayout = {
-    margin: '20px',
-    width: '25vw',
-    color: 'white',
-    fontSize: '12pt'
-    
-}
 const inputOne = {
     border: 'none',
-    fontSize: '15pt',
+    fontSize: '12pt',
     outline: 'none',
-    padding: '3px 8px',
+    // padding: '3px 8px',
     background: 'none',
     borderBottom: '1px solid black',
     color: 'white',
-    marginRight: '10px'
-}
-const input = {
-    border: 'none',
-    fontSize: '15pt',
-    outline: 'none',
-    padding: '3px 8px',
-    background: '#3F3E54',
-    borderBottom: '1px solid black',
-    color: 'white',
-    marginRight: '10px'
-
+    marginRight: '5px'
 }
 
-const wrapper = {
-    padding: '18px 15px',
-}
+
+// const wrapper = {
+//     padding: '13px 10px',
+//     background: '#292839'
+// }
 
 const inputRapper = {
-    padding: '18px 15px',
-    background: '#3F3E54'
+    padding: '10px 20px',
+    background: '#3F3E54',
+    boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)'
 }
 
-const cards = {
-    background: "#3F3E54",
-    padding: '30px',
-    marginLeft: '20px'
-}
+// const cards = {
+//     background: "#3F3E54",
+//     padding: '30px',
+//     marginLeft: '20px'
+// }
 
 
 
 function mapStateToProps(state) {
     return {
-        task: state.task,
-        tasks: state.tasks
+      
+        tasks: state.tasks,
+        task: state.task
     }
 }
 const mapDispatchToProps = {
     addTask: addTask,
-    getTask: getTask
+    getTask: getTask,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayList)

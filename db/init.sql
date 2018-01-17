@@ -23,5 +23,13 @@ CREATE TABLE task (
     goalsid INTEGER REFERENCES goals(goalsid)
 );
 
+CREATE TABLE subtask (
+    subtaskid SERIAL PRIMARY KEY,
+    subtaskname TEXT,
+    completed BOOLEAN,
+    date TEXT,
+    taskid INTEGER REFERENCES task(taskid)
+);
+
 
 

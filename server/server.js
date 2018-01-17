@@ -81,6 +81,8 @@ app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);
 app.put('/api/goal/:goalsid', display_ctr.editGoal);
 app.post('/api/task', display_ctr.addTask)
 app.get('/api/task/:goalsid', display_ctr.readTask)
+app.post('/api/subtask', display_ctr.addSubTask)
+app.get('/api/subtask/:taskid', display_ctr.getSubTask)
 
 const db = app.get('db');
 

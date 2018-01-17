@@ -3,10 +3,9 @@ import './landingpage.css';
 import logo from './../../assests/logo.png';
 import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
-// import Radium, { StyleRoot } from 'radium';
 import { login } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom'
+
 
 class LandingPage extends Component {
     constructor() {
@@ -35,7 +34,6 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                {/* <StyleRoot> */}
                     <div className="hero">
                         <div style={styling.logoText}>
                         <img style={styling.logoStyle} src={logo} alt="logo"/> 
@@ -44,27 +42,14 @@ class LandingPage extends Component {
                         <div style={styling.base}>
                         <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
                         <span onClick={this.login} className="startButton">Get Started</span>
-                        {/* <Link to="/home"><button>I dont need to log in</button></Link> */}
                     </div>
                 </div>
-            {/* </StyleRoot> */}
         </div>
         )
     }
 }
  
-// var options = {
-//     theme: {
-//       logo: './../../assests/logo.png',
-//       primaryColor: '#31324F',
-//       authButtons: {
-//         "testConnection": {
-//           displayName: "Test Conn",
-//           primaryColor: "#b7b7b7",
-//           foregroundColor: "#000000",
-//         },
-//     }
-// }}
+
 var styling = {
     base: {
     textAlign: 'center',
@@ -91,8 +76,6 @@ var styling = {
         width: '140px'
     }
 }
-
-
 
 var yellow = {
     color:'#ff8c69'

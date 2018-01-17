@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 // import axios from 'axios';
-import './goalListings.css';
+import './GoalCards.css';
 import { connect } from 'react-redux';
 import { getGoals } from '../../../ducks/reducer'
-import ProgressBar from './ProgressBar/ProgressBar';
+import ProgressBar from './ProgressBar';
 
 
 

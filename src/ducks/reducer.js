@@ -4,7 +4,8 @@ const initialState = {
     user: null,
     data: [],
     task: [],
-    tasks: []
+    tasks: [],
+    subTasks: []
   };
   
   const LOGIN = 'LOGIN';
@@ -12,6 +13,8 @@ const initialState = {
   const ADDTASK = 'ADDTASK';
   const ADDGOAL = "CREATEGOAL";
   const GETTASK = "GETTASK";
+  const ADDSUBTASK = "ADDSUBTASK";
+  const GETSUBTASK = "GETSUBTASK"
   
   export default (state = initialState, action) => {
     switch (action.type) {
@@ -29,7 +32,13 @@ const initialState = {
           return {...state, goal: action.payload};
 
       case GETTASK + "_FULFILLED":
-        return {...state, tasks: action.payload}
+        return {...state, tasks: action.payload};
+
+      case ADDSUBTASK + "_FULFILLED":
+        return {...state, subTasks: action.payload};
+
+      case GETSUBTASK + "_FULFILLED":
+        return {...state, subTasks: action.payload}
       
 
       default:
@@ -85,6 +94,32 @@ const initialState = {
     })
     return {
       type: GETTASK,
+      payload: request
+    }
+  }
+
+  export var getSubTask = (body) => {
+    var request = axios.get('/api/subtask', body).then(response => {
+      console.log(body)
+      if(response.data){
+        return response.data
+      }
+    })
+    return {
+      action: GETSUBTASK,
+      payload: request
+    }
+  }
+
+  export var addSubTask = (body) => {
+    var request = axios.post('/api/subtask', body).then( response => {
+      console.log(body)
+      if(response.data){
+        return response.data
+      }
+    })
+    return {
+      type: ADDSUBTASK,
       payload: request
     }
   }
