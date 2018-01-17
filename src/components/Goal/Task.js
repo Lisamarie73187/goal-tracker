@@ -15,6 +15,7 @@ class Task extends Component {
             subTasks: []
         }
         this.onSubmitSubTask = this.onSubmitSubTask.bind(this)
+        this.getSubTasks = this.getSubTasks.bind(this)
     }
 
     componentDidMount(){
@@ -31,7 +32,15 @@ class Task extends Component {
         console.log(value)
         this.setState({
             subTaskName: value,
-            subTasks: []
+        })
+    }
+
+    getSubTasks(){
+        axios.get(`/api/subtask/${this.props.id}`).then( (res) => {
+            console.log(res.data)
+            this.setState({
+                subTasks: res.data
+            })
         })
     }
 
@@ -42,18 +51,18 @@ class Task extends Component {
             date: new Date(),
             taskid: this.props.id})
             .then(()=>{
-                axios.get(`/api/subtask/${this.props.id}`).then( (res) => {
-                    console.log(res.data)
-                    this.setState({
-                        subTasks: res.data
-                    })
-                })
+              this.getSubTasks()
             })
     }
 
     render() {
         let subTaskData = this.state.subTasks.map( e => {
-            return <div key={e.subtaskid} style={wrapper}><SubTask name={e.subtaskname} subtaskid={e.subtaskid} completed={e.completed}/></div>
+            return <div key={e.subtaskid} style={wrapper}>
+            <SubTask getSubTasks={this.getSubTasks}
+                    name={e.subtaskname} 
+                    subtaskid={e.subtaskid} 
+                    completed={e.completed}/>
+                    </div>
         })
         return (
             <div>

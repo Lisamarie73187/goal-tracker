@@ -106,7 +106,7 @@ module.exports = {
                 const db = req.app.get('db')
             db.mark_complete([req.params.subtaskid])
             .then(() => {
-                res.status(200).json()
+                res.status(200).send()
             }).catch((error) => {
                 console.log('subtaskPut', error)
                 res.status(500).send(error)

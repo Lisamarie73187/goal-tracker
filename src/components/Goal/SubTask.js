@@ -7,14 +7,15 @@ class SubTask extends Component {
     constructor(props) {
         super(props)
         this.state = {
-           
+           completed: this.props.completed
         }
     }
 
     toggle(){
         console.log('button?')
+        console.log(this.props.completed)
         axios.put(`/api/subtask/${this.props.subtaskid}`).then(response => {
-            
+            this.props.getSubTasks()
         })
     }
 
@@ -22,7 +23,7 @@ class SubTask extends Component {
         return (
             <div>
                 <div style={subTaskLayout}>
-                    <div onClick={() => this.toggle()} className="checkBox"></div>
+                    <div onClick={() => this.toggle()} className={ this.props.completed ? "checkBox true" : "checkBox" }></div>
                     <div style={textSize}>{this.props.name} </div>
                     <span style={cursor}>x</span>
                 </div>
@@ -42,7 +43,8 @@ const subTaskLayout = {
 
 const textSize = {
     fontSize: '13pt',
-    paddingBottom: '3px'
+    paddingBottom: '3px',
+    paddingLeft: '-3px',
 }
 
 const cursor = {

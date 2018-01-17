@@ -1,1 +1,2 @@
-SELECT * FROM subtask where taskid = $1;
+SELECT * FROM subtask where taskid = $1
+ORDER BY subtaskid;
