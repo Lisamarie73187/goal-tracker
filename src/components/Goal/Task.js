@@ -3,13 +3,16 @@ import { connect } from 'react-redux'
 import { addSubTask } from '../../ducks/reducer'
 import axios from 'axios'
 
+import SubTask from './SubTask'
+
 
 class Task extends Component {
     constructor(props) {
         super(props)
         this.state = {
             subTaskName: '',
-            taskid: ''
+            taskid: '',
+            subTasks: []
         }
         this.onSubmitSubTask = this.onSubmitSubTask.bind(this)
     }
@@ -49,10 +52,14 @@ class Task extends Component {
     }
 
     render() {
+        let subTaskData = this.state.subTasks.map( e => {
+            return <div key={e.subtaskid} style={wrapper}><SubTask name={e.subtaskname} subtaskid={e.subtaskid} completed={e.completed}/></div>
+        })
         return (
-            <div key={this.props.id}>
+            <div>
                  <div style={cardsLayout}>
                             <div style= {text}>{this.props.taskName}</div>
+                            <div> {subTaskData}</div>
                             <div style={wrapper}>
                                 <input  value={this.state.subTaskName}
                                         onChange={(e) => this.handleSubTaskChange(e.target.value)}
@@ -69,16 +76,19 @@ class Task extends Component {
 const text = {
     fontSize: '14pt',
     paddingBottom: '8px',
+    paddingLeft: '15px'
 }
 
 const wrapper = {
     padding: '13px 10px',
-    background: '#292839'
+    background: '#292839',
+    margin: '10px'
 }
 
 const cardsLayout = {
     margin: '10px',
-    padding: '10px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
     width: '250px',
     color: 'white',
     fontSize: '12pt',

@@ -14,7 +14,7 @@ const initialState = {
   const ADDGOAL = "CREATEGOAL";
   const GETTASK = "GETTASK";
   const ADDSUBTASK = "ADDSUBTASK";
-  const GETSUBTASK = "GETSUBTASK"
+
   
   export default (state = initialState, action) => {
     switch (action.type) {
@@ -36,10 +36,6 @@ const initialState = {
 
       case ADDSUBTASK + "_FULFILLED":
         return {...state, subTasks: action.payload};
-
-      case GETSUBTASK + "_FULFILLED":
-        return {...state, subTasks: action.payload}
-      
 
       default:
         return state;
@@ -94,19 +90,6 @@ const initialState = {
     })
     return {
       type: GETTASK,
-      payload: request
-    }
-  }
-
-  export var getSubTask = (body) => {
-    var request = axios.get('/api/subtask', body).then(response => {
-      console.log(body)
-      if(response.data){
-        return response.data
-      }
-    })
-    return {
-      action: GETSUBTASK,
       payload: request
     }
   }

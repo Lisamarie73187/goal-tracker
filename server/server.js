@@ -83,6 +83,7 @@ app.post('/api/task', display_ctr.addTask)
 app.get('/api/task/:goalsid', display_ctr.readTask)
 app.post('/api/subtask', display_ctr.addSubTask)
 app.get('/api/subtask/:taskid', display_ctr.getSubTask)
+app.put('/api/subtask/:subtaskid', display_ctr.completedSubTask)
 
 const db = app.get('db');
 

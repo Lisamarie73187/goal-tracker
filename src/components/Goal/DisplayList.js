@@ -51,7 +51,7 @@ class DisplayList extends Component {
                 {this.props.tasks.map((e) => {
                     console.log('inside th map')
                     return (
-                      <Task id={e.taskid} taskName={e.taskname}/>
+                     <div key={e.taskid}> <Task taskName={e.taskname} id={e.taskid}/></div>
                     )
                 })}
                  <div>
