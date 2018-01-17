@@ -102,6 +102,7 @@ module.exports = {
                     res.status(500).send(error)
                 })
             },
+
             completedSubTask: (req, res, next) => {
                 const db = req.app.get('db')
             db.mark_complete([req.params.subtaskid])
@@ -111,6 +112,18 @@ module.exports = {
                 console.log('subtaskPut', error)
                 res.status(500).send(error)
             })
+            },
+
+            deleteSubTask: (req, res, next) => {
+                const db = req.app.get('db')
+                db.delete_subtask([req.params.subtaskid])
+                .then( () => {
+                    res.status(200).send()
+                }).catch((error) => {
+                    console.log('subtaskDelete', error)
+                    res.status(500).send(error)
+                })
             }
+
             
 }

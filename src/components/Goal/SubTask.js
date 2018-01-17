@@ -9,6 +9,7 @@ class SubTask extends Component {
         this.state = {
            completed: this.props.completed
         }
+        this.deleteSubTask = this.deleteSubTask.bind(this)
     }
 
     toggle(){
@@ -19,13 +20,20 @@ class SubTask extends Component {
         })
     }
 
+    deleteSubTask(){
+        console.log('deleteworking?')
+        axios.delete(`/api/subtask/${this.props.subtaskid}`).then(response => {
+            this.props.getSubTasks()
+        })
+    }
+
     render() {
         return (
             <div>
                 <div style={subTaskLayout}>
                     <div onClick={() => this.toggle()} className={ this.props.completed ? "checkBox true" : "checkBox" }></div>
                     <div style={textSize}>{this.props.name} </div>
-                    <span style={cursor}>x</span>
+                    <span style={cursor} onClick={this.deleteSubTask}>x</span>
                 </div>
             </div>
         )
