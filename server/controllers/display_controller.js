@@ -123,7 +123,17 @@ module.exports = {
                     console.log('subtaskDelete', error)
                     res.status(500).send(error)
                 })
-            }
+            },
 
+            deleteTask: (req, res, next) => {
+                const db = req.app.get('db')
+                db.delete_task([req.params.taskid])
+                .then( () => {
+                    res.status(200).send()
+                }).catch((error) => {
+                    console.log('taskDelete', error)
+                    res.status(500).send(error)
+                })
             
+            }
 }

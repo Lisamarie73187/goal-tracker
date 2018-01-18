@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addSubTask } from '../../ducks/reducer'
+import { addSubTask, getTask } from '../../ducks/reducer'
 import axios from 'axios'
 
 import SubTask from './SubTask'
@@ -16,6 +16,7 @@ class Task extends Component {
         }
         this.onSubmitSubTask = this.onSubmitSubTask.bind(this)
         this.getSubTasks = this.getSubTasks.bind(this)
+        this.deleteTask = this.deleteTask.bind(this)
     }
 
     componentDidMount(){
@@ -32,6 +33,13 @@ class Task extends Component {
         console.log(value)
         this.setState({
             subTaskName: value,
+        })
+    }
+
+    deleteTask(){
+        console.log('buttonon task ')
+        axios.delete(`/api/task/${this.props.id}`).then(response => {
+            this.props.getTask(this.props.goalsid)
         })
     }
 
@@ -67,8 +75,8 @@ class Task extends Component {
         return (
             <div>
                  <div style={cardsLayout}>
-                            <div style= {text}>{this.props.taskName}</div>
-                            <div> {subTaskData}</div>
+                            <div style={text}>{this.props.taskName} <span onClick={this.deleteTask} style={del}>x</span></div>
+                            <div>{subTaskData}</div>
                             <div style={wrapper}>
                                 <input  value={this.state.subTaskName}
                                         onChange={(e) => this.handleSubTaskChange(e.target.value)}
@@ -84,8 +92,19 @@ class Task extends Component {
 
 const text = {
     fontSize: '14pt',
-    paddingBottom: '8px',
-    paddingLeft: '15px'
+    padding: '8px 20px',
+    display: 'flex',
+	flexDirection: 'row',
+	flexWrap: 'nowrap',
+	justifyContent: 'space-between',
+	alignItems: 'baseline',
+    alignContent: 'stretch',
+}
+
+const del = {
+    fontSize: '12pt',
+    color: '#565656',
+    cursor: 'pointer'
 }
 
 const wrapper = {
@@ -128,6 +147,7 @@ const button = {
 
 const mapDispatchToProps = {
     addSubTask: addSubTask,
+    getTask: getTask
 }
 
 export default connect(null, mapDispatchToProps)(Task)
