@@ -75,7 +75,8 @@ const layout = {
 	flexWrap: 'nowrap',
 	alignItems: 'baseline',
     alignContent: 'stretch',
-    overflow: 'scroll',    
+    overflow: 'scroll',   
+    boxsizing: 'border-box'
 }
 
 // const cardsLayout = {
@@ -106,11 +107,9 @@ const inputOne = {
     border: 'none',
     fontSize: '12pt',
     outline: 'none',
-    // padding: '3px 8px',
     background: 'none',
     borderBottom: '1px solid black',
     color: 'white',
-    marginRight: '5px'
 }
 
 
@@ -120,8 +119,15 @@ const inputOne = {
 // }
 
 const inputRapper = {
-    padding: '10px 20px',
+    padding: '10px 10px',
     background: '#3F3E54',
+    margin: '10px',
+    width: '250px',
+    display: 'flex',
+	flexDirection: 'row',
+	flexWrap: 'nowrap',
+	justifyContent: 'space-between',
+    alignItems: 'center',
     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)'
 }
 

@@ -45,19 +45,20 @@ const subTaskLayout = {
 	flexDirection: 'row',
 	flexWrap: 'nowrap',
 	justifyContent: 'space-between',
-	alignItems: 'baseline',
-    alignContent: 'stretch',
+    alignItems: 'center',
+    // alignContent: 'stretch',
 }
 
 const textSize = {
-    fontSize: '13pt',
-    paddingBottom: '3px',
-    paddingLeft: '-3px',
+    fontSize: '12pt',
+    overflow: 'scroll',
+    width: '200px'
 }
 
 const cursor = {
     cursor: 'pointer',
-    color: '#565656'
+    color: '#565656',
+    // paddingBottom: '15px'
 }
 
 export default SubTask
