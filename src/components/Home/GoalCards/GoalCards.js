@@ -65,16 +65,13 @@ class GoalListings extends Component {
         console.log(this.state.subtaskArray)
         return (
             <div className="why">
-            {this.props.data.map((e)=>{
+            {this.props.data.map((e, i)=>{
                  return (
                     <div key={e.goalsid}>
                         <div className="rapper" style={heighty0}>
                             <div className="titleText">{e.goalname}</div>
                             <div className="dates">Goal Date <br/>{e.enddate}</div>
-                            {this.state.percentArray.map(p => {
-                                return <ProgressBar percent={p}/>
-                            })}
-                            {/* <ProgressBar percent={}/> */}
+                            <ProgressBar percent={Math.floor(this.state.percentArray[i])}/>
                             <div style={layoutButton}>
                             <Link className="noDecor" to={`/goal/${e.goalsid}`}><span className="buttonGoal">Go to Goal</span></Link>
                             </div>
