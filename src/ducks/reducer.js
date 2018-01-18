@@ -14,6 +14,7 @@ const initialState = {
   const ADDGOAL = "CREATEGOAL";
   const GETTASK = "GETTASK";
   const ADDSUBTASK = "ADDSUBTASK";
+  const GETSUBTASK = "GETSUBTASK";
 
   
   export default (state = initialState, action) => {
@@ -36,6 +37,8 @@ const initialState = {
 
       case ADDSUBTASK + "_FULFILLED":
         return {...state, subTasks: action.payload};
+
+        case GETSUBTASK + "_FULFILLED":
 
       default:
         return state;
@@ -106,6 +109,19 @@ const initialState = {
       payload: request
     }
   }
+
+  export var getSubTask = (id) => {
+    var request = axios.get(`/api/subtask/${id}`).then(response => {
+      if(response.data){
+        return response.date
+      }
+    })
+    return {
+      type: GETSUBTASK,
+      payload: request
+    }
+  }
+
 
   export var addGoal = (body) => {
     var request = axios.post('/api/goal', body).then(response => {
