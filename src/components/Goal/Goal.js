@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import DisplayList from './DisplayList';
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
-import GetSubTask from './GetSubTask';
+// import GetSubTask from './GetSubTask';
 
 
 export class Goal extends Component {

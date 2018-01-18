@@ -105,7 +105,7 @@ module.exports = {
 
             completedSubTask: (req, res, next) => {
                 const db = req.app.get('db')
-            db.mark_complete([req.params.subtaskid])
+            db.mark_complete([req.params.subtaskid, req.body.completedDate])
             .then(() => {
                 res.status(200).send()
             }).catch((error) => {
@@ -135,5 +135,17 @@ module.exports = {
                     res.status(500).send(error)
                 })
             
+            },
+
+            getPercent: (req,res,next) =>{
+                const db = req.app.get('db')
+                db.get_percent([req.params.goalsid])
+                .then( (subtask) => {
+                    console.log(subtask)
+                    res.status(200).send(subtask)
+                }).catch((error) => {
+                    console.log('percent', error)
+                    res.status(500).send()
+                })
             }
 }

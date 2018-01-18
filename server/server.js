@@ -86,6 +86,7 @@ app.post('/api/subtask', display_ctr.addSubTask)
 app.get('/api/subtask/:taskid', display_ctr.getSubTask)
 app.put('/api/subtask/:subtaskid', display_ctr.completedSubTask)
 app.delete('/api/subtask/:subtaskid', display_ctr.deleteSubTask)
+app.get('/api/getpercent/:goalsid', display_ctr.getPercent)
 
 
 const db = app.get('db');

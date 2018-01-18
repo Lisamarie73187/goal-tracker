@@ -39,6 +39,7 @@ const initialState = {
         return {...state, subTasks: action.payload};
 
         case GETSUBTASK + "_FULFILLED":
+          return {...state, subtasks: action.payload}
 
       default:
         return state;

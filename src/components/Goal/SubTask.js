@@ -15,7 +15,7 @@ class SubTask extends Component {
     toggle(){
         console.log('button?')
         console.log(this.props.completed)
-        axios.put(`/api/subtask/${this.props.subtaskid}`).then(response => {
+        axios.put(`/api/subtask/${this.props.subtaskid}`,{completedDate: new Date()}).then(response => {
             this.props.getSubTasks()
         })
     }

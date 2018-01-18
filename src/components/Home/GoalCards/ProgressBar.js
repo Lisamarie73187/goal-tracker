@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
 import './ProgressBar.css'
+// import { getSubTask } from '../../ducks/reducer'
 
 
 
@@ -10,6 +11,8 @@ class ProgressBar extends Component {
         this.state = {
         }
     }
+
+  
 
     render() {
         return (
