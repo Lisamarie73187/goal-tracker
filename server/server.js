@@ -75,6 +75,7 @@ massive(process.env.CONNECTION_STRING)
   });
 
 app.get('/api/goals', display_ctr.read);
+app.get('/api/goal/subtask', display_ctr.getGoalSubtask);
 app.get('/api/goal/:goalsid', display_ctr.getOne);
 app.post('/api/goal', display_ctr.addGoal);
 app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);

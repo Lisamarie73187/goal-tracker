@@ -18,14 +18,15 @@ class Task extends Component {
         this.getSubTasks = this.getSubTasks.bind(this)
         this.deleteTask = this.deleteTask.bind(this)
     }
+    componentWillUnmount(){
+        console.log( 'task is unmounting')
+    }
 
+    componentWillMount(){
+        console.log('task is mounting')
+    }
     componentDidMount(){
-        axios.get(`/api/subtask/${this.props.id}`).then( (res) => {
-            console.log(res.data)
-            this.setState({
-                subTasks: res.data
-            })
-        })
+        this.getSubTasks()
     }
 
     handleSubTaskChange(value){
@@ -55,7 +56,8 @@ class Task extends Component {
             subTaskName: this.state.subTaskName,
             completed: false,
             date: new Date(),
-            taskid: this.props.id})
+            taskid: this.props.id,
+            goalsid: this.props.goalsid})
             .then(()=>{
               this.getSubTasks()
             }).then(() => {this.setState({
@@ -66,11 +68,11 @@ class Task extends Component {
     render() {
         let subTaskData = this.state.subTasks.map( e => {
             return <div key={e.subtaskid} style={wrapper}>
-            <SubTask getSubTasks={this.getSubTasks}
+                <SubTask getSubTasks={this.getSubTasks}
                     name={e.subtaskname} 
                     subtaskid={e.subtaskid} 
                     completed={e.completed}/>
-                    </div>
+            </div>
         })
         return (
             <div>

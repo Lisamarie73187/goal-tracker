@@ -14,6 +14,8 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "icheck": "^1.0.2",
+    "lodash.uniq": "^4.5.0",
+    "lodash.uniqby": "^4.7.0",
     "massive": "^4.6.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",

@@ -6,11 +6,18 @@ module.exports = {
           .catch( () => res.status(500).send() );
       },
 
-      getOne:(req,res,next) => {
+    getOne:(req,res,next) => {
         const db = req.app.get('db');
         const {goalsid} = req.params
         db.read_goal([goalsid])
         .then( (goal) => res.status(200).send(goal[0]))
+        .catch( () => res.status(500).send())
+    },
+
+    getGoalSubtask: (req,res,next) => {
+        const db = req.app.get('db')
+        db.get_goals_subtasks([req.session.user.id])
+        .then((goals) => res.status(200).send(goals))
         .catch( () => res.status(500).send())
     },
     
@@ -58,7 +65,8 @@ module.exports = {
                 req.body.subTaskName,
                 req.body.completed,
                 req.body.date,
-                req.body.taskid
+                req.body.taskid,
+                req.body.goalsid
             ]).then((subtask) => res.status(200).send(subtask))
             .catch( (error) => {
                 console.log('error post subtask', error)

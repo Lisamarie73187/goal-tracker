@@ -8,32 +8,32 @@ class LineGraph extends Component {
         super()
         this.state = {
             data: [],
-            // dataThree: {
-            //     labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug','Sept','Oct','Nov','Dec'],
-            //     datasets: [
-            //       {
-            //         label: 'goalname',
-            //         fill: false,
-            //         lineTension: 0.1,
-            //         backgroundColor: '#655fd7',
-            //         borderColor: '#655fd7',
-            //         borderCapStyle: 'butt',
-            //         borderDash: [],
-            //         borderDashOffset: 0.0,
-            //         borderJoinStyle: 'miter',
-            //         pointBorderColor: '#655fd7',
-            //         pointBackgroundColor: '#fff',
-            //         pointBorderWidth: 1,
-            //         pointHoverRadius: 5,
-            //         pointHoverBackgroundColor: '#655fd7',
-            //         pointHoverBorderColor: '#655fd7',
-            //         pointHoverBorderWidth: 2,
-            //         pointRadius: 1,
-            //         pointHitRadius: 10,
-            //         data: [0, 1, 4, 9, 13, 18, 20, 22, 25, 26, 37, 38],
-            //       },
-            //     ]
-            // },
+            dataThree: {
+                labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug','Sept','Oct','Nov','Dec'],
+                datasets: [
+                  {
+                    label: 'goalname',
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: '#655fd7',
+                    borderColor: '#655fd7',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: '#655fd7',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: '#655fd7',
+                    pointHoverBorderColor: '#655fd7',
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [0, 1, 4, 9, 13, 18, 20, 22, 25, 26, 37, 38],
+                  },
+                ]
+            },
         }
     }
     componentWillMount() {
@@ -75,7 +75,7 @@ class LineGraph extends Component {
         })
         return (
             <div className="size">
-                <Line data={dataGraph} />
+                <Line data={this.state.dataThree} />
             </div>
         );
     }

@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './GoalCards.css';
-import { connect } from 'react-redux';
-import { getGoals } from '../../../ducks/reducer'
 import ProgressBar from './ProgressBar';
 
 
@@ -13,63 +11,65 @@ class GoalListings extends Component {
     constructor(){
         super()
         this.state = {
-            subtaskArray: [],
-            percent: [],
-            percentArray: []
+            data: [],
+            array: []
         }
-        this.getInformation = this.getInformation.bind(this)
-        this.percentage = this.percentage.bind(this)
+        this.arr = []
     }
    
 
 
     componentDidMount() {
-        this.props.getGoals().then(() => {
-            this.getInformation()
-        })
-    }
-
-    getInformation(){
-        this.props.data.map((e) => {
-            return axios.get(`/api/getpercent/${e.goalsid}`).then( res => {
-                this.setState ({
-                    subtaskArray: [...this.state.subtaskArray, res.data]
-                })
-            })
-        })
-        setTimeout(() => {
-            this.percentage()
-        },2000)
-    }
-
-    percentage(){
-        console.log('are you working?')
-        this.state.subtaskArray.map( (goal) => {
-            var completed = 0
-            console.log(goal.length)
-            goal.map((subtask) => {
-                console.log(subtask)
-                if(subtask.completed){
-                    completed++
-                }
-            })
+        return axios.get(`/api/goal/subtask`).then( res =>{
+            // console.log(res.data)
             this.setState({
-                percentArray: [...this.state.percentArray, (completed/goal.length) * 100]
-            }) 
+                data: res.data
+            })
+        }).then(() => {
+           
         })
     }
+
+    // getInformation(){
+    //     this.props.data.map((e) => {
+    //         return axios.get(`/api/getpercent/${e.goalsid}`).then( res => {
+    //             this.setState ({
+    //                 subtaskArray: [...this.state.subtaskArray, res.data]
+    //             })
+    //         })
+    //     })
+    //     setTimeout(() => {
+    //         this.percentage()
+    //     },2000)
+    // }
+
+    // percentage(){
+    //     console.log('are you working?')
+    //     return this.state.subtaskArray.map( (goal) => {
+    //         var completed = 0
+    //         goal.map((subtask) => {
+    //             console.log(subtask)
+    //             if(subtask.completed){
+    //                 completed++
+    //             }
+    //         })
+    //         this.setState({
+    //             percentArray: [...this.state.percentArray, (completed/goal.length) * 100]
+    //         }) 
+    //     })
+    // }
    
     render() {
-        console.log(this.state.subtaskArray)
         return (
             <div className="why">
-            {this.props.data.map((e, i) =>{
+            {this.state.data.map((e, i) =>{
                  return (
-                    <div key={e.goalsid}>
+                    <div key={i}>
+                        <div>{this.array}</div>
                         <div className="rapper" style={heighty0}>
                             <div className="titleText">{e.goalname}</div>
                             <div className="dates">Goal Date <br/>{e.enddate}</div>
-                            <ProgressBar percent={Math.floor(this.state.percentArray[i])? Math.floor(this.state.percentArray[i]) : '0'}/>
+                            <ProgressBar percent="90"/>
                             <div style={layoutButton}>
                             <Link className="noDecor" to={`/goal/${e.goalsid}`}><span className="buttonGoal">Go to Goal</span></Link>
                             </div>
@@ -91,15 +91,7 @@ var heighty0 = {
     height: '425px',
 }
 
-function mapStateToProps(state) {
-    return {
-      data: state.data
-    };
-  };
 
-const mapDispatchToProps = {
-    getGoals: getGoals,
-  }
   
-export default connect(mapStateToProps, mapDispatchToProps)(GoalListings);
+export default GoalListings;
 
