@@ -76,7 +76,7 @@ class CreateGoal extends Component {
                             <Link to="/home"><button onClick={() => this.props.addGoal({
                                 goalName: this.state.goalName,
                                 goalDesc: this.state.goalDesc,
-                                stateDate: this.state.startDate,
+                                startDate: this.state.startDate,
                                 endDate: this.state.endDate
                                 })} style={buttonLarger} className="buttonGoal">Create Goal</button></Link>
                         </div>

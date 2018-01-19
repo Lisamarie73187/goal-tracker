@@ -79,20 +79,6 @@ const layout = {
     boxsizing: 'border-box'
 }
 
-// const cardsLayout = {
-//     margin: '10px',
-//     padding: '10px',
-//     width: '250px',
-//     color: 'white',
-//     fontSize: '12pt',
-//     background: '#3F3E54',
-//     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)'
-// }
-
-// const text = {
-//     fontSize: '14pt',
-//     paddingBottom: '8px',
-// }
 
 const button = {
     border: 'none',
@@ -113,11 +99,6 @@ const inputOne = {
 }
 
 
-// const wrapper = {
-//     padding: '13px 10px',
-//     background: '#292839'
-// }
-
 const inputRapper = {
     padding: '10px 10px',
     background: '#3F3E54',
@@ -130,12 +111,6 @@ const inputRapper = {
     alignItems: 'center',
     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)'
 }
-
-// const cards = {
-//     background: "#3F3E54",
-//     padding: '30px',
-//     marginLeft: '20px'
-// }
 
 
 

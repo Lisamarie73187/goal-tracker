@@ -30,9 +30,8 @@ class GoalListings extends Component {
     }
 
     getInformation(){
-        console.log('get information')
         this.props.data.map((e) => {
-            axios.get(`/api/getpercent/${e.goalsid}`).then( res => {
+            return axios.get(`/api/getpercent/${e.goalsid}`).then( res => {
                 this.setState ({
                     subtaskArray: [...this.state.subtaskArray, res.data]
                 })
@@ -45,7 +44,6 @@ class GoalListings extends Component {
 
     percentage(){
         console.log('are you working?')
-        var percentArray = []
         this.state.subtaskArray.map( (goal) => {
             var completed = 0
             console.log(goal.length)
@@ -65,13 +63,13 @@ class GoalListings extends Component {
         console.log(this.state.subtaskArray)
         return (
             <div className="why">
-            {this.props.data.map((e, i)=>{
+            {this.props.data.map((e, i) =>{
                  return (
                     <div key={e.goalsid}>
                         <div className="rapper" style={heighty0}>
                             <div className="titleText">{e.goalname}</div>
                             <div className="dates">Goal Date <br/>{e.enddate}</div>
-                            <ProgressBar percent={Math.floor(this.state.percentArray[i])}/>
+                            <ProgressBar percent={Math.floor(this.state.percentArray[i])? Math.floor(this.state.percentArray[i]) : '0'}/>
                             <div style={layoutButton}>
                             <Link className="noDecor" to={`/goal/${e.goalsid}`}><span className="buttonGoal">Go to Goal</span></Link>
                             </div>

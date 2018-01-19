@@ -20,7 +20,6 @@ class Task extends Component {
     }
 
     componentDidMount(){
-        // console.log('logged task cCDM')
         axios.get(`/api/subtask/${this.props.id}`).then( (res) => {
             console.log(res.data)
             this.setState({
@@ -37,7 +36,6 @@ class Task extends Component {
     }
 
     deleteTask(){
-        console.log('buttonon task ')
         axios.delete(`/api/task/${this.props.id}`).then(response => {
             this.props.getTask(this.props.goalsid)
         })

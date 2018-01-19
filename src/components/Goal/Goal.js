@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import DisplayList from './DisplayList';
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
-// import GetSubTask from './GetSubTask';
+
 
 
 export class Goal extends Component {
@@ -80,7 +80,6 @@ export class Goal extends Component {
                             <div style={styleYo.primary}>
                                 <div style={[styleYo.base, styleYo.name]}>{e.goalname}</div>
                                 <div style={[styleYo.base, styleYo.desc]}>{e.description}</div>
-                                {/* <div><GetSubTask id={e.goalsid}/></div> */}
                                 <div style={[styleYo.base, styleYo.dates]}>Start Date: 
                                 {e.startdate}<br/>
                                 Goal Date: {e.enddate}

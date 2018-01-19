@@ -13,15 +13,12 @@ class SubTask extends Component {
     }
 
     toggle(){
-        console.log('button?')
-        console.log(this.props.completed)
         axios.put(`/api/subtask/${this.props.subtaskid}`,{completedDate: new Date()}).then(response => {
             this.props.getSubTasks()
         })
     }
 
     deleteSubTask(){
-        console.log('deleteworking?')
         axios.delete(`/api/subtask/${this.props.subtaskid}`).then(response => {
             this.props.getSubTasks()
         })
@@ -46,7 +43,6 @@ const subTaskLayout = {
 	flexWrap: 'nowrap',
 	justifyContent: 'space-between',
     alignItems: 'center',
-    // alignContent: 'stretch',
 }
 
 const textSize = {
@@ -58,7 +54,6 @@ const textSize = {
 const cursor = {
     cursor: 'pointer',
     color: '#565656',
-    // paddingBottom: '15px'
 }
 
 export default SubTask

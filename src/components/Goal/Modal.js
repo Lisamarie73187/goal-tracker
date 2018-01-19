@@ -12,15 +12,11 @@ class Modal extends Component {
             startDate: '',
             endDate: '',
         }
-        this.handleNameChange=this.handleNameChange.bind(this)
-        this.handleDescChange=this.handleDescChange.bind(this)
-        this.handleStartDateChange=this.handleStartDateChange.bind(this)
-        this.handleEndDateChange=this.handleEndDateChange.bind(this)
+      
         this.editGoal=this.editGoal.bind(this)
     }
 
     editGoal(){
-        console.log('button working?')
         return axios.put(`/api/goal/${this.props.goal}`, {
             goalName: this.state.goalName, 
             goalDesc: this.state.goalDesc, 
