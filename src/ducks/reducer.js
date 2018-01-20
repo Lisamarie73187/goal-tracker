@@ -38,8 +38,8 @@ const initialState = {
       case ADDSUBTASK + "_FULFILLED":
         return {...state, subTasks: action.payload};
 
-        case GETSUBTASK + "_FULFILLED":
-          return {...state, subtasks: action.payload}
+      case GETSUBTASK + "_FULFILLED":
+        return {...state, subtasks: action.payload}
 
       default:
         return state;
@@ -109,10 +109,10 @@ const initialState = {
     }
   }
 
-  export var getSubTask = (id) => {
-    var request = axios.get(`/api/subtask/${id}`).then(response => {
+  export var getSubTask = (goalsid) => {
+    var request = axios.get(`/api/subtask/${goalsid}`).then(response => {
       if(response.data){
-        return response.date
+        return response.data
       }
     })
     return {

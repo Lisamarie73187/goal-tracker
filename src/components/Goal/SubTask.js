@@ -12,6 +12,8 @@ class SubTask extends Component {
         this.deleteSubTask = this.deleteSubTask.bind(this)
     }
 
+  
+
     toggle(){
         axios.put(`/api/subtask/${this.props.subtaskid}`,{completedDate: new Date()}).then(response => {
             this.props.getSubTasks()

@@ -4,6 +4,7 @@ import { addSubTask, getTask } from '../../ducks/reducer'
 import axios from 'axios'
 
 import SubTask from './SubTask'
+import Utility from './Utility';
 
 
 class Task extends Component {
@@ -43,7 +44,7 @@ class Task extends Component {
     }
 
     getSubTasks(){
-        axios.get(`/api/subtask/${this.props.id}`).then( (res) => {
+        axios.get(`/api/ssubtask/${this.props.id}`).then( (res) => {
             console.log(res.data)
             this.setState({
                 subTasks: res.data
@@ -63,6 +64,12 @@ class Task extends Component {
             }).then(() => {this.setState({
                 subTaskName: ''
             })})
+    }
+
+    addTotaltoTable(){
+        axios.post('/api/subtask/data').then( response => {
+
+        })
     }
 
     render() {
@@ -86,6 +93,7 @@ class Task extends Component {
                                         style={inputOne}/>
                                 <button onClick={this.onSubmitSubTask} style={button}>Add</button>
                     </div>
+                    <Utility goalid={this.props.goalsid}/>
                 </div>
             </div>
         )

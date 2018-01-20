@@ -84,6 +84,16 @@ module.exports = {
             }) 
         },
 
+        getSubTaskTwo: (req, res, next) => {
+            const db = req.app.get('db')
+            db.get_subtask_two([req.params.goalsid])
+            .then( (subtask) => res.status(200).send(subtask))
+            .catch( (error) => {
+                console.log('error read subtask', error)
+                res.status(500).send(error)
+            }) 
+        },
+
         deleteGoal:(req,res) => {
             const db = req.app.get('db')
             db.delete_goal([req.params.goalsid])

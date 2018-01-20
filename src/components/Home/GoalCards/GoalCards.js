@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './GoalCards.css';
 import ProgressBar from './ProgressBar';
+import _ from 'lodash';
 
 
 
@@ -14,55 +15,34 @@ class GoalListings extends Component {
             data: [],
             array: []
         }
-        this.arr = []
+       
     }
    
 
 
     componentDidMount() {
+        this.filterArray()
+    }
+
+    filterArray(){
         return axios.get(`/api/goal/subtask`).then( res =>{
-            // console.log(res.data)
             this.setState({
                 data: res.data
             })
-        }).then(() => {
-           
+            var newArray = []
+            newArray = _.uniqBy(res.data, 'goalsid')
+            console.log(newArray)
+            this.setState({
+                array: newArray
+            })      
         })
+        
     }
-
-    // getInformation(){
-    //     this.props.data.map((e) => {
-    //         return axios.get(`/api/getpercent/${e.goalsid}`).then( res => {
-    //             this.setState ({
-    //                 subtaskArray: [...this.state.subtaskArray, res.data]
-    //             })
-    //         })
-    //     })
-    //     setTimeout(() => {
-    //         this.percentage()
-    //     },2000)
-    // }
-
-    // percentage(){
-    //     console.log('are you working?')
-    //     return this.state.subtaskArray.map( (goal) => {
-    //         var completed = 0
-    //         goal.map((subtask) => {
-    //             console.log(subtask)
-    //             if(subtask.completed){
-    //                 completed++
-    //             }
-    //         })
-    //         this.setState({
-    //             percentArray: [...this.state.percentArray, (completed/goal.length) * 100]
-    //         }) 
-    //     })
-    // }
    
     render() {
         return (
             <div className="why">
-            {this.state.data.map((e, i) =>{
+            {this.state.array.map((e, i) =>{
                  return (
                     <div key={i}>
                         <div>{this.array}</div>
