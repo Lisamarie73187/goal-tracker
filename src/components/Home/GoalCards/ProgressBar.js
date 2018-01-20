@@ -22,7 +22,6 @@ class ProgressBar extends Component {
 
     getSubTaskData(){
         axios.get(`/api/subtask/${this.props.goalsid}`).then( res => {
-            console.log(res.data)
             this.setState({
                 subTaskData: res.data.length
             })
@@ -31,7 +30,6 @@ class ProgressBar extends Component {
 
     getCompletedData(){
         axios.get(`/api/subtask/percent/${this.props.goalsid}`).then( res => {
-            console.log('numberasdfasdf',res.data)
             this.setState({
                 completed: res.data.length
             })
@@ -41,12 +39,9 @@ class ProgressBar extends Component {
   
 
     render() {
-        // var total = this.state.subTaskData.length
-        console.log('total',this.state.subTaskData)
-        console.log('completed', this.state.completed)
         return (
             <div>
-                <CircularProgressbar percentage={Math.floor((this.state.completed/this.state.subTaskData) *100)} initialAnimation="true" />
+                <CircularProgressbar percentage={this.state.subTaskData? Math.floor((this.state.completed/this.state.subTaskData) *100) : 0} initialAnimation="true" />
             </div>
         )
     }
