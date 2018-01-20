@@ -30,7 +30,6 @@ export class Goal extends Component {
 
     componentDidMount() {
         return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
-            console.log(res.data)
             this.setState({
                 data: res.data
             })

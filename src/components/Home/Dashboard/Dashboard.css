@@ -3,7 +3,7 @@
     width: 90vw;
     margin: auto;
     padding-bottom: 20px;
-    box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);;
+    box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);
 }
 
 .firstRow {
@@ -32,13 +32,16 @@
 }
 .boxer {
     margin: 20px;
-    padding-right: 30px;
-    padding-left: 30px;
+    width: 300px;
+    padding: 10px 20px;
     background-color: #3f3e54;
+    box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
+
 
 .textyText{
     color: #ffffff;
+    font-size: 16pt;
     text-align: center;
     font-family: 'Raleway','serif';
     /* background-color: blue; */
@@ -46,7 +49,13 @@
 
 .numberGoals {
     color: #fd8c7a;
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
-    font-size: 80pt;
+    font-size: 30pt;
+}
+
+.barGraph {
+    width: 500px;
+    background-color: #3f3e54;
+    box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }

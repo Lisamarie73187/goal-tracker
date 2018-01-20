@@ -46,11 +46,9 @@ getData(){
             this.setState({
                 goalName: [...this.state.goalName, e.goalname]
             })
-            console.log(this.state.goalName)
         })
     }).then(() => {
         const unique =_.uniq(this.state.goalName)
-        console.log('uniquearray',unique)
         this.setState({
             dataLabels: unique
         })
@@ -78,13 +76,11 @@ getData(){
                 }
             })
             lengthy = arr.length
-            console.log('tes',lengthy)
             data1.datasets[0].data.push(lengthy)
         })
             this.setState({
                 data1: data1
             })
-        console.log(data1.datasets[0].data)
         }).then(()=>{
             
         })
@@ -94,7 +90,7 @@ getData(){
           
     render() {
         return (
-            <div>
+            <div className="barGraph">
             <HorizontalBar data={this.state.data1} />
             </div>
         );

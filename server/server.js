@@ -48,7 +48,6 @@ massive(process.env.CONNECTION_STRING)
       app.get('db').find_user(userData.user_id).then(users => {
         if (users.length) {
           req.session.user = users[0]
-          console.log(users[0])
           res.json({ user: req.session.user });
         } else {
           app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then( user => {
@@ -88,7 +87,7 @@ app.get('/api/subtask/:goalsid', display_ctr.getSubTaskTwo)
 app.get('/api/ssubtask/:taskid', display_ctr.getSubTask)
 app.put('/api/subtask/:subtaskid', display_ctr.completedSubTask)
 app.delete('/api/subtask/:subtaskid', display_ctr.deleteSubTask)
-app.get('/api/getpercent/:goalsid', display_ctr.getPercent)
+app.get('/api/subtask/percent/:goalsid', display_ctr.getPercent)
 
 
 const db = app.get('db');

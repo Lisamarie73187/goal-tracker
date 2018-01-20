@@ -13,7 +13,7 @@ class GoalListings extends Component {
         super()
         this.state = {
             data: [],
-            array: []
+            array: [],
         }
        
     }
@@ -25,31 +25,24 @@ class GoalListings extends Component {
     }
 
     filterArray(){
-        return axios.get(`/api/goal/subtask`).then( res =>{
+        return axios.get(`/api/goals`).then( res =>{
             this.setState({
                 data: res.data
             })
-            var newArray = []
-            newArray = _.uniqBy(res.data, 'goalsid')
-            console.log(newArray)
-            this.setState({
-                array: newArray
-            })      
         })
-        
     }
    
     render() {
         return (
             <div className="why">
-            {this.state.array.map((e, i) =>{
+            {this.state.data.map((e, i) =>{
                  return (
                     <div key={i}>
                         <div>{this.array}</div>
                         <div className="rapper" style={heighty0}>
                             <div className="titleText">{e.goalname}</div>
                             <div className="dates">Goal Date <br/>{e.enddate}</div>
-                            <ProgressBar percent="90"/>
+                            <ProgressBar goalsid={e.goalsid}/>
                             <div style={layoutButton}>
                             <Link className="noDecor" to={`/goal/${e.goalsid}`}><span className="buttonGoal">Go to Goal</span></Link>
                             </div>

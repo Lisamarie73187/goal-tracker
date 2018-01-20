@@ -23,7 +23,6 @@ module.exports = {
     
     addGoal: (req,res,next) => {
         const db = req.app.get('db');
-        console.log(req.body)
         db.create_goal([req.body.goalName, 
                         req.body.goalDesc, 
                         req.body.startDate, 
@@ -50,7 +49,6 @@ module.exports = {
 
         readTask: (req, res, next) => {
             const db = req.app.get('db')
-            console.log('gettask?')
             db.get_task([req.params.goalsid])
             .then((task) => res.status(200).send(task))
             .catch( (error) => {
@@ -159,7 +157,6 @@ module.exports = {
                 const db = req.app.get('db')
                 db.get_percent([req.params.goalsid])
                 .then( (subtask) => {
-                    console.log(subtask)
                     res.status(200).send(subtask)
                 }).catch((error) => {
                     console.log('percent', error)

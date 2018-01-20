@@ -46,14 +46,14 @@ class DisplayList extends Component {
 
 
     render() {
+        var taskComponent = this.props.tasks.map((e) => {
+            return (
+             <div key={e.taskid}> <Task taskName={e.taskname} id={e.taskid} goalsid={this.props.goalsid}/></div>
+            )
+        })
         return (
             <div style={layout}>
-                {this.props.tasks.map((e) => {
-                    console.log('inside th map')
-                    return (
-                     <div key={e.taskid}> <Task taskName={e.taskname} id={e.taskid} goalsid={this.props.goalsid}/></div>
-                    )
-                })}
+               {taskComponent}
                  <div>
                     <div style={inputRapper}>
                         <input value={this.state.taskname}

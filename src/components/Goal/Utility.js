@@ -12,8 +12,6 @@ class Utility extends Component {
     }
     componentDidMount(){
         this.props.getSubTask(this.props.goalid).then(response => {
-            console.log('id',this.props.goalid)
-            console.log(response.data)
             this.setState({
                 data: response.data
             })

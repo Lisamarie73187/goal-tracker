@@ -72,7 +72,6 @@ const initialState = {
 
   export var addTask = (body) => {
     var request = axios.post('/api/task', body).then(response => {
-      console.log(body)
       if(response.data){
         return response.data
       }
@@ -84,7 +83,6 @@ const initialState = {
   }
 
   export var getTask = (id) => {
-    console.log('STRINGONE',id)
     var request =  axios.get(`/api/task/${id}`).then(response => {
 
       if(response.data){
@@ -124,7 +122,6 @@ const initialState = {
 
   export var addGoal = (body) => {
     var request = axios.post('/api/goal', body).then(response => {
-      console.log(body)
       if(response.data){
         return response.data
       }

@@ -45,7 +45,6 @@ class Task extends Component {
 
     getSubTasks(){
         axios.get(`/api/ssubtask/${this.props.id}`).then( (res) => {
-            console.log(res.data)
             this.setState({
                 subTasks: res.data
             })
@@ -61,7 +60,8 @@ class Task extends Component {
             goalsid: this.props.goalsid})
             .then(()=>{
               this.getSubTasks()
-            }).then(() => {this.setState({
+            })
+            .then(() => {this.setState({
                 subTaskName: ''
             })})
     }

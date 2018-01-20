@@ -8,9 +8,6 @@ import BarGraph from './BarGraph';
 
 
 
-
-
-
 class Dashboard extends Component {
     componentDidMount() {
         this.props.getGoals()
@@ -19,14 +16,27 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div >
-                    <div >
-                        <div className="boxer"><h1 className="textyText">Number of Goals </h1>
-                        <div className="numberGoals">{this.props.data.length}</div></div>
-                        {/* <div className="boxer"><LineGraph/></div> */}
+                <div className="wrappers">
+                    <div className="firstRow">
+                        <div className="boxer">
+                            <h1 className="textyText">Number of <br/> Goals </h1>
+                            <div className="numberGoals">{this.props.data.length}</div>
+                        </div>
+                        <div className="boxer">
+                            <h1 className="textyText">Number of <br/>Tasks </h1>
+                            <div className="numberGoals">{this.props.data.length}</div>
+                        </div>
+                        <div className="boxer">
+                            <h1 className="textyText">Number of Completed </h1>
+                            <div className="numberGoals">{this.props.data.length}</div>
+                        </div>
+                        <div className="boxer">
+                            <h1 className="textyText">Number of Completed </h1>
+                            <div className="numberGoals">{this.props.data.length}</div>
+                        </div>
                     </div>
-                    <div >
-                        <div><BarGraph/></div>
+                    <div className="secondRow">
+                        <div className="barGraph"><BarGraph/></div>
                     </div>
                 </div>
             </div>

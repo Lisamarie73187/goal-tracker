@@ -1,3 +1,3 @@
-SELECT * 
+SELECT completed
 FROM subtask
-WHERE taskid IN (SELECT taskid FROM task WHERE goalsid = $1)
+WHERE goalsid = $1 AND completed = true;
