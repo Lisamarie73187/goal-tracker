@@ -3,7 +3,6 @@ import './landingpage.css';
 import logo from './../../assests/logo.png';
 import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
 import { login } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 
@@ -42,8 +41,7 @@ class LandingPage extends Component {
                     </div>
                         <div style={styling.base}>
                         <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                        <span onClick={this.login} className="startButton">Get Started</span>
-                        <Link to="/home"><button>get started</button></Link>
+                        <button onClick={this.login} className="startButton">Get Started</button>
                     </div>
                 </div>
         </div>

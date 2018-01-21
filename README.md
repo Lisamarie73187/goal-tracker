@@ -1,6 +1,6 @@
 # Goalsy
 
-##Overview
+## Overview
 
 An application to help you keep track of your goals and view your goal progress. 
 
