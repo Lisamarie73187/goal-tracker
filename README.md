@@ -24,6 +24,9 @@ An application to help you keep track of your goals and view your goal progress.
 - User mark tasks complete and view goal progress
 - User can view their dashboard showing the overview of goals and analytics using `chart.js`
 
+
+### Preview
+
 Landing Page:
 
 ![Landing Page](https://github.com/Lisamarie73187/goal-tracker/blob/master/src/assests/LandingPage.png)
