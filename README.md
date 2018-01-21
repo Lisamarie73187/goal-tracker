@@ -2,7 +2,7 @@
 
 ## Overview
 
-An application to help you keep track of your goals and view your goal progress. 
+Full Stack web application to help you keep track of your goals and view your goal progress. 
 
 ## Tech Stack
 
