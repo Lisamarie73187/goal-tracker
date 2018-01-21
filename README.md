@@ -32,8 +32,6 @@ Landing Page:
 Home Page Goals:
 
 ![Goal Cards and Percent](https://github.com/Lisamarie73187/goal-tracker/blob/master/src/assests/GoalCardswPercent.gif)
-```
-
 
 Goals Page:
 
