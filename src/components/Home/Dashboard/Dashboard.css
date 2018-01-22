@@ -1,6 +1,6 @@
 .wrappers{
     background-color: #333243;
-    width: 90vw;
+    width: 1200px;
     margin: auto;
     padding-bottom: 20px;
     box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);
@@ -8,12 +8,9 @@
 
 .firstRow {
     padding: 20px;
-    /* background-color: aquamarine; */
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	/* justify-content: center; */
-	/* align-items: baseline; */
 	align-content: stretch;
 }
 

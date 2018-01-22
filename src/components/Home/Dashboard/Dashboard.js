@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getGoals } from '../../../ducks/reducer'
 // import LineGraph from './LineGraph';
 import BarGraph from './BarGraph';
+import BarGraphDates from './BarGraphDates';
 
 
 
@@ -37,6 +38,7 @@ class Dashboard extends Component {
                     </div>
                     <div className="secondRow">
                         <div className="barGraph"><BarGraph/></div>
+                        <div className="barGraph"><BarGraphDates/></div>
                     </div>
                 </div>
             </div>

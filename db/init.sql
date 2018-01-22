@@ -28,7 +28,9 @@ CREATE TABLE subtask (
     subtaskname TEXT,
     completed BOOLEAN,
     date TEXT,
-    taskid INTEGER REFERENCES task(taskid)
+    completeddate TEXT,
+    taskid INTEGER REFERENCES task(taskid),
+    goalsid INTEGER REFERENCES goals(goalsid)
 );
 
 
