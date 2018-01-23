@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import radium from 'radium';
+import radium, {StyleRoot} from 'radium';
 import './Goal.css';
 
 
@@ -70,7 +70,9 @@ export class Goal extends Component {
     render() {
         const e = this.state.data
         return (
-            <div className="homePage">
+            <div>
+                <StyleRoot>
+                <div className="homePage">
                     <div key={e.goalsid}>
                         <Header/>
                         <Modal goal={e.goalsid} show={this.state.modalIsOpen} closed={this.closeModal}/>
@@ -92,6 +94,8 @@ export class Goal extends Component {
                         </div>
                         <Footer/>
                     </div>
+                </div>
+                </StyleRoot>
             </div>
         )
     }
@@ -117,7 +121,13 @@ const styleYo = {
         color: 'white',
         position: 'absolute',
         top: '112px',
-        right: '35px'
+        right: '35px',
+        '@media (max-width: 1024px)': {
+            top: '150px',
+        },
+        '@media (max-width: 768px)': {
+            top: '140px',
+        }
     },
     desc: {
         fontSize: '15pt',
@@ -139,4 +149,4 @@ const buttonTwo = {
 }
 
 
-export default radium(Goal)
+export default (Goal)

@@ -65,12 +65,16 @@ var styling = {
     color: 'white',
     fontFamily: 'Raleway',
     fontSize: '2em',
-    '@media (max-width: 360px)': {
+    '@media (max-width: 1024px)': {
+        fontSize: '30pt'
+      },
+      '@media (max-width: 768px)': {
+        fontSize: '25pt'
+      },
+    '@media (max-width: 414px)': {
         fontSize: '12pt',
-        // padding: '10px',
         top: '35%',
-        
-    }
+    },
     },
     logoText: {
         display: 'flex',
@@ -81,7 +85,11 @@ var styling = {
         color: 'white',
         fontFamily: 'Raleway',
         fontSize: '35pt',
-        '@media (max-width: 360px)': {
+        '@media (max-width: 414px)': {
+            fontSize: '15pt',
+            padding: '12px'
+        },
+        '@media (max-width: 375px)': {
             fontSize: '23pt',
             padding: '12px'
         }
@@ -89,15 +97,15 @@ var styling = {
     logoStyle: {
         width: '100px',
         height: 'auto',
-        '@media (max-width: 360px)': {
+        '@media (max-width: 412px)': {
             width: '80px',
             height: 'auto',
         }
     },
     buttons: {
-        '@media(max-width: 360px)': {
-            padding: '5px 10px',
-            fontSize: '15pt'
+        '@media(max-width: 414px)': {
+            padding: '10px 15px',
+            fontSize: '16pt'
         }
     }
 }

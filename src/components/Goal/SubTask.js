@@ -56,6 +56,7 @@ const textSize = {
 const cursor = {
     cursor: 'pointer',
     color: '#565656',
+    fontSize: '14pt'
 }
 
 export default SubTask

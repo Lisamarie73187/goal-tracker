@@ -134,7 +134,7 @@ const cardsLayout = {
     fontSize: '12pt',
     background: '#3F3E54',
     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)',
-    maxHeight: '600px',
+    maxHeight: '800px',
     overflow: 'scroll'
 }
 
@@ -155,7 +155,7 @@ const button = {
     fontFamily: 'Raleway',
     cursor: 'pointer',
     background: 'none',
-    color: 'white'
+    color: 'white',
 }
 
 

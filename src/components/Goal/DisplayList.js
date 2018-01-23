@@ -91,7 +91,7 @@ const button = {
 
 const inputOne = {
     border: 'none',
-    fontSize: '12pt',
+    fontSize: '14pt',
     outline: 'none',
     background: 'none',
     borderBottom: '1px solid black',
