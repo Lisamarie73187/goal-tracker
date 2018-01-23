@@ -14,15 +14,27 @@ class PieChart extends Component {
                     data: [],
                     backgroundColor: [
                     '#655fd7',
+                    '#ef766a',
+                    '#f2649b',
                     '#28c5ea',
-                    '#c353f5'
+                    '#c353f5',
+                    "#655fd7",
+                    '#ef766a'
                     ],
                     hoverBackgroundColor: [
-                    '#655fd7',
-                    '#28c5ea',
-                    '#c353f5'
+                    '#4a4acc',
+                    '#f75652',
+                    '#db3a8a',
+                    '#09b4c6',
+                    "#4a4acc",
+                    '#a246d3',
+                    'f75652'
                     ],
                     borderColor: [
+                    '#3f3e54',
+                    '#3f3e54',
+                    '#3f3e54',
+                    '#3f3e54',
                     '#3f3e54',
                     '#3f3e54',
                     '#3f3e54',
@@ -71,7 +83,7 @@ formatChartData(){
     render() {
         return (
             <div>
-                <Pie data={this.state.data2} 
+                <Pie data={this.state.data2} redraw
                 width={600}
                 height={400}/>
             </div>

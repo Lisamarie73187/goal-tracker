@@ -105,7 +105,7 @@ class BarGraphDates extends Component {
                                 ticks:{
                                     beginAtZero:true,
                                     suggestedMin: 0,
-                                    suggestedMax: 40,
+                                    suggestedMax: 10,
                                 },
                             }]
                         }

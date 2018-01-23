@@ -4,7 +4,7 @@ import { addSubTask, getTask } from '../../ducks/reducer'
 import axios from 'axios'
 
 import SubTask from './SubTask'
-import Utility from './Utility';
+// import Utility from './Utility';
 
 
 class Task extends Component {
@@ -93,7 +93,7 @@ class Task extends Component {
                                         style={inputOne}/>
                                 <button onClick={this.onSubmitSubTask} style={button}>Add</button>
                     </div>
-                    <Utility goalid={this.props.goalsid}/>
+                    {/* <Utility goalid={this.props.goalsid}/> */}
                 </div>
             </div>
         )
