@@ -38,6 +38,7 @@ class BarGraphDates extends Component {
                     arr.push(e.completeddate)
                 }
             })
+            console.log('dfsdf', arr)
                 var monday = []
                 var tuesday = []
                 var wed = []
@@ -90,6 +91,14 @@ class BarGraphDates extends Component {
                     width={550}
                     height={380}
                     options={{
+                        title: {
+                            display: true,
+                            text: 'Number of Tasks Completed By Day of the Week',
+                            fontColor: 'white'
+                        },
+                        legend: {
+                            display: false,
+                        },
                          maintainAspectRatio: true,
                          scales:{
                             yAxes:[{

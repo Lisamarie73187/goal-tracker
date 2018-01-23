@@ -8,76 +8,68 @@ class BarGraph extends Component {
     constructor(){
         super()
         this.state = {
-            data: [],
-            goalName: [],
-            dataLabels: [],
-            data1: {}
-        }
+            data1: {
+                    labels: [],
+                    datasets: [
+                            {   
+                                backgroundColor: ['#655fd7','#ef766a','#c353f5','#28c5ea','#655fd7','#655fd7','#655fd7'],
+                                borderWidth: 1,
+                                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                                barThickness: 1,
+                                hoverBorderColor: 'rgba(255,99,132,1)',
+                                data: []
+                            },    
+                            ],
+                        }
 
-    this.getData = this.getData.bind(this)
+        }
 }
 
 componentDidMount(){
-    this.getData()
+    this.getTheData()
 }
 
-getData(){
-    return axios.get('/api/goal/subtask').then( response => {
-        console.log('response.data',response.data)
-        this.setState({
-            data:response.data
-        })
-    }).then(() => {
-        this.state.data.map((e,i) => {
-            this.setState({
-                goalName: [...this.state.goalName, e.goalname]
-            })
-            console.log('goalName', this.state.goalName)
-        })
-    }).then(() => {
-        const unique =_.uniq(this.state.goalName)
-        this.setState({
-            dataLabels: unique
-        })
-        console.log('datalabels', this.state.dataLabels)
-    }).then(()=> {
-        var data1 = {
-            labels: [],
-            datasets: [
-                {   label: '# of Tasks',
-                    backgroundColor: ['#655fd7','#ef766a','#c353f5','#28c5ea','#655fd7','#655fd7','#655fd7'],
-                    borderWidth: 1,
-                    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                    hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: []
-                },
-                
-            ],
-        }
 
-        this.state.dataLabels.map((e,i) => {
-            data1.labels.push(e)
+    
+
+
+
+getTheData(){
+    axios.get(`api/goal/subtask`).then(response => {
+        console.log(response.data)
+        var goalNameArray = []
+        var goalName = []
+        // var arr = []
+        response.data.map(e => {
+            goalName.push(e.goalname)
+        })
+        console.log('goalnamearray',goalName)
+        // var goalNameArray = []
+        goalNameArray = _.uniq(goalName)
+        console.log('unique', goalNameArray)
+        goalNameArray.map(name => {
+            this.state.data1.labels.push(name)
             var arr = []
-            var lengthy = ''
-            this.state.data.map((s,i) =>{
-                if(s.goalname === e){
-                    arr.push(s.completed)
+            console.log('labels', this.state.data1.labels)
+            response.data.map(e => {
+                if(e.goalname === name){
+                    if(e.completed === true){
+                        arr.push(e.completed)
+                    }
                 }
-                console.log('arr', arr)
             })
-            lengthy = arr.length
-            data1.datasets[0].data.push(lengthy)
+            this.state.data1.datasets[0].data.push(arr.length)
+            console.log('arr', arr)
+            console.log('goalnamearray', goalNameArray)
         })
-            this.setState({
-                data1: data1
-            })
-            console.log('length', this.state.data1)
+        this.setState({
+            data1: this.state.data1
         })
+        
+    })
 }
 
-
-          
-    render() {
+        render() {
         return (
             <div className="barGraph">
             <HorizontalBar 
@@ -85,6 +77,14 @@ getData(){
                 width={500}
                 height={260}
                 options={{
+                    title: {
+                        display: true,
+                        text: 'Number of Tasks Completed by Goal',
+                        fontColor: 'white'
+                    },
+                    legend: {
+                        display: false
+                    },
                     maintainAspectRatio: true,
                     scales:{
                         xAxes:[{

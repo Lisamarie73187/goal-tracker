@@ -13,7 +13,8 @@ class Dashboard extends Component {
         super()
         this.state = {
             numberOfSubTasks: 0,
-            numberOfCompletedTasks: 0
+            numberOfCompletedTasks: 0,
+
         }
 
         this.getSubtaskGoals = this.getSubtaskGoals.bind(this)
@@ -24,7 +25,7 @@ class Dashboard extends Component {
     }
 
     getSubtaskGoals(){
-        axios.get('/api/goal/subtask').then( response => {
+        axios.get(`/api/goal/subtask`).then( response => {
             var arr = []
             console.log('?',response.data)
             response.data.map(e => {
@@ -42,24 +43,25 @@ class Dashboard extends Component {
     
 
     render() {
+       
         return (
             <div>
                 <div className="wrappers">
                     <div className="firstRow">
                         <div>
-                            <div className="boxer">
+                            <div className="boxerOne">
                                 <h1 className="textyText">Number of <br/> Goals </h1>
                                 <div className="numberGoals">{this.props.data.length}</div>
                             </div>
                         </div>
                         <div>
-                            <div className="boxer">
+                            <div className="boxerTwo">
                                 <h1 className="textyText">Number of <br/>Tasks </h1>
                                 <div className="numberGoals">{this.state.numberOfSubTasks}</div>
                             </div>
                         </div>
                         <div>
-                            <div className="boxer">
+                            <div className="boxerThree">
                                 <h1 className="textyText">Number of Completed </h1>
                                 <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
                             </div>
@@ -81,7 +83,7 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     return {
-        data: state.data
+        data: state.data,
     }
 }
 
