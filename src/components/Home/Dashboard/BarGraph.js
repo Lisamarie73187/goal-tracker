@@ -99,10 +99,6 @@ getTheData(){
     }
 }
 
-// const size = {
-//     width: '40vw',
-//     backgroundColor: '#3f3e54'
-// }
 
 
 export default BarGraph;

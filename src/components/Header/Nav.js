@@ -19,12 +19,6 @@ const color = {
     color: 'white',
     paddingRight: '20px',
     fontFamily: 'Raleway serif',
-    '@media (max-width: 1024px)': {
-        fontSize: '23pt',
-    },
-    '@media (max-width: 768px)': {
-        fontSize: '20pt',
-    }
 }
 
 

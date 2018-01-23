@@ -122,12 +122,6 @@ const styleYo = {
         position: 'absolute',
         top: '112px',
         right: '35px',
-        '@media (max-width: 1024px)': {
-            top: '150px',
-        },
-        '@media (max-width: 768px)': {
-            top: '140px',
-        }
     },
     desc: {
         fontSize: '15pt',

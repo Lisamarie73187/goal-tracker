@@ -43,36 +43,18 @@ const layout = {
     paddingLeft: '30px',
     paddingTop: '10px',
     color: 'white',
-    '@media (max-width: 1024px)': {
-      fontSize: '23pt',
-  },
- 
-    '@media (max-width: 412px)': {
-      paddingTop: '1px',
-      paddingLeft: '6px'
-    }
 }
 
 const texty = {
     color: 'white',
     float: 'right',
     padding: '20px',
-    '@media (max-width: 768px)': {
-      fontSize: '17pt',
-  },
-    '@media (max-width: 412px)': {
-      fontSize: '16px;'
-    },
-    
 }
-
-
 const picture = {
     borderRadius: '50%',
-    '@media (max-width: 360px)': {
-      display: 'none'
-    }
 }
+
+
 const mapDispatchToProps = {
     login: login,
   }
