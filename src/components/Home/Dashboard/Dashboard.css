@@ -7,29 +7,31 @@
 }
 
 .firstRow {
-    padding: 20px;
+    padding-top: 20px;
     display: flex;
-	flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
 	flex-wrap: nowrap;
 	align-content: stretch;
 }
 
 .secondRow {
     /* background-color: rgb(48, 117, 94); */
-    display: flex;
+    transform: translateY(-40px);
+	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-around;
-	align-items: center; 
-    align-content: stretch; 
+	align-items: baseline;
+	align-content: stretch;
 }
 
 .size{
     width: 50vw;
 }
 .boxer {
-    margin: 20px;
-    width: 300px;
+    margin: 10px;
+    width: 150px;
     padding: 10px 20px;
     background-color: #3f3e54;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
@@ -46,13 +48,18 @@
 
 .numberGoals {
     color: #fd8c7a;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
-    font-size: 30pt;
+    font-size: 50pt;
 }
 
 .barGraph {
-    width: 500px;
+    margin: 20px;
     background-color: #3f3e54;
-    box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
+}
+
+.pie{
+    width: 400px;
+    margin-right: 50px;
+    text-align: center;
 }

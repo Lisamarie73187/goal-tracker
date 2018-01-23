@@ -87,10 +87,19 @@ class BarGraphDates extends Component {
             <div>
                 <Bar 
                     data={this.state.data2} 
-                    width={150}
-                    height={100}
+                    width={550}
+                    height={380}
                     options={{
-                         maintainAspectRatio: true
+                         maintainAspectRatio: true,
+                         scales:{
+                            yAxes:[{
+                                ticks:{
+                                    beginAtZero:true,
+                                    suggestedMin: 0,
+                                    suggestedMax: 40,
+                                },
+                            }]
+                        }
                     }}
                     />
             </div>

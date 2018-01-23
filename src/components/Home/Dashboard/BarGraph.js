@@ -82,8 +82,8 @@ getData(){
             <div className="barGraph">
             <HorizontalBar 
                 data={this.state.data1} redraw
-                width={200}
-                height={100}
+                width={500}
+                height={260}
                 options={{
                     maintainAspectRatio: true,
                     scales:{
