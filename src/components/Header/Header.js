@@ -8,7 +8,7 @@ import AccountInfo from '../Header/AccountInfo'
 const Header = (props) => {
     return (
         <div>
-            <Link to="/"><img style={image} src={logo} alt="logo"/></Link>
+            <Link to="/"><img className="image" src={logo} alt="logo"/></Link>
             <AccountInfo/>
             <div className="nav">
                 <Nav tagz="Home" linky="/home"/>
@@ -22,9 +22,4 @@ const Header = (props) => {
 
 export default Header;
 
-const image = {
-    float: 'left',
-    height: '65px',
-    margin: '0'
-}
 

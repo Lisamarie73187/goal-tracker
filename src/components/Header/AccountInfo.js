@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import radium from 'radium'
 // import axios from 'axios';
 import { login } from '../../ducks/reducer';
 
@@ -43,10 +44,18 @@ const layout = {
 const texty = {
     color: 'white',
     float: 'right',
-    padding: '20px'
+    padding: '20px',
+    '@media screen and (min-width: 64em)': {
+      fontSize: '10px;'
+    }
 }
+
+
 const picture = {
-    borderRadius: '50%'
+    borderRadius: '50%',
+    '@media screen and (min-width: 64em)': {
+      display: 'none'
+    }
 }
 const mapDispatchToProps = {
     login: login,

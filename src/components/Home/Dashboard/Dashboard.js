@@ -28,7 +28,7 @@ class Dashboard extends Component {
         axios.get(`/api/goal/subtask`).then( response => {
             var arr = []
             console.log('?',response.data)
-            response.data.map(e => {
+            response.data.forEach(e => {
                 if(e.completed){
                     arr.push(e.completed)
                 }

@@ -5,6 +5,9 @@ import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
 import { login } from '../../ducks/reducer';
 import { connect } from 'react-redux';
+import Radium, { StyleRoot } from 'radium'
+
+
 
 
 class LandingPage extends Component {
@@ -34,16 +37,18 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
+            <StyleRoot>
                     <div className="hero">
                         <div style={styling.logoText}>
-                        <img style={styling.logoStyle} src={logo} alt="logo"/> 
+                        <div><img style={styling.logoStyle} src={logo} alt="logo"/> </div>
                         <div style={styling.alignText}>Goalsy</div>
-                    </div>
+                        </div>
                         <div style={styling.base}>
                         <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
-                        <button onClick={this.login} className="startButton">Get Started</button>
+                        <button onClick={this.login} style={styling.buttons} className="startButton">Get Started</button>
                     </div>
                 </div>
+        </StyleRoot>
         </div>
         )
     }
@@ -59,7 +64,13 @@ var styling = {
     transform: 'translate(-50%, -50%)',
     color: 'white',
     fontFamily: 'Raleway',
-    fontSize: '2em'
+    fontSize: '2em',
+    '@media (max-width: 360px)': {
+        fontSize: '12pt',
+        // padding: '10px',
+        top: '35%',
+        
+    }
     },
     logoText: {
         display: 'flex',
@@ -70,10 +81,24 @@ var styling = {
         color: 'white',
         fontFamily: 'Raleway',
         fontSize: '35pt',
+        '@media (max-width: 360px)': {
+            fontSize: '23pt',
+            padding: '12px'
+        }
     },
     logoStyle: {
-        height: '90px',
-        width: '140px'
+        width: '100px',
+        height: 'auto',
+        '@media (max-width: 360px)': {
+            width: '80px',
+            height: 'auto',
+        }
+    },
+    buttons: {
+        '@media(max-width: 360px)': {
+            padding: '5px 10px',
+            fontSize: '15pt'
+        }
     }
 }
 
@@ -89,4 +114,6 @@ const mapDispatchToProps = {
     login: login,
   };
   
+
+
   export default connect(null, mapDispatchToProps)(LandingPage);

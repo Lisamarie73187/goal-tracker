@@ -9,5 +9,14 @@
 	font-size: 16pt;
 }
 
+.image {
+    float: left;
+    height: 65px;
+    margin: 0;
+}
 
-
+@media (max-width: 361px) {
+	.image{
+	 height: 30px;
+	}
+ }

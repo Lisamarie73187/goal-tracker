@@ -9,17 +9,17 @@ import radium from 'radium'
 const Nav = (props) => {
     return (  
         <div>
-             <Link className="noDecor" to={props.linky}><h4 style={color}>{props.tagz}</h4></Link>
+             <Link className="noDecor" to={props.linky}><h4 className="color">{props.tagz}</h4></Link>
         </div>)
 }
  
 
 
-const color = {
-    color: 'white',
-    paddingRight: '20px',
-    fontFamily: "'Raleway','serif'",
-}
+// const color = {
+//     color: 'white',
+//     paddingRight: '20px',
+//     fontFamily: "'Raleway','serif'",
+// }
 
 
 export default radium(Nav)

@@ -39,19 +39,17 @@ getTheData(){
         console.log(response.data)
         var goalNameArray = []
         var goalName = []
-        // var arr = []
-        response.data.map(e => {
+        response.data.forEach(e => {
             goalName.push(e.goalname)
         })
         console.log('goalnamearray',goalName)
-        // var goalNameArray = []
         goalNameArray = _.uniq(goalName)
         console.log('unique', goalNameArray)
-        goalNameArray.map(name => {
+        goalNameArray.forEach(name => {
             this.state.data1.labels.push(name)
             var arr = []
             console.log('labels', this.state.data1.labels)
-            response.data.map(e => {
+            response.data.forEach(e => {
                 if(e.goalname === name){
                     if(e.completed === true){
                         arr.push(e.completed)
@@ -75,7 +73,7 @@ getTheData(){
             <HorizontalBar 
                 data={this.state.data1} redraw
                 width={500}
-                height={260}
+                height={300}
                 options={{
                     title: {
                         display: true,

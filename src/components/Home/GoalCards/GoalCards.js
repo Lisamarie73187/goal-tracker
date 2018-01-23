@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './GoalCards.css';
 import ProgressBar from './ProgressBar';
-import _ from 'lodash';
+
 
 
 

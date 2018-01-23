@@ -54,17 +54,17 @@ formatChartData(){
         console.log(response.data)
         var goalNameArray = []
         var goalName = []
-        response.data.map(e => {
+        response.data.forEach(e => {
             goalName.push(e.goalname)
         })
         console.log('goalnamearray',goalName)
         goalNameArray = _.uniq(goalName)
         console.log('unique', goalNameArray)
-        goalNameArray.map(name => {
+        goalNameArray.forEach(name => {
             this.state.data2.labels.push(name)
             var arr = []
             // console.log('labels', this.state.data1.labels)
-            response.data.map(e => {
+            response.data.forEach(e => {
                 if(e.goalname === name){
                     arr.push(e.completed)
                 }

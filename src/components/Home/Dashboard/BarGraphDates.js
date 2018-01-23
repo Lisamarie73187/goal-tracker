@@ -33,7 +33,7 @@ class BarGraphDates extends Component {
             console.log('response', response.data)
             var arr = []
             var completedTotals = []
-            response.data.map(e => {
+            response.data.forEach(e => {
                 if(e.completed){
                     arr.push(e.completeddate)
                 }
@@ -89,7 +89,7 @@ class BarGraphDates extends Component {
                 <Bar 
                     data={this.state.data2} 
                     width={550}
-                    height={380}
+                    height={400}
                     options={{
                         title: {
                             display: true,
