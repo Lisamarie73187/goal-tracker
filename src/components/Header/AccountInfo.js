@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Radium, { StyleRoot } from 'radium'
+import { StyleRoot } from 'radium'
 // import axios from 'axios';
 import { login } from '../../ducks/reducer';
 

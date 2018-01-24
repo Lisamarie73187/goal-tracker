@@ -20,7 +20,7 @@ class Dashboard extends Component {
         this.getSubtaskGoals = this.getSubtaskGoals.bind(this)
     }
     componentDidMount() {
-        this.props.getGoals(),
+        this.props.getGoals()
         this.getSubtaskGoals()
     }
 

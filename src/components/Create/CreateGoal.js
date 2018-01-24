@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGoal } from '../../ducks/reducer'
 import { Link } from 'react-router-dom'
-import radium, {StyleRoot} from 'radium'
+import {StyleRoot} from 'radium'
 
 
 import Header from '../Header/Header';

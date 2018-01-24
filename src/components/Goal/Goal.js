@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import radium, {StyleRoot} from 'radium';
+import {StyleRoot} from 'radium';
 import './Goal.css';
 
 

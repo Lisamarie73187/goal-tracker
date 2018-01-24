@@ -29,6 +29,31 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A',endColorstr='#F2649B' , GradientType=1);
 }
 
+
+.buttonPulse{    
+	animation-name: pulse;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,.91,.82,.32);
+    animation-fill-mode: both;
+    animation-delay: 3s;
+ }
+ 
+ @keyframes pulse{
+    2%   {transform: rotate(0deg);
+            transform: scale(.9);}
+    3%   {transform: rotate(0deg);}
+    4%   {transform: rotate(0deg);}
+    5%   {transform: rotate(0deg);}
+    6%   {transform: rotate(-5deg);}
+    8%   {transform: rotate(3deg);}
+    9%  {transform: rotate(0deg);
+        transform: scale(1.2);}
+    9%  {transform: rotate(0deg);}
+    90%, 100% {transform: rotate(0deg);}
+ }
+
+
 .startButton:hover {
     background : -moz-linear-gradient(0% 50% 0deg,rgba(253, 140, 122, 1) 0%,rgba(253, 130, 140, 1) 39.9%,rgba(253, 117, 162, 1) 97.1%);
     background : -webkit-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
@@ -63,3 +88,26 @@
         padding: 10px 20px;
     }
 }
+
+.pulse {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-name: smart;
+    font-size: 1.4em;
+    color:#ff8c69;
+}
+
+@keyframes smart {
+    0%   {color: #f79e63;}
+    25%   {color: #ef766a;}
+    50%   {color: #f2649b;}
+    75%   {color: #ef766a;}
+    100%   {color: #f79e63;}
+}
+
+
+
+
+

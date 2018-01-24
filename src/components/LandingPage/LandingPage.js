@@ -5,7 +5,7 @@ import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
 import { login } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-import Radium, { StyleRoot } from 'radium'
+import { StyleRoot } from 'radium'
 
 
 
@@ -44,8 +44,10 @@ class LandingPage extends Component {
                         <div style={styling.alignText}>Goalsy</div>
                         </div>
                         <div style={styling.base}>
-                        <h1>The <span style={yellow}>Smart</span> Way to Track Your Goals</h1>
+                        <h1>The <span className="pulse">Smart</span> Way to Track Your Goals</h1>
+                        <div className="buttonPulse">
                         <button onClick={this.login} style={styling.buttons} className="startButton">Get Started</button>
+                        </div>
                     </div>
                 </div>
         </StyleRoot>
@@ -70,10 +72,7 @@ var styling = {
     },
     '@media (max-width: 527px)': {
         fontSize: '1.3em'
-    },
-    '@media (max-width: 527px)': {
-        fontSize: '1em'
-    }
+        },
     },
     logoText: {
         display: 'flex',
@@ -95,9 +94,6 @@ var styling = {
     },
 }
 
-var yellow = {
-    color:'#ff8c69'
-}
 
 
 

@@ -13,7 +13,7 @@ class BarGraph extends Component {
                     labels: [],
                     datasets: [
                             {   
-                                backgroundColor: ['#655fd7','#ef766a','#c353f5','#28c5ea',"#4a4acc",'#a246d3','f75652'],
+                                backgroundColor: ["#4a4acc",'#c353f5','f75652','#655fd7','#ef766a','#c353f5','#28c5ea',"#4a4acc",'#a246d3','f75652'],
                                 borderWidth: 1,
                                 hoverBackgroundColor: ['#4a4acc', '#f75652', '#09b4c6', '#09b4c6', '#4a4acc', '#c353f5',"#655fd7",'#ef766a'],
                                 barThickness: 1,

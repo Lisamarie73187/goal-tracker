@@ -70,7 +70,7 @@ class BarGraphDates extends Component {
                      datasets: [
                       {
                         label: '# of Completed Tasks by Day of Week',
-                        backgroundColor: ['#655fd7','#ef766a','#c353f5','#28c5ea','#655fd7','#655fd7','#655fd7'],
+                        backgroundColor: ['#28c5ea','#c353f5','#655fd7','#ef766a','#655fd7','#655fd7','#655fd7'],
                         borderWidth: 1,
                         hoverBackgroundColor: this.state.hoverColor,
                         hoverBorderColor: this.state.hoverColor,

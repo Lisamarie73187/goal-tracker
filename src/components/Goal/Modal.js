@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./Modal.css";
 import axios from 'axios'
-import radium, {StyleRoot} from 'radium'
+import {StyleRoot} from 'radium'
 
 
 class Modal extends Component {

@@ -4,6 +4,8 @@ import axios from 'axios'
 import _ from 'lodash'
 
 
+
+
 class PieChart extends Component {
     constructor(props) {
         super(props)
@@ -19,7 +21,7 @@ class PieChart extends Component {
                     '#28c5ea',
                     '#c353f5',
                     "#655fd7",
-                    '#ef766a'
+                    '#ef766a',
                     ],
                     hoverBackgroundColor: [
                     '#4a4acc',
