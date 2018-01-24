@@ -74,8 +74,8 @@ getTheData(){
             <div className="barGraphOne">
             <HorizontalBar 
                 data={this.state.data1} redraw
-                width={500}
-                height={300}
+                width={480}
+                height={270}
                 options={{
                     title: {
                         display: true,
@@ -100,8 +100,8 @@ getTheData(){
              <div className="barGraphTwo">
              <HorizontalBar 
                  data={this.state.data1} redraw
-                 width={500}
-                 height={300}
+                 width={400}
+                 height={230}
                  options={{
                      title: {
                          display: true,

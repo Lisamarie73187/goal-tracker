@@ -43,15 +43,28 @@ const layout = {
     paddingLeft: '30px',
     paddingTop: '10px',
     color: 'white',
+    '@media (max-width: 40em)': {
+      padding: '10px 3px',
+    },
+    '@media (max-width: 30em)': {
+      display: 'none'
+    }
 }
 
 const texty = {
     color: 'white',
     float: 'right',
     padding: '20px',
+    '@media (max-width: 40em)': {
+      padding: '20px 0px',
+      paddingLeft: '0px'
+    }
 }
 const picture = {
     borderRadius: '50%',
+    '@media (max-width: 40em)': {
+      display: 'none'
+    }
 }
 
 

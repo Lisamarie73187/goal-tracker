@@ -48,24 +48,24 @@ class Dashboard extends Component {
             <div>
                 <div className="wrappers">
                     <div className="firstRow">
-                        <div>
+                      
                             <div className="boxerOne">
                                 <h1 className="textyText">Number of <br/> Goals </h1>
                                 <div className="numberGoals">{this.props.data.length}</div>
                             </div>
-                        </div>
-                        <div>
+                       
+                        
                             <div className="boxerTwo">
                                 <h1 className="textyText">Number of <br/>Tasks </h1>
                                 <div className="numberGoals">{this.state.numberOfSubTasks}</div>
                             </div>
-                        </div>
-                        <div>
+                   
+                   
                             <div className="boxerThree">
-                                <h1 className="textyText">Number of Completed </h1>
+                                <h1 className="textyText">Number of <br/>Completed </h1>
                                 <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
                             </div>
-                        </div>
+                     
                         <div className="pie">
                             <div className="textyText">Number of Tasks per Goal</div>
                             <PieChart/>

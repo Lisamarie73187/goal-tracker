@@ -57,3 +57,9 @@
 .noDecor {
     text-decoration: none;
 }
+
+@media(max-width: 527px){
+    .startButton{
+        padding: 10px 20px;
+    }
+}

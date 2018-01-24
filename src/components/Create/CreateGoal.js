@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGoal } from '../../ducks/reducer'
 import { Link } from 'react-router-dom'
+import radium, {StyleRoot} from 'radium'
 
 
 import Header from '../Header/Header';
@@ -40,7 +41,9 @@ class CreateGoal extends Component {
 
     render() {
         return (
-            <div className="homePage">
+            <div>
+                <StyleRoot>
+                <div className="homePage">
                 <Header/>
                 <div className="rapperLarge">
                     <div className="titleText">Create your Goal</div>
@@ -84,6 +87,8 @@ class CreateGoal extends Component {
                 </div>
                 <Footer/>
             </div>
+            </StyleRoot>
+            </div>
         )
     }
 }
@@ -91,7 +96,11 @@ class CreateGoal extends Component {
 
 const buttonLarger = {
     fontSize: '15pt',
-    width: '150px'
+    width: '150px',
+    '@media (max-width: 453px)': {
+        width: '100px',
+        fontSize: '10pt'
+    }
 }
 
 function mapStateToProps(state) {

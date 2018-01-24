@@ -65,16 +65,29 @@ var styling = {
     color: 'white',
     fontFamily: 'Raleway',
     fontSize: '2em',
+    '@media (max-width: 730px)': {
+        fontSize: '1.6em'
+    },
+    '@media (max-width: 527px)': {
+        fontSize: '1.3em'
+    },
+    '@media (max-width: 527px)': {
+        fontSize: '1em'
+    }
     },
     logoText: {
         display: 'flex',
         flexDirection: 'row',
+       
     },
     alignText: {
         padding: '20px',
         color: 'white',
         fontFamily: 'Raleway',
         fontSize: '35pt',
+        '@media (max-width: 527px)': {
+            fontSize: '20pt'
+        }
     },
     logoStyle: {
         width: '100px',

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./Modal.css";
 import axios from 'axios'
+import radium, {StyleRoot} from 'radium'
 
 
 class Modal extends Component {
@@ -53,6 +54,7 @@ class Modal extends Component {
         
         return (
             <div>
+                <StyleRoot>
                 <div className={cssClasses.join(' ')}>
                     <div className="titleText" >Edit</div>
                 <form className="formyForm" >
@@ -86,6 +88,7 @@ class Modal extends Component {
                         </div>
                     </form>
                 </div>
+                </StyleRoot>
             </div>
         )
     }
@@ -93,7 +96,11 @@ class Modal extends Component {
 
 const buttonLarger = {
     fontSize: '15pt',
-    width: '150px'
+    width: '150px',
+    '@media (max-width: 800px)': {
+        width: '100px',
+        fontSize: '10pt'
+    }
 }
 
 export default Modal

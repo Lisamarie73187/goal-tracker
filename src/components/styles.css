@@ -50,3 +50,28 @@ p {
 .noDecor {
   text-decoration: none;
 }
+
+@media (max-width: 730px){
+  .inputs {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 20pt;
+    width: 50vw;
+  }
+  .datess {
+    width: 23vw;
+  }
+}
+@media (max-width: 538px){
+  .inputs {
+    font-size: 15pt;
+    width: 60vw;
+  }
+  .datess {
+    width: 27vw;
+    font-size: 15pt;
+  }
+  p {
+    margin: 15px;
+  }
+}
