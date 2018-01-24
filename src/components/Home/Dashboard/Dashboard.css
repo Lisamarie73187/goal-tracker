@@ -102,11 +102,33 @@
     margin: 20px;
     background-color: #3f3e54;
 }
+.barGraphOne {
+    margin: 20px;
+    background-color: #3f3e54;
+}
+.barGraphTwo {
+    display: none;
+}
+.barGraphThree {
+   display: none;
+}
 
 .pie{
     width: 400px;
     margin-right: 50px;
     text-align: center;
+}
+
+@media (min-width: 1230px){
+    .barGraphOne {
+        display: none;
+    }
+    .barGraphTwo {
+        display: block;
+    }
+    .barGraphThree {
+       display: none;
+    }
 }
 /* 
 @media (min-width: 1350px) {

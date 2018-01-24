@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HorizontalBar } from 'react-chartjs-2'
 import axios from 'axios'
 import _ from 'lodash';
+import './Dashboard.css'
 
 
 class BarGraph extends Component {
@@ -69,7 +70,8 @@ getTheData(){
 
         render() {
         return (
-            <div className="barGraph">
+            <div>
+            <div className="barGraphOne">
             <HorizontalBar 
                 data={this.state.data1} redraw
                 width={500}
@@ -95,6 +97,59 @@ getTheData(){
                     }
             }}/>
             </div>
+             <div className="barGraphTwo">
+             <HorizontalBar 
+                 data={this.state.data1} redraw
+                 width={500}
+                 height={300}
+                 options={{
+                     title: {
+                         display: true,
+                         text: 'Number of Tasks Completed by Goal',
+                         fontColor: 'white'
+                     },
+                     legend: {
+                         display: false
+                     },
+                     maintainAspectRatio: true,
+                     scales:{
+                         xAxes:[{
+                             ticks:{
+                                 beginAtZero:true,
+                                 suggestedMin: 0,
+                                 suggestedMax: 10,
+                             },
+                         }]
+                     }
+             }}/>
+             </div>
+                <div className="barGraphThree">
+                <HorizontalBar 
+                  data={this.state.data1} redraw
+                  width={500}
+                  height={300}
+                  options={{
+                      title: {
+                          display: true,
+                          text: 'Number of Tasks Completed by Goal',
+                          fontColor: 'white'
+                      },
+                      legend: {
+                          display: false
+                      },
+                      maintainAspectRatio: true,
+                      scales:{
+                          xAxes:[{
+                              ticks:{
+                                  beginAtZero:true,
+                                  suggestedMin: 0,
+                                  suggestedMax: 10,
+                              },
+                          }]
+                      }
+                     }}/>
+                </div>
+              </div>
         );
     }
 }
