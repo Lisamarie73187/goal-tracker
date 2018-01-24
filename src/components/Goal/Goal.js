@@ -28,13 +28,22 @@ export class Goal extends Component {
         this.deleteGoal = this.deleteGoal.bind(this)
     }
 
-    componentDidMount() {
-        return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
-            this.setState({
-                data: res.data
-            })
-        })
+    componentWillUnmount(){
+        console.log("goal is unmounting")
     }
+
+    componentWillMount(){
+        console.log("goal is mounting")
+
+    }
+
+    // componentDidMount() {
+    //     return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
+    //         this.setState({
+    //             data: res.data
+    //         })
+    //     })
+    // }
     deleteGoal(){
         return axios.delete(`/api/goal/${this.props.match.params.goalsid}`).then(results=>{
             this.props.history.push('/home')
@@ -68,6 +77,7 @@ export class Goal extends Component {
       }
 
     render() {
+        console.log('goal rendering')
         const e = this.state.data
         return (
             <div>
@@ -90,7 +100,10 @@ export class Goal extends Component {
                                 </div>
                                 </div>
                             </div>
-                            <DisplayList goalsid={this.props.match.params.goalsid}/>
+                            {e.goalsid ? <DisplayList goalsid={this.props.match.params.goalsid}/> : 
+                            <div style={backdrop}>
+                                <div style={loading}>Loading...</div>
+                            </div>}
                         </div>
                         <Footer/>
                     </div>
@@ -142,5 +155,18 @@ const buttonTwo = {
     marginTop: '20px'
 }
 
+const backdrop = {
+    height: '100%',
+    backgroundColor: 'rgb(41,40,57)',
+    zIndex: '200',
+}
 
-export default (Goal)
+const loading = {
+    height: '200px',
+    width: '200px',
+    margin: 'auto',
+    backgroundColor: '#3f3e54',
+    zIndex: '200'
+}
+
+export default Goal

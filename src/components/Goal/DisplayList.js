@@ -9,7 +9,7 @@ class DisplayList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-                taskname: '',
+                taskNameInput: '',
                 date: '',
                 data: '',
                 tasks: []
@@ -21,18 +21,24 @@ class DisplayList extends Component {
     handleChange(value){
         console.log(value)
         this.setState({
-            taskname: value
+            taskNameInput: value
         })
     }
   
+    
     componentDidMount(){
         this.props.getTask(this.props.goalsid)
+        console.log('displaylist is mounting')
     }
 
+    componentWillUnmount(){
+        console.log("display List")
+    }
+  
 
     submitTask(){
         this.props.addTask({
-            taskname: this.state.taskname, 
+            taskname: this.state.taskNameInput, 
             completed: false, 
             date: new Date(), 
             data: this.props.goalsid})
@@ -46,21 +52,21 @@ class DisplayList extends Component {
 
 
     render() {
-        var taskComponent = this.props.tasks.map((e) => {
-            return (
-             <div key={e.taskid}> <Task taskName={e.taskname} id={e.taskid} goalsid={this.props.goalsid}/></div>
-            )
-        })
+        console.log('displaylist is rendering')
         return (
             <div style={layout}>
-               {taskComponent}
+                {this.props.tasks.map((e) => {
+                    return (
+                     <div key={e.taskid}> <Task taskName={e.taskname} id={e.taskid} goalsid={this.props.goalsid}/></div>
+                    )
+                })}
                  <div>
                     <div style={inputRapper}>
-                        <input value={this.state.taskname}
+                        <input value={this.state.taskNameInput}
                                 style={inputOne}
                                 placeholder="Add Task"
                                 onChange={(e) => this.handleChange(e.target.value)}/>
-                        <button style={button} onClick={this.submitTask}>Add</button>
+                        <button style={button} onClick={() => this.submitTask()}>Add</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +124,7 @@ function mapStateToProps(state) {
     return {
       
         tasks: state.tasks,
-        task: state.task
+        // task: state.task
     }
 }
 const mapDispatchToProps = {

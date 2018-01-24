@@ -91,7 +91,7 @@ class Task extends Component {
                                         onChange={(e) => this.handleSubTaskChange(e.target.value)}
                                         placeholder="Add More Tasks"
                                         style={inputOne}/>
-                                <button onClick={this.onSubmitSubTask} style={button}>Add</button>
+                                <button onClick={() => this.onSubmitSubTask()} style={button}>Add</button>
                     </div>
                 </div>
             </div>
