@@ -4,16 +4,17 @@ const bodyParser = require('body-parser')
 const massive = require('massive')
 const session = require('express-session');
 const axios = require ('axios')
+const path = require('path')
 
 
 const display_ctr = require('./controllers/display_controller');
 
 
 
-
 const app = express();
 
-// app.use(cors());
+app.use( express.static( `${__dirname}/../build` ) );
+
 
 app.use(bodyParser.json());
 app.use(session({
@@ -39,12 +40,6 @@ massive(process.env.CONNECTION_STRING)
       }
     }).then(response => {
       const userData = response.data;
-      // const userForDatabase = {
-      //   name: userData.name,
-      //   email: userData.email,
-      //   auth0_id: userData.user_id,
-      //   pictureurl: userData.picture
-      // };
       app.get('db').find_user(userData.user_id).then(users => {
         if (users.length) {
           req.session.user = users[0]
@@ -91,6 +86,10 @@ app.get('/api/subtask/percent/:goalsid', display_ctr.getPercent)
 
 const db = app.get('db');
 
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 const port = 3003;
