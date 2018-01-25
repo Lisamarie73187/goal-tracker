@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {StyleRoot} from 'radium';
 import './Goal.css';
+import ReactLoading from 'react-loading';
 
 
 import Header from '../Header/Header';
@@ -26,6 +27,8 @@ export class Goal extends Component {
         }
 
         this.deleteGoal = this.deleteGoal.bind(this)
+        this.closeModal = this.closeModal.bind(this)
+        this.showModal = this.showModal.bind(this)
     }
 
     componentWillUnmount(){
@@ -37,13 +40,14 @@ export class Goal extends Component {
 
     }
 
-    // componentDidMount() {
-    //     return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
-    //         this.setState({
-    //             data: res.data
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        return axios.get(`/api/goal/${this.props.match.params.goalsid}`).then(res => {
+            this.setState({
+                data: res.data
+            })
+        })
+    }
+
     deleteGoal(){
         return axios.delete(`/api/goal/${this.props.match.params.goalsid}`).then(results=>{
             this.props.history.push('/home')
@@ -69,10 +73,12 @@ export class Goal extends Component {
     }
 
     showModal = () => {
+        console.log('ismodalopen?')
         this.setState({modalIsOpen: true});
       }
     
-      closeModal = () => {
+    closeModal = () => {
+        console.log('ismodalclosed?')
         this.setState({modalIsOpen: false});
       }
 
@@ -83,6 +89,7 @@ export class Goal extends Component {
             <div>
                 <StyleRoot>
                 <div className="homePage">
+                    {e.goalsid ? 
                     <div key={e.goalsid}>
                         <Header/>
                         <Modal goal={e.goalsid} show={this.state.modalIsOpen} closed={this.closeModal}/>
@@ -96,17 +103,20 @@ export class Goal extends Component {
                                 Goal Date: {e.enddate}
                                 <div style={buttonTwo}>
                                 <button className="buttonGoal" style={button} onClick={this.deleteGoal}>Delete Goal</button>
-                                <button onClick={this.showModal} style={button} className="buttonGoal">Edit</button>
+                                <button onClick={() => this.showModal()} style={button} className="buttonGoal">Edit</button>
                                 </div>
                                 </div>
                             </div>
                             {e.goalsid ? <DisplayList goalsid={this.props.match.params.goalsid}/> : 
                             <div style={backdrop}>
-                                <div style={loading}>Loading...</div>
+                                <div><ReactLoading type="bubbles" color="white"/></div>
                             </div>}
                         </div>
                         <Footer/>
                     </div>
+                            :  <div className="loadingBackDrop">
+                                    <div><div><ReactLoading type="bubbles" color="white" width="200px" height="200px"/></div></div>
+                                </div>}
                 </div>
                 </StyleRoot>
             </div>
@@ -156,17 +166,9 @@ const buttonTwo = {
 }
 
 const backdrop = {
-    height: '100%',
+    height: '100vh',
     backgroundColor: 'rgb(41,40,57)',
     zIndex: '200',
-}
-
-const loading = {
-    height: '200px',
-    width: '200px',
-    margin: 'auto',
-    backgroundColor: '#3f3e54',
-    zIndex: '200'
 }
 
 export default Goal

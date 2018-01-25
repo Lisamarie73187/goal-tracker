@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Dashboard.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import ReactLoading from 'react-loading';
 import { getGoals } from '../../../ducks/reducer'
 import BarGraph from './BarGraph';
 import BarGraphDates from './BarGraphDates';
@@ -48,37 +49,54 @@ class Dashboard extends Component {
             <div>
                 <div className="wrappers">
                     <div className="firstRow">
-                      
                             <div className="boxerOne">
-                                <h1 className="textyText">Number of <br/> Goals </h1>
-                                <div className="numberGoals">{this.props.data.length}</div>
+                            {this.props.data ? 
+                                <div>
+                                    <h1 className="textyText">Number of <br/> Goals </h1>
+                                    <div className="numberGoals">{this.props.data.length}</div>
+                                </div> : <div><ReactLoading type="bubbles" color="white" height='67' width='35' /></div>}
                             </div>
-                       
-                        
                             <div className="boxerTwo">
-                                <h1 className="textyText">Number of <br/>Tasks </h1>
-                                <div className="numberGoals">{this.state.numberOfSubTasks}</div>
+                            {this.state.numberOfCompletedTasks ? 
+                                <div>
+                                    <h1 className="textyText">Number of <br/>Tasks </h1>
+                                    <div className="numberGoals">{this.state.numberOfSubTasks}</div>
+                                </div>
+                                : <div><ReactLoading type="bubbles" color="white" height='67' width='35' /></div>}
                             </div>
-                   
-                   
                             <div className="boxerThree">
-                                <h1 className="textyText">Number of <br/>Completed </h1>
-                                <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
+                            {this.state.numberOfCompletedTasks ? 
+                                <div>
+                                    <h1 className="textyText">Number of <br/>Completed </h1>
+                                    <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
+                                </div> 
+                                : <div>
+                                <ReactLoading type="bubbles" color="white" height='67' width='35' />
+                                </div>}
                             </div>
-                     
-                        <div className="pie">
-                            <div className="textyText">Number of Tasks per Goal</div>
-                            <PieChart/>
-                        </div>
-                    </div>
+                            <div className="pie">
+                            {this.state.numberOfCompletedTasks? 
+                                <div>
+                                    <div className="textyText">Number of Tasks per Goal</div>
+                                    <PieChart/>
+                                </div>
+                                : <div style={centers}><ReactLoading type="spin" color="white" /></div>}
+                                </div>
+                            </div>
+                            {this.state.numberOfCompletedTasks ? 
                     <div className="secondRow">
                         <div className="barGraph"><BarGraphDates/></div>
                             <div className="barGraph"><BarGraph/></div>
                     </div>
+                        : <ReactLoading type="spin" color="white" />}
                 </div>
             </div>
         )
     }
+}
+
+const centers = {
+    padding: '80px 160px',
 }
 
 function mapStateToProps(state) {

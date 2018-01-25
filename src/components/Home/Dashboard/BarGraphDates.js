@@ -78,7 +78,6 @@ class BarGraphDates extends Component {
                       }
                     ]
                   }})
-                console.log(this.state.data2)
             })
             
     }
@@ -111,60 +110,6 @@ class BarGraphDates extends Component {
                             }]
                         }
                     }}
-                    />
-            </div>
-            <div className="barGraphTwo">
-            <Bar 
-                data={this.state.data2} 
-                width={450}
-                height={300}
-                options={{
-                    title: {
-                        display: true,
-                        text: 'Number of Tasks Completed By Day of the Week',
-                        fontColor: 'white'
-                    },
-                    legend: {
-                        display: false,
-                    },
-                     maintainAspectRatio: true,
-                     scales:{
-                        yAxes:[{
-                            ticks:{
-                                beginAtZero:true,
-                                suggestedMin: 0,
-                                suggestedMax: 10,
-                            },
-                        }]
-                    }
-                }}
-                />
-            </div>
-            <div className="barGraphThree">
-                <Bar 
-                    data={this.state.data2} 
-                    width={400}
-                    height={300}
-                    options={{
-                        title: {
-                            display: true,
-                            text: 'Number of Tasks Completed By Day of the Week',
-                            fontColor: 'white'
-                        },
-                        legend: {
-                            display: false,
-                        },
-                         maintainAspectRatio: true,
-                         scales:{
-                            yAxes:[{
-                                ticks:{
-                                    beginAtZero:true,
-                                    suggestedMin: 0,
-                                    suggestedMax: 10,
-                                },
-                            }]
-                        }
-                        }}
                     />
                 </div>
             </div>

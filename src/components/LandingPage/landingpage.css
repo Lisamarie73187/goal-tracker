@@ -36,19 +36,18 @@
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0,.91,.82,.32);
     animation-fill-mode: both;
-    animation-delay: 3s;
+    animation-delay: 2s;
  }
  
  @keyframes pulse{
     2%   {transform: rotate(0deg);
             transform: scale(.9);}
-    3%   {transform: rotate(0deg);}
+    3%   {transform: rotate(0deg);
+        transform: scale(1.2)}
     4%   {transform: rotate(0deg);}
     5%   {transform: rotate(0deg);}
     6%   {transform: rotate(-5deg);}
     8%   {transform: rotate(3deg);}
-    9%  {transform: rotate(0deg);
-        transform: scale(1.2);}
     9%  {transform: rotate(0deg);}
     90%, 100% {transform: rotate(0deg);}
  }
@@ -77,6 +76,14 @@
     box-shadow: 2px 2px 2px #1f1f1f;
     transform: translateY(3px);
 
+}
+
+
+
+.loadingBackDrop{
+        padding: 10% 42%;
+        width: 100%;
+        height: 100vh;
 }
 
 .noDecor {

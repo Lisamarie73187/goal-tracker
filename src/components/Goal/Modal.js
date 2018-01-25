@@ -47,16 +47,16 @@ class Modal extends Component {
         }
 
     render() {
-        const cssClasses = [
-            "Modal",
-            this.props.show ? "ModalOpen" : "ModalClosed"
-          ];
+        // const cssClasses = [
+        //     // "Modal",
+        //     this.props.show ? "ModalOpen" : "ModalClosed"
+        //   ];
         
         return (
             <div>
                 <StyleRoot>
-                <div className={cssClasses.join(' ')}>
-                    <div className="titleText" >Edit</div>
+                <div className={this.props.show ? "ModalOpen" : "ModalClosed"}>
+                    <div className="titleText">Edit</div>
                 <form className="formyForm" >
                         <input 
                             className="inputs" 

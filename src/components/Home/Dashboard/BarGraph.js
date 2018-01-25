@@ -13,7 +13,7 @@ class BarGraph extends Component {
                     labels: [],
                     datasets: [
                             {   
-                                backgroundColor: ["#4a4acc",'#c353f5','f75652','#655fd7','#ef766a','#c353f5','#28c5ea',"#4a4acc",'#a246d3','f75652'],
+                                backgroundColor: ["#4a4acc",'#c353f5','#655fd7','#ef766a','#c353f5','#28c5ea',"#4a4acc",'#a246d3','f75652'],
                                 borderWidth: 1,
                                 hoverBackgroundColor: ['#4a4acc', '#f75652', '#09b4c6', '#09b4c6', '#4a4acc', '#c353f5',"#655fd7",'#ef766a'],
                                 barThickness: 1,
@@ -95,61 +95,9 @@ getTheData(){
                             },
                         }]
                     }
-            }}/>
-            </div>
-             <div className="barGraphTwo">
-             <HorizontalBar 
-                 data={this.state.data1} redraw
-                 width={400}
-                 height={230}
-                 options={{
-                     title: {
-                         display: true,
-                         text: 'Number of Tasks Completed by Goal',
-                         fontColor: 'white'
-                     },
-                     legend: {
-                         display: false
-                     },
-                     maintainAspectRatio: true,
-                     scales:{
-                         xAxes:[{
-                             ticks:{
-                                 beginAtZero:true,
-                                 suggestedMin: 0,
-                                 suggestedMax: 10,
-                             },
-                         }]
-                     }
-             }}/>
-             </div>
-                <div className="barGraphThree">
-                <HorizontalBar 
-                  data={this.state.data1} redraw
-                  width={500}
-                  height={300}
-                  options={{
-                      title: {
-                          display: true,
-                          text: 'Number of Tasks Completed by Goal',
-                          fontColor: 'white'
-                      },
-                      legend: {
-                          display: false
-                      },
-                      maintainAspectRatio: true,
-                      scales:{
-                          xAxes:[{
-                              ticks:{
-                                  beginAtZero:true,
-                                  suggestedMin: 0,
-                                  suggestedMax: 10,
-                              },
-                          }]
-                      }
-                     }}/>
+                }}/>
                 </div>
-              </div>
+            </div>
         );
     }
 }

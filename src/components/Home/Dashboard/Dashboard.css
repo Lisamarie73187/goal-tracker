@@ -2,7 +2,6 @@
     background-color: #333243;
     width: 90vw;
     margin: auto;
-    padding-bottom: 20px;
     box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);
 }
 
@@ -19,14 +18,11 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: baseline;
 	align-content: stretch;
 }
 
-.size{
-    width: 50vw;
-}
 .boxerOne {
     background : -moz-linear-gradient(2.9% 86.06% 40.65deg,rgba(242, 100, 155, 1) 0%,rgba(240, 100, 156, 1) 1.28%,rgba(141, 96, 198, 1) 69.47%,rgba(101, 95, 215, 1) 100%);
     background : -webkit-linear-gradient(40.65deg, rgba(242, 100, 155, 1) 0%, rgba(240, 100, 156, 1) 1.28%, rgba(141, 96, 198, 1) 69.47%, rgba(101, 95, 215, 1) 100%);
@@ -37,10 +33,10 @@
     background : linear-gradient(49.35deg, rgba(242, 100, 155, 1) 0%, rgba(240, 100, 156, 1) 1.28%, rgba(141, 96, 198, 1) 69.47%, rgba(101, 95, 215, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2649B',endColorstr='#655FD7' , GradientType=1);  
     margin: 10px;
-    margin-left: 40px;
-    width: 12vw;
-    padding: 10px 20px;
-    /* background-color: #3f3e54; */
+    margin-left: 20px;
+    width: 13vw;
+    height: 23vh;
+    padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
 
@@ -54,9 +50,9 @@
     background : linear-gradient(49.35deg, rgba(242, 100, 155, 1) 0%, rgba(201, 146, 151, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2649B',endColorstr='#C99297' , GradientType=1);  
     margin: 10px;
-    width: 12vw;
-    padding: 10px 20px;
-    /* background-color: #3f3e54; */
+    width: 13vw;
+    height: 23vh;
+    padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
 
@@ -70,9 +66,10 @@
     background : linear-gradient(49.35deg, rgba(40, 197, 234, 1) 0%, rgba(94, 157, 238, 1) 29.13%, rgba(148, 117, 242, 1) 62.02%, rgba(182, 92, 244, 1) 86.65%, rgba(195, 83, 245, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28C5EA',endColorstr='#C353F5' , GradientType=1);
     margin: 10px;
-    width: 12vw;
-    padding: 10px 20px;
-    /* background-color: #3f3e54; */
+    margin-right: 30px;
+    width: 13vw;
+    height: 23vh;
+    padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
 
@@ -82,7 +79,8 @@
     font-size: 16pt;
     text-align: center;
     font-family: 'Raleway','serif';
-    /* background-color: blue; */
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
 }
 
 .color {
@@ -93,25 +91,19 @@
 
 .numberGoals {
     color: #ffffff;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
-    font-size: 50pt;
+    font-size: 30pt;
 }
 
 .barGraph {
-    margin: 20px;
+    margin: 10px;
     background-color: #3f3e54;
+    transform: translateY(-80px)
 }
 .barGraphOne {
     background-color: #3f3e54;
 }
-.barGraphTwo {
-    display: none;
-}
-.barGraphThree {
-   display: none;
-}
-
 .pie{
     width: 400px;
     margin-right: 50px;

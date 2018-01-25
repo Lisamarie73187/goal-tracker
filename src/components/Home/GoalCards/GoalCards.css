@@ -1,10 +1,8 @@
 .rapper {
-    /* padding: 10px; */
     text-align: center;
-    margin: 30px;
+    margin: 20px;
     background : #333243;
     box-shadow : 7px 7px 5px rgba(0, 0, 0, 0.4);
-    /* height: 425px; */
 }
     
 .rapperLarge {

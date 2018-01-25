@@ -45,7 +45,7 @@ class DisplayList extends Component {
             .then(()=>{
                 this.props.getTask(this.props.goalsid)
                 .then(() => {this.setState({
-                    taskname: ''
+                    taskNameInput: ''
                 })})
             })
     }

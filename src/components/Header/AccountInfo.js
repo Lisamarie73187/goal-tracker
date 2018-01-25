@@ -57,7 +57,6 @@ const texty = {
     padding: '20px',
     '@media (max-width: 40em)': {
       padding: '20px 0px',
-      paddingLeft: '0px'
     }
 }
 const picture = {
