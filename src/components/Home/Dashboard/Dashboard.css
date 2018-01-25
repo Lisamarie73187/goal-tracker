@@ -110,6 +110,52 @@
     text-align: center;
 }
 
+.createButton
+{
+    color: white;
+    padding: 20px 30px;
+    font-size: 17pt;
+    outline: none;
+    border: none;
+    background : -moz-linear-gradient(34.02% -49.4% -60deg,rgba(239, 118, 106, 1) 0%,rgba(242, 100, 155, 1) 100%);
+    background : -webkit-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+    background : -webkit-gradient(linear,34.02% -49.4% ,65.98% 149.4% ,color-stop(0,rgba(239, 118, 106, 1) ),color-stop(1,rgba(242, 100, 155, 1) ));
+    background : -o-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+    background : -ms-linear-gradient(-60deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A', endColorstr='#F2649B' ,GradientType=0)";
+    background : linear-gradient(150deg, rgba(239, 118, 106, 1) 0%, rgba(242, 100, 155, 1) 100%);
+    border-radius : 41px;
+    -moz-border-radius : 41px;
+    -webkit-border-radius : 41px;
+    cursor: pointer;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EF766A',endColorstr='#F2649B' , GradientType=1);
+}
+
+.createButton:hover {
+    background : -moz-linear-gradient(0% 50% 0deg,rgba(253, 140, 122, 1) 0%,rgba(253, 130, 140, 1) 39.9%,rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(253, 140, 122, 1) ),color-stop(0.399,rgba(253, 130, 140, 1) ),color-stop(0.971,rgba(253, 117, 162, 1) ));
+    background : -o-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -ms-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : linear-gradient(90deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background-color: rgba(247, 248, 246, 0.555);
+    box-shadow: 6px 6px 6px #1f1f1f;
+    transform: translateY(2px);
+}
+
+.createButton:active {
+    background : -moz-linear-gradient(0% 50% 0deg,rgba(253, 140, 122, 1) 0%,rgba(253, 130, 140, 1) 39.9%,rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(253, 140, 122, 1) ),color-stop(0.399,rgba(253, 130, 140, 1) ),color-stop(0.971,rgba(253, 117, 162, 1) ));
+    background : -o-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : -ms-linear-gradient(0deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background : linear-gradient(90deg, rgba(253, 140, 122, 1) 0%, rgba(253, 130, 140, 1) 39.9%, rgba(253, 117, 162, 1) 97.1%);
+    background-color: rgba(247, 248, 246, 0.555);
+    box-shadow: 2px 2px 2px #1f1f1f;
+    transform: translateY(3px);
+
+}
+
 @media(max-width: 1200px){
     .firstRow, .secondRow {
         padding-top: 20px;

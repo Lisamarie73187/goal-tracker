@@ -49,7 +49,6 @@ const subTaskLayout = {
 
 const textSize = {
     fontSize: '12pt',
-    overflow: 'scroll',
     width: '200px'
 }
 

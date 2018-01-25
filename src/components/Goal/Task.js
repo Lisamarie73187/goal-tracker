@@ -128,7 +128,6 @@ const cardsLayout = {
     background: '#3F3E54',
     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)',
     maxHeight: '800px',
-    overflow: 'scroll'
 }
 
 const inputOne = {
