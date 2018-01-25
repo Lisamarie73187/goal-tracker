@@ -19,19 +19,13 @@ class Task extends Component {
         this.getSubTasks = this.getSubTasks.bind(this)
         this.deleteTask = this.deleteTask.bind(this)
     }
-    componentWillUnmount(){
-        console.log( 'task is unmounting')
-    }
+  
 
-    componentWillMount(){
-        console.log('task is mounting')
-    }
     componentDidMount(){
         this.getSubTasks()
     }
 
     handleSubTaskChange(value){
-        console.log(value)
         this.setState({
             subTaskName: value,
         })

@@ -52,7 +52,6 @@ massive(process.env.CONNECTION_STRING)
         } else {
           app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then( user => {
             req.session.user = user[0];
-            console.log(user[0])
             res.json({ user: req.session.user });
           }).catch(error => {
             console.log('error', error);

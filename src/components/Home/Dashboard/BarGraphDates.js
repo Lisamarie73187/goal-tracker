@@ -30,7 +30,6 @@ class BarGraphDates extends Component {
 
     getData(){
         axios.get('/api/goal/subtask').then(response => {
-            console.log('response', response.data)
             var arr = []
             var completedTotals = []
             response.data.forEach(e => {
@@ -38,7 +37,6 @@ class BarGraphDates extends Component {
                     arr.push(e.completeddate)
                 }
             })
-            console.log('dfsdf', arr)
                 var monday = []
                 var tuesday = []
                 var wed = []

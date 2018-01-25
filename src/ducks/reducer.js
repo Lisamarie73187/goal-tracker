@@ -33,7 +33,6 @@ const initialState = {
           return {...state, goal: action.payload};
 
       case GETTASK + "_FULFILLED":
-      console.log('getTasksFulfilled')
         return {...state, tasks: action.payload};
 
       case ADDSUBTASK + "_FULFILLED":

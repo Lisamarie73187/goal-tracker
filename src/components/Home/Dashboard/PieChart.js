@@ -53,27 +53,21 @@ componentDidMount() {
 
 formatChartData(){
     axios.get(`api/goal/subtask`).then(response => {
-        console.log(response.data)
         var goalNameArray = []
         var goalName = []
         response.data.forEach(e => {
             goalName.push(e.goalname)
         })
-        console.log('goalnamearray',goalName)
         goalNameArray = _.uniq(goalName)
-        console.log('unique', goalNameArray)
         goalNameArray.forEach(name => {
             this.state.data2.labels.push(name)
             var arr = []
-            // console.log('labels', this.state.data1.labels)
             response.data.forEach(e => {
                 if(e.goalname === name){
                     arr.push(e.completed)
                 }
             })
             this.state.data2.datasets[0].data.push(arr.length)
-            console.log('arr', arr)
-            console.log('goalnamearray', goalNameArray)
         })
         this.setState({
             data2: this.state.data2

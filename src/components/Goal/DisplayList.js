@@ -19,7 +19,6 @@ class DisplayList extends Component {
     }
 
     handleChange(value){
-        console.log(value)
         this.setState({
             taskNameInput: value
         })
@@ -28,14 +27,9 @@ class DisplayList extends Component {
     
     componentDidMount(){
         this.props.getTask(this.props.goalsid)
-        console.log('displaylist is mounting')
     }
 
-    componentWillUnmount(){
-        console.log("display List")
-    }
   
-
     submitTask(){
         this.props.addTask({
             taskname: this.state.taskNameInput, 
@@ -52,7 +46,6 @@ class DisplayList extends Component {
 
 
     render() {
-        console.log('displaylist is rendering')
         return (
             <div style={layout}>
                 {this.props.tasks.map((e) => {

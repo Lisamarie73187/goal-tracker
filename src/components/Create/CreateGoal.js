@@ -21,19 +21,15 @@ class CreateGoal extends Component {
     }
     
     handleNameChange ( value ){
-        console.log(value)
         this.setState({ goalName: value})
     }
     handleDescChange ( value ){
-        console.log(value)
         this.setState({ goalDesc: value})
     }
     handleStartDateChange ( value ){
-        console.log(value)
         this.setState({ startDate: value})
     }
     handleEndDateChange ( value ){
-        console.log(value)
         this.setState({ endDate: value})
     }
 
