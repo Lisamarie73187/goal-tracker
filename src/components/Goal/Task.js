@@ -114,7 +114,8 @@ const wrapper = {
     padding: '13px 10px',
     background: '#333243',
     margin: '10px',
-    boxsizing: 'border-box'
+    boxsizing: 'border-box',
+    overflow: 'scroll'
 
 }
 
@@ -122,12 +123,13 @@ const cardsLayout = {
     margin: '10px',
     paddingTop: '8px',
     paddingBottom: '8px',
-    width: '300px',
+    width: '330px',
     color: 'white',
     fontSize: '12pt',
     background: '#3F3E54',
     boxShadow: '7px 7px 5px rgba(0, 0, 0, 0.4)',
     maxHeight: '800px',
+    overflow: 'scroll'
 }
 
 const inputOne = {

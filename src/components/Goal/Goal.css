@@ -18,4 +18,30 @@
     background-color: #716e9bc7;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #333243;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #333243; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(35, 36, 49); 
+}
+
+::-webkit-scrollbar-corner{
+    background: #333243;
+}
+
 
