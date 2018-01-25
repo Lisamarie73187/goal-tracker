@@ -46,12 +46,7 @@ class Modal extends Component {
             
         }
 
-    render() {
-        // const cssClasses = [
-        //     // "Modal",
-        //     this.props.show ? "ModalOpen" : "ModalClosed"
-        //   ];
-        
+    render() {    
         return (
             <div>
                 <StyleRoot>
@@ -63,7 +58,7 @@ class Modal extends Component {
                             type="text" 
                             value={this.state.value}
                             onChange={ (e) => this.handleNameChange(e.target.value)}
-                            placeholder="Goal Title (20 character limit)"/>
+                            placeholder={"Goal Title (20 character limit)"}/>
                         <input 
                             className="inputs" 
                             type="text" 

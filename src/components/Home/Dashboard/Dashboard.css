@@ -35,7 +35,7 @@
     margin: 10px;
     margin-left: 20px;
     width: 13vw;
-    height: 23vh;
+    height: 160px;
     padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
@@ -51,7 +51,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2649B',endColorstr='#C99297' , GradientType=1);  
     margin: 10px;
     width: 13vw;
-    height: 23vh;
+    height: 160px;
     padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
@@ -68,7 +68,7 @@
     margin: 10px;
     margin-right: 30px;
     width: 13vw;
-    height: 23vh;
+    height: 160px;
     padding: 8px 15px;
     box-shadow: 10px 10px 69px -5px rgba(0, 0, 0, 0.226);
 }
@@ -111,17 +111,7 @@
 }
 
 @media(max-width: 1200px){
-    .secondRow {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: baseline;
-        align-content: stretch;
-    }
-}
-@media(max-width: 1200px){
-    .firstRow {
+    .firstRow, .secondRow {
         padding-top: 20px;
         flex-wrap: wrap;
     }
@@ -133,6 +123,12 @@
     }
     .boxerThree{
         margin-right: 30px;
+    }
+}
+
+@media(max-width: 1198px){
+    .barGraph{
+        transform: translateY(0)
     }
 }
 

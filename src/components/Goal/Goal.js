@@ -92,7 +92,9 @@ export class Goal extends Component {
                     {e.goalsid ? 
                     <div key={e.goalsid}>
                         <Header/>
+                        {this.state.modalIsOpen ? 
                         <Modal goal={e.goalsid} show={this.state.modalIsOpen} closed={this.closeModal}/>
+                        : null}
                         <Backdrop show={this.state.modalIsOpen} />
                         <div className="rapper">
                             <div style={styleYo.primary}>
@@ -129,27 +131,40 @@ const styleYo = {
     primary: {
         backgroundColor: '#3F3E54',
         fontFamily: 'Raleway',
-        padding: '15px',    
+        padding: '10px',
+        height: '80px'    
     },
     base: {
-        padding: '6px',
+        padding: '4px',
     },
     name: {
         textAlign: 'left',
         fontSize: '20pt',
         color: 'white',
+        '@media(max-width: 488px)':{
+            fontSize: '12pt',
+        }
     },
     dates: {
         textAlign: 'right',
         color: 'white',
         position: 'absolute',
-        top: '112px',
+        top: '100px',
         right: '35px',
+        
     },
     desc: {
         fontSize: '15pt',
         textAlign: 'left',
         color: '#292839',
+        '@media(max-width: 600px)':{
+            fontSize: '12pt',
+            width: '30vw'
+        },
+        // '@media(max-width: 500px)':{
+        //     fontSize: '12pt',
+        //     width: '40px'
+        // }
     }
 }
 

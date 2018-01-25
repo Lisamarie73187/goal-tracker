@@ -35,8 +35,6 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    /* animation-delay: 3s; */
-    /* display: block; */
     opacity: 1;
 
 }
@@ -54,14 +52,13 @@
     left: 25%;
     width: 50%;
     padding-bottom: 50px;
-    /* display: none; */
     animation-name: closeModal;
     animation-duration: .6s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     opacity: 0;
-    transform: translateY(-100%)
+    /* transform: translateY(-100%) */
 }
 
 @keyframes openModal {
@@ -74,7 +71,7 @@
 }
 
 @keyframes closeModal {
-    0%   {opacity: 0;
+    0%   {opacity: 1;
         transform: translateY(0);}
     /* 50%   {opacity: 0.8;
         transform: translateY(10%);} */
