@@ -49,7 +49,7 @@ const subTaskLayout = {
 
 const textSize = {
     fontSize: '12pt',
-    width: '200px',
+    width: '140px',
 }
 
 const cursor = {

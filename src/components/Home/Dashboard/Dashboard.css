@@ -1,6 +1,6 @@
 .wrappers{
     background-color: #333243;
-    width: 90vw;
+    width: 90%;
     margin: auto;
     box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);
 }
@@ -97,7 +97,7 @@
 }
 
 .barGraph {
-    margin: 10px;
+    margin: 20px 30px;
     background-color: #3f3e54;
     transform: translateY(-80px)
 }
@@ -156,7 +156,25 @@
 
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1300px){
+    .firstRow, .secondRow {
+        padding-top: 20px;
+    }
+    .pie{
+        margin: 30px 0;
+    }
+    .boxerOne, .boxerTwo, .boxerThree {
+        width: 16vw;
+    }
+    .boxerThree{
+        margin-right: 30px;
+    }
+    .barGraph{
+        margin: 15px;
+        transform: translateY(-100px)
+    }
+}
+@media(max-width: 1250px){
     .firstRow, .secondRow {
         padding-top: 20px;
         flex-wrap: wrap;
@@ -169,6 +187,9 @@
     }
     .boxerThree{
         margin-right: 30px;
+    }
+    .barGraph{
+        margin: 10px;
     }
 }
 
@@ -228,6 +249,9 @@
     .barGraphTwo{
         display: block;
         background-color: #3f3e54;
+    }
+    .createButton{
+        font-size: 12pt;
     }
 }
 
@@ -324,6 +348,9 @@
     }
     .barGraphTwo{
         display: none;
+    }
+    .createButton{
+        font-size: 10pt;
     }
 }
 

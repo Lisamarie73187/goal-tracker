@@ -113,7 +113,6 @@ const create = {
     color: 'white',
     textAlign: 'center',
     margin: 'auto',
-    fontSize: '20pt',
     display: 'inline'
 }
 

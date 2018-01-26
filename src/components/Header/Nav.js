@@ -19,10 +19,18 @@ const color = {
     color: 'white',
     paddingRight: '20px',
     fontFamily: 'Raleway serif',
+    '@media (max-width: 610px)': {
+        fontSize: '15pt',
+        padding: '10px'
+    },
+    '@media (max-width: 507px)': {
+        fontSize: '12pt',
+        padding: '6px'
+    }
 }
 
 
 
 
 
-export default (Nav)
+export default Nav

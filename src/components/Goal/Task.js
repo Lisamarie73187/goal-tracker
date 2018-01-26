@@ -123,7 +123,7 @@ const cardsLayout = {
     margin: '10px',
     paddingTop: '8px',
     paddingBottom: '8px',
-    width: '330px',
+    width: '320px',
     color: 'white',
     fontSize: '12pt',
     background: '#3F3E54',
