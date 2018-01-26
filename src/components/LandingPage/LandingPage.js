@@ -36,7 +36,7 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-            <StyleRoot>
+                <StyleRoot>
                     <div className="hero">
                         <div style={styling.logoText}>
                         <div><img style={styling.logoStyle} src={logo} alt="logo"/> </div>
@@ -49,6 +49,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </div>
+                    <div style={demo}>To log in as a guest please use: email: example@example.com password: demo </div>
         </StyleRoot>
         </div>
         )
@@ -92,7 +93,13 @@ var styling = {
         height: 'auto',
     },
 }
-
+ const demo = {
+    fontSize: '12pt',
+    backgroundColor: '#292839',
+    textAlign: 'center',
+    color: '#565479',
+    padding: '10px'
+ }
 
 
 

@@ -86,8 +86,8 @@ class BarGraphDates extends Component {
             <div className="barGraphOne">
                 <Bar 
                     data={this.state.data2} 
-                    width={580}
-                    height={400}
+                    width={this.props.w}
+                    height={this.props.h}
                     options={{
                         title: {
                             display: true,

@@ -33,6 +33,16 @@ class CreateGoal extends Component {
         this.setState({ endDate: value})
     }
 
+    submitGoal(){
+        this.props.addGoal({
+            goalName: this.state.goalName,
+            goalDesc: this.state.goalDesc,
+            startDate: this.state.startDate,
+            endDate: this.state.endDate
+        }).then( resp => {
+            this.props.history.push('/home')
+        })
+    }
     
 
     render() {
@@ -72,12 +82,7 @@ class CreateGoal extends Component {
                             placeholder="End Date"/>
                         <div>
                             <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
-                            <Link to="/home"><button onClick={() => this.props.addGoal({
-                                goalName: this.state.goalName,
-                                goalDesc: this.state.goalDesc,
-                                startDate: this.state.startDate,
-                                endDate: this.state.endDate
-                                })} style={buttonLarger} className="buttonGoal">Create Goal</button></Link>
+                            <Link to="/home"><button onClick={() => this.submitGoal()} style={buttonLarger} className="buttonGoal">Create Goal</button></Link>
                         </div>
                     </form>
                 </div>

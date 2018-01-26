@@ -83,15 +83,19 @@ class Dashboard extends Component {
                             {this.state.numberOfSubTasks >= 2 ? 
                                 <div>
                                     <div className="textyText">Number of Tasks per Goal</div>
-                                    <PieChart/>
+                                    <div><PieChart w="600" h="400"/></div>
                                 </div>
                                 : null}
                                 </div>
                             </div>
                             {this.state.numberOfSubTasks >= 2 ? 
                     <div className="secondRow">
-                        <div className="barGraph"><BarGraphDates/></div>
-                            <div className="barGraph"><BarGraph/></div>
+                        <div className="barGraph"><BarGraphDates w="550px" h="370px"/></div>
+                        <div className="barGraphTwo"><BarGraphDates w="470px" h="280px"/></div>
+                        <div className="barGraphThree"><BarGraphDates w="400px" h="250px"/></div>
+                            <div className="barGraph"><BarGraph w="500px" h="270px"/></div>
+                            <div className="barGraphTwo"><BarGraph w="440px" h="220px"/></div>
+                            <div className="barGraphThree"><BarGraph w="400px" h="200px"/></div>
                     </div>
                         : null}
                 </div>

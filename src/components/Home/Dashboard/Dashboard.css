@@ -1,6 +1,7 @@
 .wrappers{
     background-color: #333243;
     width: 90%;
+    height: 90%;
     margin: auto;
     box-shadow: 10px 10px 69px -5px rgba(0,0,0,0.51);
 }
@@ -20,7 +21,7 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: baseline;
-	align-content: stretch;
+    align-content: stretch;
 }
 
 .boxerOne {
@@ -101,9 +102,21 @@
     background-color: #3f3e54;
     transform: translateY(-80px)
 }
-.barGraphOne {
+
+.barGraphTwo {
+    margin: 20px 30px;
     background-color: #3f3e54;
+    transform: translateY(-80px);
+    display: none;
 }
+
+.barGraphThree {
+    margin: 20px 30px;
+    background-color: #3f3e54;
+    transform: translateY(-80px);
+    display: none;
+}
+
 .pie{
     width: 400px;
     margin-right: 50px;
@@ -157,45 +170,63 @@
 }
 
 @media(max-width: 1300px){
-    .firstRow, .secondRow {
-        padding-top: 20px;
-    }
-    .pie{
-        margin: 30px 0;
-    }
     .boxerOne, .boxerTwo, .boxerThree {
-        width: 16vw;
-    }
-    .boxerThree{
-        margin-right: 30px;
+        width: 13vw;
     }
     .barGraph{
         margin: 15px;
-        transform: translateY(-100px)
-    }
-}
-@media(max-width: 1250px){
-    .firstRow, .secondRow {
-        padding-top: 20px;
-        flex-wrap: wrap;
-    }
-    .pie{
-        margin: 30px 0;
-    }
-    .boxerOne, .boxerTwo, .boxerThree {
-        width: 16vw;
-    }
-    .boxerThree{
-        margin-right: 30px;
-    }
-    .barGraph{
-        margin: 10px;
+        transform: translateY(-80px)
     }
 }
 
-@media(max-width: 1198px){
+@media(max-width: 1250px){
     .barGraph{
+        display: none;
+    }
+    .barGraphTwo{
+        display: inline;
+        transform: translateY(-80px);
+        margin: 10px 10px;
+    }
+    .pie{
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media(max-width: 1055px){
+    .barGraphTwo{
+        display: none;
+    }
+    .barGraphThree {
+        display: inline;
+        margin: 20px 10px;
+    }
+    .numberGoals {
+        font-size: 30pt;
+        margin-top: 20px;
+    }
+    .textyText{
+        font-size: 13pt;
+    }
+}
+
+@media(max-width: 920px){
+    .secondRow, .firstRow {
+        flex-wrap: wrap;
+    }
+    .barGraphThree{
         transform: translateY(0)
+    }
+    .numberGoals {
+        font-size: 20pt;
+        margin-top: 10px;
+    }
+    .textyText{
+        font-size: 10pt;
+    }
+    .boxerOne, .boxerTwo, .boxerThree {
+        height: 120px;
     }
 }
 
@@ -207,9 +238,6 @@
     .pie{
         margin: 30px 0;
     }
-    .boxerOne, .boxerTwo, .boxerThree {
-        width: 15vw;
-    }
     .boxerThree{
         margin-right: 30px;
     }
@@ -222,132 +250,75 @@
     }
 }
 
-@media(max-width: 628px){
-    /* .firstRow {
-        padding-top: 20px;
-        flex-wrap: wrap;
-    } */
+@media(max-width: 691px){
     .pie{
         margin: 30px 0;
     }
     .boxerOne, .boxerTwo, .boxerThree {
-        width: 15vw;
+        width: 14vw;
+        margin: 5px;
     }
     .boxerThree{
         margin-right: 30px;
     }
     .numberGoals {
-        font-size: 30pt;
-        margin-top: 20px;
+        font-size: 20pt;
+        margin-top: 10px;
     }
     .textyText{
-        font-size: 13pt;
+        font-size: 12pt;
     }
-    .barGraphOne{
-        display: none;
-    }
-    .barGraphTwo{
-        display: block;
-        background-color: #3f3e54;
-    }
+   
     .createButton{
         font-size: 12pt;
     }
 }
-
-@media(max-width: 511px){
-    .firstRow {
-        padding-top: 10px;
-       display: inline-block;
-    }
-    .pie{
-        margin: 30px 0;
+@media(max-width: 515px){
+    .firstRow{
+        display: inline-block;
     }
     .boxerOne, .boxerTwo, .boxerThree {
-        width: 59vw;
-        padding: 8px 16px;
-        margin: 10px auto;
-        margin-left: 55px;
+        margin-left: 150px;
+        width: 18vw;
     }
-    /* .boxerThree{
-        margin-right: 30px;
-    } */
-    .numberGoals {
-        font-size: 20pt;
-        margin-top: 10px;
+    .pie{
+        margin-left: 10px;
     }
     .textyText{
-        font-size: 15pt;
-    }
-    .barGraphOne{
-        display: none;
-    }
-    .barGraphTwo{
-        display: none;
+        border: none;
     }
 }
 
-@media(max-width: 411px){
-    .firstRow {
-        padding-top: 10px;
-       display: inline-block;
+@media(max-width: 427px){
+    .firstRow{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+	flex-wrap: nowrap;
+    align-content: stretch;
+    margin: 8px;
+}
+    .boxerOne, .boxerTwo, .boxerThree {
+       margin: 0px;
     }
     .pie{
         display: none;
     }
-    .boxerOne, .boxerTwo, .boxerThree {
-        width: 60vw;
-        padding: 8px 8px;
-        margin: 10px auto;
-        margin-left: 55px;
-    }
-    .boxerThree{
-        margin-right: 0px;
-    }
-    .numberGoals {
-        font-size: 20pt;
-        margin-top: 10px;
-    }
-    .textyText{
-        font-size: 15pt;
-    }
-    .barGraphOne{
-        display: none;
-    }
-    .barGraphTwo{
+    .barGraphThree{
         display: none;
     }
 }
 @media(max-width: 375px){
-    .firstRow {
-        padding-top: 10px;
-       display: inline-block;
-    }
-    .pie{
-        display: none;
-    }
     .boxerOne, .boxerTwo, .boxerThree {
-        width: 60vw;
-        padding: 8px 8px;
         margin: 10px auto;
-        margin-left: 47px;
-    }
-    .boxerThree{
-        margin-right: 0px;
+        padding-bottom: 8px;
     }
     .numberGoals {
-        font-size: 20pt;
+        font-size: 12pt;
         margin-top: 10px;
-        padding-bottom: 10px;
     }
     .textyText{
-        font-size: 15pt;
-    }
-    .barGraphOne{
-        display: none;
-    }
-    .barGraphTwo{
-        display: none;
+        font-size: 10pt;
     }
     .createButton{
         font-size: 10pt;

@@ -65,11 +65,11 @@ getTheData(){
         render() {
         return (
             <div>
-            <div className="barGraphOne">
+            <div>
             <HorizontalBar 
                 data={this.state.data1} redraw
-                width={500}
-                height={270}
+                width={this.props.w}
+                height={this.props.h}
                 options={{
                     title: {
                         display: true,
