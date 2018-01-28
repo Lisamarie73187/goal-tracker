@@ -13,7 +13,7 @@ class Footer extends Component {
         return (
             <div style={layoutBox}>
                 <div>
-                    
+                © copyright 2018 Lisa Herzberg
                 </div>
             </div>
         )
@@ -22,7 +22,8 @@ class Footer extends Component {
 
 const layoutBox = {
     padding: '20px',
-    backgroundColor: '#3f3e54'
+    backgroundColor: '#3f3e54',
+    color: 'white'
 }
 
 export default Footer

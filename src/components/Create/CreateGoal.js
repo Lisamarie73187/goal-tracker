@@ -6,7 +6,7 @@ import {StyleRoot} from 'radium'
 
 
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+
 
 
 class CreateGoal extends Component {
@@ -87,7 +87,6 @@ class CreateGoal extends Component {
                         </div>
                     </form>
                 </div>
-                <Footer/>
             </div>
             </StyleRoot>
             </div>

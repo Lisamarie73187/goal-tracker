@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Dashboard from '../Home/Dashboard/Dashboard';
 import GoalCards from '../Home/GoalCards/GoalCards';
 import '../styles.css';
-import Footer from '../Footer/Footer';
+
 
 
 
@@ -34,7 +34,6 @@ class Home extends Component {
                 <div>
                   <GoalCards/>
                 </div>
-                  <Footer/>
               </div>
             }
         </div>

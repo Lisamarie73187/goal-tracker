@@ -97,8 +97,8 @@ var styling = {
     fontSize: '12pt',
     backgroundColor: '#292839',
     textAlign: 'center',
-    color: '#565479',
-    padding: '10px'
+    color: 'white',
+    padding: '20px'
  }
 
 

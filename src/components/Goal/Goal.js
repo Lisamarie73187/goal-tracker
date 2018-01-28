@@ -6,7 +6,6 @@ import ReactLoading from 'react-loading';
 
 
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import DisplayList from './DisplayList';
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
@@ -118,7 +117,6 @@ export class Goal extends Component {
                                 <div><ReactLoading type="bubbles" color="white"/></div>
                             </div>}
                         </div>
-                        <Footer/>
                     </div>
                             :  <div className="loadingBackDrop">
                                     <div><div><ReactLoading type="bubbles" color="white" width="200px" height="200px"/></div></div>
