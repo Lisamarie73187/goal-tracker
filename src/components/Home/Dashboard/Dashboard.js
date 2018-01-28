@@ -68,7 +68,7 @@ class Dashboard extends Component {
                             <div className="boxerThree">
                             {this.state.numberOfCompletedTasks >= 1? 
                                 <div>
-                                    <h1 className="textyText">Number of <br/>Completed Subtasks </h1>
+                                    <h1 style={completedTasks} className="textyText">Number of Completed Subtasks </h1>
                                     <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
                                 </div> 
                                 : <div>
@@ -120,6 +120,10 @@ const create = {
     textAlign: 'center',
     margin: 'auto',
     display: 'inline'
+}
+
+const completedTasks = {
+    marginTop: '3px'
 }
 
 function mapStateToProps(state) {

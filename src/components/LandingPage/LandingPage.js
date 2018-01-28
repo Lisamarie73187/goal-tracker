@@ -80,9 +80,10 @@ var styling = {
        
     },
     alignText: {
-        padding: '20px',
+        padding: '8px',
         color: 'white',
-        fontFamily: 'Raleway',
+        fontFamily: 'Fredoka One',
+        letterSpacing: '2pt',
         fontSize: '35pt',
         '@media (max-width: 527px)': {
             fontSize: '20pt'
