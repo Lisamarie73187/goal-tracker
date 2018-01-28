@@ -45,9 +45,6 @@ const layout = {
     color: 'white',
     '@media (max-width: 40em)': {
       padding: '10px 3px',
-    },
-    '@media (max-width: 30em)': {
-      display: 'none'
     }
 }
 

@@ -149,7 +149,7 @@ const styleYo = {
         textAlign: 'right',
         color: 'white',
         position: 'absolute',
-        top: '100px',
+        top: '110px',
         right: '35px',
         
     },
@@ -160,11 +160,7 @@ const styleYo = {
         '@media(max-width: 600px)':{
             fontSize: '12pt',
             width: '30vw'
-        },
-        // '@media(max-width: 500px)':{
-        //     fontSize: '12pt',
-        //     width: '40px'
-        // }
+        }
     }
 }
 

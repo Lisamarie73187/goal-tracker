@@ -1,12 +1,18 @@
 .nav {
 	display: flex;
 	flex-direction: row-reverse;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	align-content: stretch;
 	box-sizing: border-box;
-	font-size: 16pt;
+	font-size: 17pt;
+}
+
+.menButton{
+	display: none;
+	cursor: pointer;
+	padding: 20px;
 }
 
 .image {
@@ -15,8 +21,88 @@
     margin: 0;
 }
 
-/* @media (max-width: 361px) {
-	.image{
-	 height: 30px;
+.menu{
+	background-color: #1f1f2b;
+    margin-left: 20px;
+    position: fixed;
+    z-index: 200;
+    padding: 10px 20px;
+    top: 10%;
+    left: 60%;
+	width: 250px;
+	height: 100vh;
+    font-size: 24pt;
+    box-shadow: 10px 10px 38px -4px rgba(0,0,0,1);
+	animation-name: openMenu;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+.closeMenu{
+	background-color: #1f1f2b;
+    margin-left: 20px;
+    position: fixed;
+    z-index: 200;
+    padding: 10px 20px;
+    text-align: center;
+    top: 10%;
+    left: 70%;
+    width: 150px;
+    font-size: 24pt;
+    box-shadow: 10px 10px 38px -4px rgba(0,0,0,1);
+	animation-name: closeMenu;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+@keyframes openMenu {
+    0%   {opacity: 0;
+        transform: translateY(-100%);}
+    80%   {opacity: 1;
+        transform: translateY(10%);}
+    100%   {opacity: 1;
+        transform: translateY(0);}
+}
+
+@keyframes closeMenu {
+    0%   {opacity: 1;
+        transform: translateY(-100%);}
+    80%   {opacity: 1;
+        transform: translateY(10%);}
+    100%   {opacity: 0;
+        transform: translateY(0);}
+}
+
+@media(max-width: 680px){
+	.nav{
+		display: none
 	}
- } */
+	.menButton{
+		display: flex;
+		margin-left: 80vw;
+	}
+}
+
+@media(max-width: 560px){
+	.menu{
+    top: 10%;
+    font-size: 20pt;
+	}
+}
+
+@media(max-width: 560px){
+	.menu{
+    top: 10%;
+    left: 50%;
+	font-size: 20pt;
+	}
+	.menButton{
+		display: flex;
+		margin-left: 70vw;
+	}
+}

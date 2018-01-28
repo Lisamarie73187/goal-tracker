@@ -1,7 +1,7 @@
 .hero{
     width: 100%;
     height: 100vh;
-    background-image: url("../../assests/herocopy.png");
+    background-image: url('https://s3-us-west-1.amazonaws.com/goalsytracker/herocopy.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,8 +77,6 @@
     transform: translateY(3px);
 
 }
-
-
 
 .loadingBackDrop{
         padding: 10% 42%;

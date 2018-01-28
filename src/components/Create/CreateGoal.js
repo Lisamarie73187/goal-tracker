@@ -39,7 +39,7 @@ class CreateGoal extends Component {
             goalDesc: this.state.goalDesc,
             startDate: this.state.startDate,
             endDate: this.state.endDate
-        }).then( resp => {
+        }).then( response => {
             this.props.history.push('/home')
         })
     }

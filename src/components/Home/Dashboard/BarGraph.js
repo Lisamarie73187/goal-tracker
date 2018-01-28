@@ -31,10 +31,6 @@ componentDidMount(){
 }
 
 
-    
-
-
-
 getTheData(){
     axios.get(`api/goal/subtask`).then(response => {
         var goalNameArray = []

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
 import './ProgressBar.css'
 import axios from 'axios'
-// import { getSubTask } from '../../ducks/reducer'
 
 
 

@@ -13,13 +13,10 @@ class GoalListings extends Component {
         super()
         this.state = {
             data: [],
-            array: [],
         }
        
     }
    
-
-
     componentDidMount() {
         this.filterArray()
     }
