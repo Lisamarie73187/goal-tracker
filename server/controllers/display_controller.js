@@ -92,16 +92,35 @@ module.exports = {
             }) 
         },
 
-        deleteGoal:(req,res) => {
+        deleteSubtasksGoals: (req, res, next) => {
             const db = req.app.get('db')
-            db.delete_goal([req.params.goalsid])
-            .then(() => {
-                res.status(200).json()
-            }).catch( (error) => {
-                console.log('errordelete', error)
+            db.delete_subtasks_goals([req.params.goalsid])
+            .then( () => res.status(200).send())
+            .catch ((error) => {
+                console.log('delete Error', error)
                 res.status(500).send(error)
             })
         },
+     
+        deleteTasksGoals:(req,res) => {
+            const db = req.app.get('db')
+            db.delete_tasks_goals([req.params.goalsid])
+            .then((goals) => res.status(200).send(goals))
+                .catch( (error) => {
+                    console.log('delete', error)
+                    res.status(500).send(error)
+            })
+        },
+        deleteGoal:(req,res) => {
+            const db = req.app.get('db')
+            db.delete_goal([req.params.goalsid])
+            .then((goals) => res.status(200).send(goals))
+               .catch( (error) => {
+                   console.log('delete', error)
+                   res.status(500).send(error)
+            })
+        },
+
         editGoal: (req,res, next) => {
             const db = req.app.get('db')
             db.edit_goal([

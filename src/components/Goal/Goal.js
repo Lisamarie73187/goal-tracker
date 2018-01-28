@@ -49,8 +49,12 @@ export class Goal extends Component {
     }
 
     deleteGoal(){
-        return axios.delete(`/api/goal/${this.props.match.params.goalsid}`).then(results=>{
-            this.props.history.push('/home')
+        return axios.delete(`/api/goal/subtasks/${this.props.match.params.goalsid}`).then(results=>{
+            axios.delete(`/api/goal/tasks/${this.props.match.params.goalsid}`).then( results => {
+                axios.delete(`/api/goal/${this.props.match.params.goalsid}`).then( results => {
+                    this.props.history.push('/home')
+                })
+            })
         }).catch(console.log)
     }
 

@@ -71,6 +71,8 @@ app.get('/api/goals', display_ctr.read);
 app.get('/api/goal/subtask', display_ctr.getGoalSubtask);
 app.get('/api/goal/:goalsid', display_ctr.getOne);
 app.post('/api/goal', display_ctr.addGoal);
+app.delete('/api/goal/subtasks/:goalsid', display_ctr.deleteSubtasksGoals);
+app.delete('/api/goal/tasks/:goalsid', display_ctr.deleteTasksGoals);
 app.delete('/api/goal/:goalsid', display_ctr.deleteGoal);
 app.put('/api/goal/:goalsid', display_ctr.editGoal);
 app.post('/api/task', display_ctr.addTask)
