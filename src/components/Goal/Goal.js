@@ -136,7 +136,7 @@ const styleYo = {
         backgroundColor: '#3F3E54',
         fontFamily: 'Raleway',
         padding: '10px',
-        height: '80px'    
+        height: '90px'    
     },
     base: {
         padding: '4px',

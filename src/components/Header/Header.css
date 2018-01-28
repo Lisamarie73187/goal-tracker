@@ -12,7 +12,7 @@
 .menButton{
 	display: none;
 	cursor: pointer;
-	padding: 20px;
+	padding: 10px;
 }
 
 .image {
@@ -27,7 +27,7 @@
     position: fixed;
     z-index: 200;
     padding: 10px 20px;
-    top: 10%;
+    top: 8%;
     left: 60%;
 	width: 250px;
 	height: 100vh;
@@ -62,11 +62,11 @@
 
 @keyframes openMenu {
     0%   {opacity: 0;
-        transform: translateY(-100%);}
+        transform: translateX(100%);}
     80%   {opacity: 1;
-        transform: translateY(10%);}
+        transform: translateX(-10%);}
     100%   {opacity: 1;
-        transform: translateY(0);}
+        transform: translateX(0);}
 }
 
 @keyframes closeMenu {
@@ -78,7 +78,7 @@
         transform: translateY(0);}
 }
 
-@media(max-width: 680px){
+@media(max-width: 720px){
 	.nav{
 		display: none
 	}

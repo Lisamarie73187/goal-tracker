@@ -80,8 +80,8 @@ formatChartData(){
         return (
             <div>
                 <Pie data={this.state.data2} redraw
-                width={this.props.w}
-                height={this.props.h}/>
+                width={600}
+                height={400}/>
             </div>
         )
     }

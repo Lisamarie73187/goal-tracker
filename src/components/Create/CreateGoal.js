@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGoal } from '../../ducks/reducer'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import {StyleRoot} from 'radium'
 
 
@@ -40,7 +40,8 @@ class CreateGoal extends Component {
             startDate: this.state.startDate,
             endDate: this.state.endDate
         }).then( response => {
-            this.props.history.push('/home')
+            
+            this.props.history.push(`/home`)
         })
     }
     
@@ -53,8 +54,8 @@ class CreateGoal extends Component {
                 <Header/>
                 <div className="rapperLarge">
                     <div className="titleText">Create your Goal</div>
-                    <p>Create a goal. You are able to create up to 10 goals. Once you create a goal <br/>
-                    you can add tasks to it.</p>
+                    <p style={paragraph}>Create a goal. You are able to create up to 10 goals. Once you create a goal <br/>
+                    you can add tasks.</p>
                     <form className="formyForm">
                         <input 
                             className="inputs" 
@@ -67,7 +68,7 @@ class CreateGoal extends Component {
                             type="text" 
                             value={this.state.value}
                             onChange={ (e) => this.handleDescChange(e.target.value)}
-                            placeholder="Goal Description"/>
+                            placeholder="Goal Description(optional)"/>
                         <input 
                             className="datess" 
                             type="text" 
@@ -82,7 +83,7 @@ class CreateGoal extends Component {
                             placeholder="End Date"/>
                         <div>
                             <button type="reset"style={buttonLarger} className="buttonGoal">Reset</button>
-                            <Link to="/home"><button onClick={() => this.submitGoal()} style={buttonLarger} className="buttonGoal">Create Goal</button></Link>
+                            <button onClick={() => this.submitGoal()} style={buttonLarger} className="buttonGoal">Create Goal</button>
                         </div>
                     </form>
                 </div>
@@ -102,6 +103,10 @@ const buttonLarger = {
         width: '100px',
         fontSize: '10pt'
     }
+}
+
+const paragraph = {
+    color: 'white'
 }
 
 function mapStateToProps(state) {

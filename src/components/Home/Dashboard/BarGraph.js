@@ -64,8 +64,7 @@ getTheData(){
             <div>
             <HorizontalBar 
                 data={this.state.data1} redraw
-                width={this.props.w}
-                height={this.props.h}
+                width={this.props.width} height={this.props.height}
                 options={{
                     title: {
                         display: true,

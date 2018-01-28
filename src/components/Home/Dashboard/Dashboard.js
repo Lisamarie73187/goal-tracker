@@ -3,7 +3,7 @@ import './Dashboard.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import ReactLoading from 'react-loading';
+// import ReactLoading from 'react-loading';
 import { getGoals } from '../../../ducks/reducer'
 import BarGraph from './BarGraph';
 import BarGraphDates from './BarGraphDates';
@@ -51,16 +51,13 @@ class Dashboard extends Component {
                 <div className="wrappers">
                     <div className="firstRow">
                             <div className="boxerOne">
-                            {this.props.data ? 
-                                <div>
-                                    <h1 className="textyText">Number of <br/> Goals </h1>
-                                    <div className="numberGoals">{this.props.data.length}</div>
-                                </div> : <div><ReactLoading type="bubbles" color="white" height='67' width='35' /></div>}
+                                <h1 className="textyText">Number of <br/> Goals </h1>
+                                <div className="numberGoals">{this.props.data.length}</div>
                             </div>
                             <div className="boxerTwo">
-                            {this.state.numberOfSubTasks >= 1 ? 
+                            {this.state.numberOfSubTasks >= 2 ? 
                                 <div>
-                                    <h1 className="textyText">Number of <br/>Tasks </h1>
+                                    <h1 className="textyText">Number of <br/>Subtasks </h1>
                                     <div className="numberGoals">{this.state.numberOfSubTasks}</div>
                                 </div>
                                 : <div>
@@ -71,11 +68,11 @@ class Dashboard extends Component {
                             <div className="boxerThree">
                             {this.state.numberOfCompletedTasks >= 1? 
                                 <div>
-                                    <h1 className="textyText">Number of <br/>Completed </h1>
+                                    <h1 className="textyText">Number of <br/>Completed Subtasks </h1>
                                     <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
                                 </div> 
                                 : <div>
-                                <div className="textyText">Number of Completed<br/> Tasks</div>
+                                <div className="textyText">Number of Completed<br/> Subtasks</div>
                                 <div className="numberGoals">0</div>
                                 </div>}
                             </div>
@@ -83,23 +80,28 @@ class Dashboard extends Component {
                             {this.state.numberOfSubTasks >= 2 ? 
                                 <div>
                                     <div className="textyText">Number of Tasks per Goal</div>
-                                    <div><PieChart w="600" h="400"/></div>
+                                    <div><PieChart/></div>
                                 </div>
                                 : null}
                                 </div>
                             </div>
                             {this.state.numberOfSubTasks >= 2 ? 
                     <div className="secondRow">
-                        <div className="barGraph"><BarGraphDates w="550px" h="370px"/></div>
-                        <div className="barGraphTwo"><BarGraphDates w="470px" h="280px"/></div>
-                        <div className="barGraphThree"><BarGraphDates w="400px" h="250px"/></div>
-                            <div className="barGraph"><BarGraph w="500px" h="270px"/></div>
-                            <div className="barGraphTwo"><BarGraph w="440px" h="220px"/></div>
-                            <div className="barGraphThree"><BarGraph w="400px" h="200px"/></div>
+                        <div className="barGraph"><BarGraphDates width={550} height={370}/></div>
+                        <div className="barGraphTwo"><BarGraphDates width={470} height={280}/></div>
+                        <div className="barGraphThree"><BarGraphDates width={400} height={250}/></div>
+                            <div className="barGraph"><BarGraph width={500} height={270}/></div>
+                            <div className="barGraphTwo"><BarGraph width={440} height={220}/></div>
+                            <div className="barGraphThree"><BarGraph width={400} height={200}/></div>
                     </div>
                         : null}
-                </div>
-                    : <div className="wrappers" style={wrappers}><Link to="/Create" className="noDecor"><div style={create} className="createButton">Create your First Goal</div></Link></div> }
+                    </div>
+                    : 
+                    <div className="wrappers" style={wrappers}>
+                        <Link to="/Create" className="noDecor">
+                            <div style={create} className="createButton">Create your First Goal</div>
+                        </Link>
+                    </div>}
             </div>
         )
     }
