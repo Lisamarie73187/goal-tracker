@@ -83,7 +83,7 @@ class BarGraphDates extends Component {
     render() {
         return (
             <div>
-            <div className="barGraphOne">
+            <div>
                 <Bar 
                     data={this.state.data2} 
                     width={this.props.width}

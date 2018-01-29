@@ -100,7 +100,14 @@
 .barGraph {
     margin: 20px 30px;
     background-color: #3f3e54;
-    transform: translateY(-80px)
+    transform: translateY(-50px);
+}
+
+.barGraphOne {
+    margin: 20px 30px;
+    background-color: #3f3e54;
+    transform: translateY(-80px);
+    display: none;
 }
 
 .barGraphTwo {
@@ -169,18 +176,33 @@
 
 }
 
+@media(max-width: 1500px){
+    .barGraph{
+        margin: 10px;
+    }
+}
+
+@media(max-width: 1410px){
+    .barGraph{
+        display: none;
+    }
+    .barGraphOne {
+        display: inline;
+    }
+}
+
 @media(max-width: 1300px){
     .boxerOne, .boxerTwo, .boxerThree {
         width: 13vw;
     }
-    .barGraph{
-        margin: 15px;
+    .barGraphOne{
+        margin: 10px;
         transform: translateY(-80px)
     }
 }
 
 @media(max-width: 1250px){
-    .barGraph{
+    .barGraphOne{
         display: none;
     }
     .barGraphTwo{

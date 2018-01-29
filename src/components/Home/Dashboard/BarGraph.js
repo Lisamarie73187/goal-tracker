@@ -80,7 +80,7 @@ getTheData(){
                             ticks:{
                                 beginAtZero:true,
                                 suggestedMin: 0,
-                                suggestedMax: 10,
+                                suggestedMax: 20,
                             },
                         }]
                     }

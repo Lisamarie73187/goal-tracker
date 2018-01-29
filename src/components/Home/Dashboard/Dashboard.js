@@ -29,7 +29,6 @@ class Dashboard extends Component {
 
     getSubtaskGoals(){
         axios.get(`/api/goal/subtask`).then( response => {
-            console.log(response.data)
             var completedArr = []
             var subtaskArr = []
             response.data.forEach(e => {
@@ -51,7 +50,6 @@ class Dashboard extends Component {
     
 
     render() {
-       console.log(this.state.taskResp)
         return (
             <div>
                 {this.props.data.length >= 1 ? 
@@ -94,10 +92,12 @@ class Dashboard extends Component {
                             </div>
                             {this.state.numberOfSubTasks >= 2 ? 
                     <div className="secondRow">
-                        <div className="barGraph"><BarGraphDates width={550} height={370}/></div>
+                        <div className="barGraph"><BarGraphDates width={650} height={450}/></div>
+                        <div className="barGraphOne"><BarGraphDates width={550} height={370}/></div>
                         <div className="barGraphTwo"><BarGraphDates width={470} height={280}/></div>
                         <div className="barGraphThree"><BarGraphDates width={400} height={250}/></div>
-                            <div className="barGraph"><BarGraph width={500} height={270}/></div>
+                            <div className="barGraph"><BarGraph width={600} height={370}/></div>
+                            <div className="barGraphOne"><BarGraph width={500} height={270}/></div>
                             <div className="barGraphTwo"><BarGraph width={440} height={220}/></div>
                             <div className="barGraphThree"><BarGraph width={400} height={200}/></div>
                     </div>

@@ -52,7 +52,7 @@ class Modal extends Component {
                         <input 
                             className="inputs" 
                             type="text" 
-                            value={this.state.value}
+                            value={this.state.goalName}
                             onChange={ (e) => this.handleNameChange(e.target.value)}
                             placeholder={"Goal Title (20 character limit)"}/>
                         <input 
