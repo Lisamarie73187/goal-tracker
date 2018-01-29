@@ -16,6 +16,7 @@ class Dashboard extends Component {
         this.state = {
             numberOfSubTasks: 0,
             numberOfCompletedTasks: 0,
+            taskResp: []
 
         }
 
@@ -28,14 +29,20 @@ class Dashboard extends Component {
 
     getSubtaskGoals(){
         axios.get(`/api/goal/subtask`).then( response => {
-            var arr = []
+            console.log(response.data)
+            var completedArr = []
+            var subtaskArr = []
             response.data.forEach(e => {
                 if(e.completed){
-                    arr.push(e.completed)
+                    completedArr.push(e.completed)
+                }
+                if(e.subtaskname){
+                    subtaskArr.push(e.subtaskname)
                 }
                 this.setState({
-                    numberOfCompletedTasks: arr.length,
-                    numberOfSubTasks: response.data.length
+                    numberOfCompletedTasks: completedArr.length,
+                    numberOfSubTasks: response.data.length,
+                    taskResp: subtaskArr.length
                 })
                 })
             })
@@ -44,7 +51,7 @@ class Dashboard extends Component {
     
 
     render() {
-       
+       console.log(this.state.taskResp)
         return (
             <div>
                 {this.props.data.length >= 1 ? 
@@ -55,10 +62,10 @@ class Dashboard extends Component {
                                 <div className="numberGoals">{this.props.data.length}</div>
                             </div>
                             <div className="boxerTwo">
-                            {this.state.numberOfSubTasks >= 2 ? 
+                            {this.state.numberOfSubTasks ? 
                                 <div>
                                     <h1 className="textyText">Number of <br/>Subtasks </h1>
-                                    <div className="numberGoals">{this.state.numberOfSubTasks}</div>
+                                    <div className="numberGoals">{this.state.taskResp}</div>
                                 </div>
                                 : <div>
                                 <div className="textyText">Number of <br/> Tasks</div>
@@ -66,7 +73,7 @@ class Dashboard extends Component {
                                 </div>}
                             </div>
                             <div className="boxerThree">
-                            {this.state.numberOfCompletedTasks >= 1? 
+                            {this.state.numberOfCompletedTasks ? 
                                 <div>
                                     <h1 style={completedTasks} className="textyText">Number of Completed Subtasks </h1>
                                     <div className="numberGoals">{this.state.numberOfCompletedTasks}</div>
@@ -77,7 +84,7 @@ class Dashboard extends Component {
                                 </div>}
                             </div>
                             <div className="pie">
-                            {this.state.numberOfSubTasks >= 2 ? 
+                            {this.state.numberOfSubTasks ? 
                                 <div>
                                     <div className="textyText">Number of Tasks per Goal</div>
                                     <div><PieChart/></div>

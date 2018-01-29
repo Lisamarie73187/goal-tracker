@@ -83,7 +83,7 @@ class Task extends Component {
                             <div style={wrapper}>
                                 <input  value={this.state.subTaskName}
                                         onChange={(e) => this.handleSubTaskChange(e.target.value)}
-                                        placeholder="Add More Tasks"
+                                        placeholder="Add a Subtask"
                                         style={inputOne}/>
                                 <button onClick={() => this.onSubmitSubTask()} style={button}>Add</button>
                     </div>
