@@ -94,6 +94,6 @@ app.get('*', (req, res)=>{
 })
 
 
-const port = 3003;
+const port = 80;
 
 app.listen(port, () => console.log(`I'm listening... on port: ${port}`));
